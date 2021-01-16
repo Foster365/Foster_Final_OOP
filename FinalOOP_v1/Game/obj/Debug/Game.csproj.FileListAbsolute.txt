@@ -1,0 +1,186 @@
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Engine.dll
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\ship.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Enemy2.jpg
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Enemy3.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Game.exe
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Game.pdb
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\obj\Debug\Game.csprojAssemblyReference.cache
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\obj\Debug\Game.exe
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\obj\Debug\Game.pdb
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Player.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\BulletPj.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion1.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion10.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion11.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion12.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion14.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion15.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion2.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion3.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion4.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion5.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion6.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion7.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion8.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion9.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion13.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\Game_Over.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\PauseB.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\Select.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\TextBut.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\TextCre.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\TextEx.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\TextLG.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\TextMMenu.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\TextNG.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\TextPlay.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\Win.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\SpaceBk.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Boss.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Enemy1.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Enemy4.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\BulletEnemy1.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\BulletEnemy3.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\BulletEnemy4.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\BulletEnemy2.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Engine.dll
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\ship.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion1.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion10.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion11.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion12.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion13.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion14.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion15.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion2.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion3.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion4.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion5.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion6.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion7.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion8.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion9.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Boss.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\BulletEnemy2.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\BulletEnemy1.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\BulletEnemy3.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\BulletEnemy4.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\BulletPj.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Enemy1.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Enemy2.jpg
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Enemy3.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Enemy4.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Player.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\Game_Over.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\PauseB.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\Select.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\SpaceBk.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextBut.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextCre.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextEx.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextLG.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextMMenu.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextNG.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextPlay.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\Win.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Game.exe
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Game.pdb
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\obj\Debug\Game.csprojAssemblyReference.cache
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\obj\Debug\Game.exe
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\obj\Debug\Game.pdb
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Engine.dll
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\ship.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion1.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion10.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion11.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion12.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion13.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion14.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion15.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion2.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion3.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion4.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion5.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion6.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion7.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion8.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion9.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Boss.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\BulletEnemy2.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\BulletEnemy1.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\BulletEnemy3.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\BulletEnemy4.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\BulletPj.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Enemy1.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Enemy2.jpg
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Enemy3.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Enemy4.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Player.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\Game_Over.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\PauseB.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\Select.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\SpaceBk.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextBut.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextCre.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextEx.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextLG.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextMMenu.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextNG.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextPlay.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\Win.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Game.exe
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Game.pdb
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\obj\Debug\Game.csprojAssemblyReference.cache
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\obj\Debug\Game.exe
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\obj\Debug\Game.pdb
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Heart.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Engine.dll
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Heart.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\ship.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion1.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion10.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion11.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion12.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion13.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion14.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion15.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion2.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion3.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion4.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion5.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion6.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion7.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion8.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion9.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Boss.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\BulletEnemy2.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\BulletEnemy1.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\BulletEnemy3.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\BulletEnemy4.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\BulletPj.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Enemy1.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Enemy2.jpg
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Enemy3.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Enemy4.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Player.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\Game_Over.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\PauseB.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\Select.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\SpaceBk.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\TextBut.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\TextCre.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\TextEx.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\TextLG.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\TextMMenu.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\TextNG.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\TextPlay.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\Win.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Game.exe
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Game.pdb
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\obj\Debug\Game.csprojAssemblyReference.cache
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\obj\Debug\Game.exe
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\obj\Debug\Game.pdb
