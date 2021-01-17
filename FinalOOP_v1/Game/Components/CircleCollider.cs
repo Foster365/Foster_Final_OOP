@@ -38,8 +38,8 @@ namespace Game
 
             float distance = (float)Math.Sqrt(diffX * diffX + diffY * diffY);
 
-            if (distance <= radius + target.Radius)
-                return target.Transform.Position;
+            //if (distance <= radius + target.Radius)
+                //return target.Transform.Position;
 
             //float diffX = transform.Position.X - target.Transform.Position.X;
             //float diffY = transform.Position.Y - target.Transform.Position.Y;
@@ -59,10 +59,10 @@ namespace Game
             //return sPoint;
         }
 
-        public List<Collider> CollidersList()
-        {
-            Colliders = 
-        }
+        //public List<Collider> CollidersList()
+        //{
+        //    Colliders = 
+        //} 
 
     }
 

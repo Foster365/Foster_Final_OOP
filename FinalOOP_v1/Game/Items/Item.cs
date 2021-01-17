@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public abstract class Item : IRenderizable, IUpdatable
+    public abstract class Item : IItem
     {
         Vector2 position;
         Vector2 size;
@@ -36,6 +36,7 @@ namespace Game
 
             transform = new Transform(Position, Scale, Rotation);
             renderer = new Renderer(Size, Texture, transform);
+
 
         }
         public abstract void Update();

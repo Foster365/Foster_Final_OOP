@@ -16,7 +16,8 @@ namespace Game
 
         int points;
 
-        public static List<ICharacter>RenderizableObjects { get; set; } = new List<ICharacter>();
+        public static List<IRenderizable>RenderizableObjects { get; set; } = new List<IRenderizable>();
+        public static List<IUpdatable> UpdatableObjects { get; set; } = new List<IUpdatable>();
 
         float levelTimer;
 
@@ -38,6 +39,7 @@ namespace Game
             timetoCreate = 0.5f;
             levelTimer = 60;
             ResetLevel();
+            AddTextures();
             RenderizableObjects.Add(new Player(new Vector2(200, 400), new Vector2(0.15f, 0.15f), 90, new Vector2(166, 304), new Vector2(200, 200), "Textures/Player.png"));
 
         }
@@ -54,9 +56,9 @@ namespace Game
             CreateRenderizableObjects();
             //CreateUpdatableObjects();
 
-            for (int i = 0; i < RenderizableObjects.Count; i++)
+            for (int i = 0; i < UpdatableObjects.Count; i++)
             {
-                RenderizableObjects[i].Update();
+                UpdatableObjects[i].Update();
             }
 
             if (timer>=timetoCreate)
@@ -107,15 +109,16 @@ namespace Game
             //AnimationParameters();
             
         }
-        
+
         public void CreateEnemy()
         {
 
             Random random = new Random();
-            
+
             Vector2 enemyPosition = new Vector2(random.Next(600, 750), random.Next(0, 500));
 
             RenderizableObjects.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, enemyPosition));
+            UpdatableObjects.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, enemyPosition));
 
         }
 
@@ -163,5 +166,16 @@ namespace Game
         //    }
         //}
 
+        public void AddTextures()
+        {
+            Level1Screen.RenderizableObjects.Add(new HealthIcon(new Vector2(10, 10), new Vector2(0.1f, 0.1f), 0, new Vector2(788, 663), "Textures/Heart.png"));
+            Level1Screen.RenderizableObjects.Add(new HealthIcon(new Vector2(30, 10), new Vector2(0.1f, 0.1f), 0, new Vector2(788, 663), "Textures/Heart.png"));
+            Level1Screen.RenderizableObjects.Add(new HealthIcon(new Vector2(50, 10), new Vector2(0.1f, 0.1f), 0, new Vector2(788, 663), "Textures/Heart.png"));
+
+            Level1Screen.UpdatableObjects.Add(new HealthIcon(new Vector2(50, 10), new Vector2(0.1f, 0.1f), 0, new Vector2(788, 663), "Textures/Heart.png"));
+            Level1Screen.UpdatableObjects.Add(new HealthIcon(new Vector2(50, 10), new Vector2(0.1f, 0.1f), 0, new Vector2(788, 663), "Textures/Heart.png"));
+            Level1Screen.UpdatableObjects.Add(new HealthIcon(new Vector2(50, 10), new Vector2(0.1f, 0.1f), 0, new Vector2(788, 663), "Textures/Heart.png"));
+
+        }
     }
 }

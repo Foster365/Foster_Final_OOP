@@ -48,12 +48,13 @@
     <Compile Include="Custom Delegates\Custom Delegates.cs" />
     <Compile Include="Characters\Enemy.cs" />
     <Compile Include="Factory\EnemyFactory.cs" />
-    <Compile Include="HealthIcon.cs" />
+    <Compile Include="Interfaces\IItem.cs" />
+    <Compile Include="Items\HealthIcon.cs" />
     <Compile Include="Interfaces\ICharacter.cs" />
     <Compile Include="Interfaces\IRenderizable.cs" />
     <Compile Include="Interfaces\IUpdatable.cs" />
     <Compile Include="Arrow.cs" />
-    <Compile Include="Item.cs" />
+    <Compile Include="Items\Item.cs" />
     <Compile Include="Managers\GameManager.cs" />
     <Compile Include="Menu-Screens\GameOverScreen.cs" />
     <Compile Include="Menu-Screens\Level1Screen.cs" />
