@@ -55,7 +55,7 @@ namespace Game
         {
 
             InitializeGame();
-            AnimationParameters();
+            ActualScreen();
 
             while (true)
             {
@@ -91,10 +91,10 @@ namespace Game
 
         }
 
-        static public void AnimationParameters()
+        static public void ActualScreen()
         {
 
-            ActualScreenState = ScreenFlow.splashScreen;
+            ActualScreenState = ScreenFlow.level1Screen;
 
         }
 

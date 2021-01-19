@@ -9,29 +9,26 @@ namespace Game
     public class Level1Screen
     {
 
-        //public Enemigo enemigo;
-        
+        Player _player;
+
         float timer;
         float timetoCreate = 0.5f;
 
         int points;
 
-        public static List<IRenderizable>RenderizableObjects { get; set; } = new List<IRenderizable>();
-        public static List<IUpdatable> UpdatableObjects { get; set; } = new List<IUpdatable>();
+        public static List<ICharacter> RenderizableObjects { get; set; } = new List<ICharacter>();
 
         float levelTimer;
 
-        //Animation explosion;
+        Animation lifeStack;
 
-        public enum Animations { explosion }
+        public enum Animations { lifeStack }
 
-        Animations actualAnimstate = Animations.explosion;
+        Animations actualAnimstate = Animations.lifeStack;
 
         public Animations ActualAnimstate { get => actualAnimstate; set => actualAnimstate = value; }
-        //public Animation Explosion { get => explosion; set => explosion = value; }
 
-        public float Timer { get => timer; set => timer = 0; }
-        public float TimetoCreate { get => timetoCreate; set => timetoCreate = value; }
+        //public Animation Explosion { get => explosion; set => explosion = value; }
 
         public Level1Screen()
         {
@@ -40,40 +37,28 @@ namespace Game
             levelTimer = 60;
             ResetLevel();
             AddTextures();
-            RenderizableObjects.Add(new Player(new Vector2(200, 400), new Vector2(0.15f, 0.15f), 90, new Vector2(166, 304), new Vector2(200, 200), "Textures/Player.png"));
-
         }
 
         public void Update()
         {
-            //PlayerBullet playerBullet = playerBullet;
-            //Aplicar temporizadores acá
+
 
             levelTimer -= Time.DeltaTime;
             //Console.WriteLine("LevelTimer" + levelTimer);
             timer += Time.DeltaTime;
-            //Console.WriteLine("Enemycreator" + timer);
-            CreateRenderizableObjects();
-            //CreateUpdatableObjects();
 
-            for (int i = 0; i < UpdatableObjects.Count; i++)
+            for (int i = 0; i < RenderizableObjects.Count; i++)
             {
-                UpdatableObjects[i].Update();
+                RenderizableObjects[i].Update();
             }
 
-            if (timer>=timetoCreate)
+            if (timer >= timetoCreate)
             {
                 CreateEnemy();
                 timer = 0;
             }
 
-            //ChequearDerrota();
-
-            //for (int i = 0; i < RenderizableObjects.Count; i++)
-            //{
-            //    RenderizableObjects[i].Update();
-            //}
-
+            UpdateLifeStack();
             //UpdateAnimation();
 
             if (Engine.GetKey(Keys.ESCAPE))
@@ -86,28 +71,24 @@ namespace Game
         public void Render()
         {
 
-            //for (var i = 0; i < Program.Bullets.Count; i++)
-            //{
-            //    Program.Bullets[i].Render();
-            //}
-
             for (int j = 0; j < RenderizableObjects.Count; j++)
             {
                 RenderizableObjects[j].Render();
             }
 
-            //if (ActualAnimstate == Animations.explosion)
-            //    Engine.Draw(Explosion.animFrames[Explosion.actualAnimationFrame], 200, 100, 0.5f, 0.5f, 0, 0, 0);
+            //if (ActualAnimstate == Animations.lifeStack)
+            //    Engine.Draw(lifeStack.AnimList[lifeStack.ActualAnimationFrame], 10, 10, 0.05f, 0.05f, 0, 0, 0);
+
         }
 
         public void ResetLevel()
         {
             Engine.Clear();
             //Timer para crear enemigos
-            Timer += Time.DeltaTime;
+            timer += Time.DeltaTime;
 
-            //AnimationParameters();
-            
+            AnimationParameters();
+
         }
 
         public void CreateEnemy()
@@ -118,63 +99,54 @@ namespace Game
             Vector2 enemyPosition = new Vector2(random.Next(600, 750), random.Next(0, 500));
 
             RenderizableObjects.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, enemyPosition));
-            UpdatableObjects.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, enemyPosition));
 
         }
 
-        public void CreateRenderizableObjects()
+        void UpdateLifeStack()
         {
 
+            for (var i = 0; i < Level1Screen.RenderizableObjects.Count; i--)
+            {
+
+                if (_player.CurrentLife == (_player.CurrentLife - 0.2f))
+                    Level1Screen.RenderizableObjects.Remove(Level1Screen.RenderizableObjects[Level1Screen.RenderizableObjects.Count]);
+            }
         }
 
-        //public void CreateUpdatableObjects()
-        //{
-        //    UpdatableObjects.Add(new Player(new Vector2(200, 400), new Vector2(0.15f, 0.15f), 90, new Vector2(166, 304), new Vector2(200, 200), "Textures/Player.png"));
-        //}
+        public void AnimationParameters()
+        {
 
-        //public void AnimationParameters()
-        //{
+            //List<Texture> lifeStackFrames = new List<Texture>();
 
-        //    List<Texture> explosionFrames = new List<Texture>();
+            //lifeStackFrames.Add(Engine.GetTexture("Textures/Heart.png"));
+            //lifeStackFrames.Add(Engine.GetTexture("Textures/Heart.png"));
+            //lifeStackFrames.Add(Engine.GetTexture("Textures/Heart.png"));
+            //lifeStackFrames.Add(Engine.GetTexture("Textures/Heart.png"));
+            //lifeStackFrames.Add(Engine.GetTexture("Textures/Heart.png"));
 
-        //    explosionFrames.Add(Engine.GetTexture("Textures/Animations/Explosion/Explosion1.png"));
-        //    explosionFrames.Add(Engine.GetTexture("Textures/Animations/Explosion/Explosion2.png"));
-        //    explosionFrames.Add(Engine.GetTexture("Textures/Animations/Explosion/Explosion3.png"));
-        //    explosionFrames.Add(Engine.GetTexture("Textures/Animations/Explosion/Explosion4.png"));
-        //    explosionFrames.Add(Engine.GetTexture("Textures/Animations/Explosion/Explosion5.png"));
-        //    explosionFrames.Add(Engine.GetTexture("Textures/Animations/Explosion/Explosion6.png"));
-        //    explosionFrames.Add(Engine.GetTexture("Textures/Animations/Explosion/Explosion7.png"));
-        //    explosionFrames.Add(Engine.GetTexture("Textures/Animations/Explosion/Explosion8.png"));
-        //    explosionFrames.Add(Engine.GetTexture("Textures/Animations/Explosion/Explosion9.png"));
-        //    explosionFrames.Add(Engine.GetTexture("Textures/Animations/Explosion/Explosion10.png"));
-        //    explosionFrames.Add(Engine.GetTexture("Textures/Animations/Explosion/Explosion11.png"));
-        //    explosionFrames.Add(Engine.GetTexture("Textures/Animations/Explosion/Explosion12.png"));
-        //    explosionFrames.Add(Engine.GetTexture("Textures/Animations/Explosion/Explosion13.png"));
-        //    explosionFrames.Add(Engine.GetTexture("Textures/Animations/Explosion/Explosion14.png"));
-        //    explosionFrames.Add(Engine.GetTexture("Textures/Animations/Explosion/Explosion15.png"));
+            //lifeStack = new Animation(lifeStackFrames, 0.1f, false);
 
-        //    Explosion = new Animation(explosionFrames, true, 0.1f);
+        }
 
-        //}
-
-        //public void UpdateAnimation()
-        //{
-        //    if (ActualAnimstate == Animations.explosion)
-        //    {
-        //        ActualAnimstate = Animations.explosion;
-        //        Explosion.Play();
-        //    }
-        //}
+        public void UpdateAnimation()
+        {
+            if (ActualAnimstate == Animations.lifeStack)
+            {
+                ActualAnimstate = Animations.lifeStack;
+                lifeStack.Play();
+            }
+        }
 
         public void AddTextures()
         {
-            Level1Screen.RenderizableObjects.Add(new HealthIcon(new Vector2(10, 10), new Vector2(0.1f, 0.1f), 0, new Vector2(788, 663), "Textures/Heart.png"));
-            Level1Screen.RenderizableObjects.Add(new HealthIcon(new Vector2(30, 10), new Vector2(0.1f, 0.1f), 0, new Vector2(788, 663), "Textures/Heart.png"));
-            Level1Screen.RenderizableObjects.Add(new HealthIcon(new Vector2(50, 10), new Vector2(0.1f, 0.1f), 0, new Vector2(788, 663), "Textures/Heart.png"));
 
-            Level1Screen.UpdatableObjects.Add(new HealthIcon(new Vector2(50, 10), new Vector2(0.1f, 0.1f), 0, new Vector2(788, 663), "Textures/Heart.png"));
-            Level1Screen.UpdatableObjects.Add(new HealthIcon(new Vector2(50, 10), new Vector2(0.1f, 0.1f), 0, new Vector2(788, 663), "Textures/Heart.png"));
-            Level1Screen.UpdatableObjects.Add(new HealthIcon(new Vector2(50, 10), new Vector2(0.1f, 0.1f), 0, new Vector2(788, 663), "Textures/Heart.png"));
+            RenderizableObjects.Add(new Player(new Vector2(200, 400), new Vector2(0.15f, 0.15f), 90, new Vector2(166, 304), new Vector2(200, 200), 50, "Textures/Player.png"));
+
+            RenderizableObjects.Add(new HealthIcon(new Vector2(10, 10), new Vector2(0.03f, 0.03f), 0, new Vector2(788, 663), "Textures/Heart.png"));
+            RenderizableObjects.Add(new HealthIcon(new Vector2(40, 10), new Vector2(0.03f, 0.03f), 0, new Vector2(788, 663), "Textures/Heart.png"));
+            RenderizableObjects.Add(new HealthIcon(new Vector2(70, 10), new Vector2(0.03f, 0.03f), 0, new Vector2(788, 663), "Textures/Heart.png"));
+            RenderizableObjects.Add(new HealthIcon(new Vector2(100, 10), new Vector2(0.03f, 0.03f), 0, new Vector2(788, 663), "Textures/Heart.png"));
+            RenderizableObjects.Add(new HealthIcon(new Vector2(130, 10), new Vector2(0.03f, 0.03f), 0, new Vector2(788, 663), "Textures/Heart.png"));
 
         }
     }

@@ -26,6 +26,7 @@ namespace Game
         private int enemyKillstoWin;
         private int points;
         private Player player { get; set; }
+        //BossEnemy bossEnemy{get;set;}
 
         public int Points
         {
@@ -51,13 +52,13 @@ namespace Game
 
             set
             {
-                enemyKillstoWin = value;
+                enemyKillstoWin = 10;
             }
         }
 
         private void CheckVictory()
         {
-            if (Program.ActualScreenState == Program.ScreenFlow.level5Screen && points >= enemyKillstoWin)
+            if (Program.ActualScreenState == Program.ScreenFlow.level5Screen/* && bossEnemy.destroyed && points >= enemyKillstoWin*/)
             {
                 Program.ActualScreenState = Program.ScreenFlow.winScreen;
             }
@@ -65,10 +66,21 @@ namespace Game
 
         private void CheckDefeat()
         {
-            if (player.Life <= 0)
+            if (player.CurrentLife<= 0)
             {
                 Program.ActualScreenState = Program.ScreenFlow.gameOverScreen;
             }
         }
+
+        void UpdateLifeStack()
+        {
+            for (var i = 0; i < Level1Screen.RenderizableObjects.Count; i--)
+            {
+
+                if (player.CurrentLife == (player.CurrentLife - 0.2f))
+                    Level1Screen.RenderizableObjects.Remove(Level1Screen.RenderizableObjects[Level1Screen.RenderizableObjects.Count]);
+            }
+        }
+
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public interface IItem : IRenderizable, IUpdatable
+    public interface IItem : ICharacter
     {
     }
 }

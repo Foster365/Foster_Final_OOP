@@ -20,7 +20,7 @@ namespace Game
         string texture;
         float radius;
 
-        int life;
+        /*int maxLife;*/ int currentLife;
 
         bool destroyed;
 
@@ -50,7 +50,7 @@ namespace Game
         public string Texture { get => texture; set => texture = value; }
         public float Radius { get => radius; set => radius = value; }
 
-        public int Life { get => life; set => life = value; }
+        public int CurrentLife { get => currentLife; set => currentLife = value; }
 
         public bool Destroyed { get => destroyed; set => destroyed = false; }
 
@@ -66,7 +66,7 @@ namespace Game
 
         //
 
-        public Player(Vector2 playerPos, Vector2 scale, float rotation, Vector2 size, Vector2 playerSpeed, string texture)
+        public Player(Vector2 playerPos, Vector2 scale, float rotation, Vector2 size, Vector2 playerSpeed, int maxLife, string texture)
         {
 
             transform = new Transform(playerPos, scale, rotation);
@@ -74,7 +74,7 @@ namespace Game
 
             circleCollider = new CircleCollider(playerPos, scale, rotation, size, radius);
 
-            Life = life;
+            currentLife = maxLife;
             PlayerPos = transform.Position;
             PlayerSpeed = playerSpeed;
             timetoShoot = 0.8f;

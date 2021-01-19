@@ -1,0 +1,10 @@
+1- Arreglar collider y agregarlo en las clases
+2- Arreglar transform y renderer OK
+3- Los objetos renderizables se guardan en una lista en c/screen y se renderizan en el render de esa clase.
+4- El jugador se mueve y dispara sobre un escenario OK
+5- Los enemigos spawnean por tiempo y p/ pasar de nivel hay que matar a una cantidad específica.
+6- Hacer 5 niveles (Dificultad progresiva)
+7- Hacer 4 variedades de enemigos con comportamientos diferentes (1 rápido, 1 tanque, 1 disparo doble y otro común o de otro tipo)
+8- Stack de vidas que se muestren en pantalla
+9- Cuando el jugador muere spawnea en otro lado y con invulnerabilidad (Pero no puede disparar)
+10- Power Ups que se spawneen al matar a un enemigo (Velocidad y vida)

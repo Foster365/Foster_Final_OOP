@@ -37,6 +37,5 @@ namespace Game
             Engine.Draw(renderer.Texture, transform.Position.X, transform.Position.Y, transform.Scale.X, transform.Scale.Y, transform.Rotation);
         }
 
-      
     }
 }
