@@ -29,16 +29,25 @@ namespace Game
         }
 
         // AABB
-        public override void CheckforCollisions(Collider target)
+        public override bool CheckforCollisions(Entity target)
         {
-            //float diffX = Math.Abs(transform.Position.X - target.Transform.Position.X);
-            //float diffY = Math.Abs(transform.Position.Y - target.Transform.Position.Y);
-            //float sumaMitadAncho = size.X / 2 + target.Renderer.Size.X / 2;
-            //float sumaMitadAlto = size.Y / 2 + target.Renderer.Size.Y / 2;
 
-            //// Si se cumple hay colision
-            //if (diffX <= sumaMitadAncho && diffY <= sumaMitadAlto) return true;
-            //else return false;
+            bool colliding;
+
+            float diffX = Math.Abs(transform.Position.X - target.Transform.Position.X);
+            float diffY = Math.Abs(transform.Position.Y - target.Transform.Position.Y);
+            float sumaMitadAncho = renderer.Size.X / 2 + target.Renderer.Size.X / 2;
+            float sumaMitadAlto = renderer.Size.Y / 2 + target.Renderer.Size.Y / 2;
+
+            // Si se cumple hay colision
+            if (diffX <= sumaMitadAncho && diffY <= sumaMitadAlto)
+            {
+
+                colliding = true;
+                Colliders.Add(this);
+
+            }
+            return colliding = false;
 
         }
     }

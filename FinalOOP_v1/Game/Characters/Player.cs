@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public class Player: ICharacter
+    public class Player: Entity, ICharacter
     {
         //Variables
         
@@ -35,8 +35,6 @@ namespace Game
 
         ObjectsPool<PlayerBullet> bulletsPool;
 
-        Enemy _enemy;
-            
         //
 
         //Encapsuladas
@@ -66,7 +64,7 @@ namespace Game
 
         //
 
-        public Player(Vector2 playerPos, Vector2 scale, float rotation, Vector2 size, Vector2 playerSpeed, int maxLife, string texture)
+        public Player(Vector2 playerPos, Vector2 scale, float rotation, Vector2 size, Vector2 playerSpeed, int maxLife, string texture, float radius) : base(radius)
         {
 
             transform = new Transform(playerPos, scale, rotation);
@@ -74,6 +72,7 @@ namespace Game
 
             circleCollider = new CircleCollider(playerPos, scale, rotation, size, radius);
 
+            this.radius = radius;
             currentLife = maxLife;
             PlayerPos = transform.Position;
             PlayerSpeed = playerSpeed;
@@ -96,6 +95,11 @@ namespace Game
                     Shoot();
                     TimerShoot = 0;
 
+                }
+                for (int i = 0; i < Level1Screen.Enemies.Count; i++)
+                {
+
+                    circleCollider.CheckforCollisions(Level1Screen.Enemies[i]);
                 }
 
             }

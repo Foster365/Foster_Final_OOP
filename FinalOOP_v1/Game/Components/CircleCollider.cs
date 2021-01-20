@@ -9,11 +9,6 @@ namespace Game
     public class CircleCollider : Collider
     {
 
-        Vector2 position;
-        Vector2 scale;
-        float rotation;
-
-
         float radius;
 
         Transform transform;
@@ -30,39 +25,26 @@ namespace Game
         1 singular.
         1 lista de colliders que retorne bool, si colisionó o no.
         */
-        public override void CheckforCollisions(Collider target)
+        public override bool CheckforCollisions(Entity target)
         {
+
+            bool colliding = false;
 
             float diffX = Math.Abs(transform.Position.X - target.Transform.Position.X);
             float diffY = Math.Abs(transform.Position.Y - target.Transform.Position.Y);
 
             float distance = (float)Math.Sqrt(diffX * diffX + diffY * diffY);
 
-            //if (distance <= radius + target.Radius)
-                //return target.Transform.Position;
+            if (distance <= radius + target.Radius)
+            {
 
-            //float diffX = transform.Position.X - target.Transform.Position.X;
-            //float diffY = transform.Position.Y - target.Transform.Position.Y;
+                colliding = true;
+                Colliders.Add(this);
 
-            //float distance = (float)Math.Sqrt(diffX * diffX + diffY * diffY);
+            }
+            return colliding = false;
 
-            //if (distance <= radius + target.Radius) return true;
-            //else return false;
-
-            //return coll;
-
-            //Collider[] colliders = Physics.OverlapSphere(transform.position, lineOfSight.ViewDistance, safePointLayer);
-            //if (colliders.Length > 1)
-            //{
-            //    sPoint = colliders[0].transform.position;
-            //}
-            //return sPoint;
         }
-
-        //public List<Collider> CollidersList()
-        //{
-        //    Colliders = 
-        //} 
 
     }
 

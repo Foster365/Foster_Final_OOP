@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animation.cs" />
+    <Compile Include="Characters\Entity.cs" />
     <Compile Include="Components\Background.cs" />
     <Compile Include="Bullet.cs" />
     <Compile Include="Button.cs" />

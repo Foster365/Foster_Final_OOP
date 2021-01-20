@@ -79,7 +79,7 @@ namespace Game
             levelTimer = 0;
             timer = 0;
 
-            player = new Player(new Vector2(200, 400), new Vector2(0.15f, 0.15f), 90, new Vector2(166, 304), new Vector2(200, 200), 50, "Textures/Player.png");
+            //player = new Player(new Vector2(200, 400), new Vector2(0.15f, 0.15f), 90, new Vector2(166, 304), new Vector2(200, 200), 50, "Textures/Player.png");
             //AnimationParameters();
 
             CreateEnemy();

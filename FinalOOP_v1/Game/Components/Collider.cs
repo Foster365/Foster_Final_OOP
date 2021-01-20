@@ -32,7 +32,7 @@ namespace Game
             renderer = new Renderer(size, null, transform);
         }
 
-        public abstract void CheckforCollisions(Collider target);
+        public abstract bool CheckforCollisions(Entity target);
 
 
         

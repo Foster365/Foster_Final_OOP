@@ -16,7 +16,11 @@ namespace Game
 
         int points;
 
+        static List<Enemy> enemies;
+
         public static List<ICharacter> RenderizableObjects { get; set; } = new List<ICharacter>();
+
+        public static List<Enemy> Enemies { get => enemies; set => enemies = value; }
 
         float levelTimer;
 
@@ -98,19 +102,24 @@ namespace Game
 
             Vector2 enemyPosition = new Vector2(random.Next(600, 750), random.Next(0, 500));
 
-            RenderizableObjects.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, enemyPosition));
+            enemies = new List<Enemy>();
+
+            //RenderizableObjects.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, enemyPosition));
+            enemies.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, enemyPosition));
 
         }
 
         void UpdateLifeStack()
         {
 
-            for (var i = 0; i < Level1Screen.RenderizableObjects.Count; i--)
-            {
+            //for (var i = 0; i < Level1Screen.RenderizableObjects.Count; i--)
+            //{
+                
+            //    if (_player.CurrentLife == (_player.CurrentLife - 0.2f))
+            //        Level1Screen.RenderizableObjects.Remove(Level1Screen.RenderizableObjects[Level1Screen.RenderizableObjects.Count]);
 
-                if (_player.CurrentLife == (_player.CurrentLife - 0.2f))
-                    Level1Screen.RenderizableObjects.Remove(Level1Screen.RenderizableObjects[Level1Screen.RenderizableObjects.Count]);
-            }
+            //}
+
         }
 
         public void AnimationParameters()
@@ -140,7 +149,7 @@ namespace Game
         public void AddTextures()
         {
 
-            RenderizableObjects.Add(new Player(new Vector2(200, 400), new Vector2(0.15f, 0.15f), 90, new Vector2(166, 304), new Vector2(200, 200), 50, "Textures/Player.png"));
+            RenderizableObjects.Add(new Player(new Vector2(200, 400), new Vector2(0.15f, 0.15f), 90, new Vector2(166, 304), new Vector2(200, 200), 50, "Textures/Player.png", 1));
 
             RenderizableObjects.Add(new HealthIcon(new Vector2(10, 10), new Vector2(0.03f, 0.03f), 0, new Vector2(788, 663), "Textures/Heart.png"));
             RenderizableObjects.Add(new HealthIcon(new Vector2(40, 10), new Vector2(0.03f, 0.03f), 0, new Vector2(788, 663), "Textures/Heart.png"));

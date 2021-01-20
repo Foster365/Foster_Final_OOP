@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public class Enemy :/* EnemyAbs, */ICharacter //Clase abstracta de la cual heredan los enemigos. overraid en update (Aplico las trayectorias como en los métodos)
+    public class Enemy : Entity, /* EnemyAbs, */ICharacter //Clase abstracta de la cual heredan los enemigos. overraid en update (Aplico las trayectorias como en los métodos)
     {
         //Variables
 
@@ -68,7 +68,7 @@ namespace Game
 
         //
 
-        public Enemy(Vector2 position, float rotation, Vector2 scale, Vector2 size, Vector2 enemySpeed, string texture, int life, float angle = 0)/* : base(position, rotation, scale, size, enemySpeed, texture, life)*/
+        public Enemy(Vector2 position, float rotation, Vector2 scale, Vector2 size, Vector2 enemySpeed, string texture, int life, float angle, float radius) : base (radius)/*(position, rotation, scale, size, enemySpeed, texture, life)*/
         {
             
             transform = new Transform(enemyPosition, scale, rotation);
