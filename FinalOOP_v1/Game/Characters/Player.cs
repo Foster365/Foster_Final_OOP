@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public class Player: Entity, ICharacter
+    public class Player: ICharacter
     {
         //Variables
         
@@ -64,7 +64,7 @@ namespace Game
 
         //
 
-        public Player(Vector2 playerPos, Vector2 scale, float rotation, Vector2 size, Vector2 playerSpeed, int maxLife, string texture, float radius) : base(radius)
+        public Player(Vector2 playerPos, Vector2 scale, float rotation, Vector2 size, Vector2 playerSpeed, int maxLife, string texture, float radius)/* : base(radius)*/
         {
 
             transform = new Transform(playerPos, scale, rotation);

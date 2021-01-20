@@ -16,11 +16,9 @@ namespace Game
 
         int points;
 
-        static List<Enemy> enemies;
-
         public static List<ICharacter> RenderizableObjects { get; set; } = new List<ICharacter>();
 
-        public static List<Enemy> Enemies { get => enemies; set => enemies = value; }
+        public static List<Enemy> Enemies { get; set; } = new List<Enemy>();
 
         float levelTimer;
 
@@ -102,10 +100,8 @@ namespace Game
 
             Vector2 enemyPosition = new Vector2(random.Next(600, 750), random.Next(0, 500));
 
-            enemies = new List<Enemy>();
-
             //RenderizableObjects.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, enemyPosition));
-            enemies.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, enemyPosition));
+            Enemies.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, enemyPosition));
 
         }
 

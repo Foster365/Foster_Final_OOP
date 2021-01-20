@@ -12,24 +12,24 @@ namespace Game
 
         //
 
-        float rotation;
-        Vector2 scale;
+        //float rotation;
+        //Vector2 scale;
 
         Vector2 enemyPosition;
-        Vector2 enemySpeed;
+        //Vector2 enemySpeed;
 
-        Vector2 size;
-        string texture;
-        float radius;
+        //Vector2 size;
+        //string texture;
+        //float radius;
 
-        int life;
+        //int life;
 
-        bool destroyed;
+        //bool destroyed;
 
-        float lifeTime;
-        float lifeTimer;
+        //float lifeTime;
+        //float lifeTimer;
 
-        float angle;
+        //float angle;
 
         Transform transform;
         Renderer renderer;
@@ -40,60 +40,53 @@ namespace Game
         float timerShoot;
         float timetoShoot;
 
-        //
+        ////
 
-        //Encapsuladas
-        public Vector2 EnemyPosition { get => enemyPosition; set => enemyPosition = value; }
-        public Vector2 EnemySpeed { get => enemySpeed; set => enemySpeed = value; }
+        ////Encapsuladas
+        //public Vector2 EnemyPosition { get => enemyPosition; set => enemyPosition = value; }
+        //public Vector2 EnemySpeed { get => enemySpeed; set => enemySpeed = value; }
 
-        public Vector2 Scale { get => scale; set => scale = value; }
-        public float Rotation { get => rotation; set => rotation = value; }
+        //public Vector2 Scale { get => scale; set => scale = value; }
+        //public float Rotation { get => rotation; set => rotation = value; }
 
-        public Vector2 Size { get => size; set => size = value; }
-        public string Texture { get => texture; set => texture = value; }
-        public float Radius { get => radius; set => radius = value; }
+        //public Vector2 Size { get => size; set => size = value; }
+        //public string Texture { get => texture; set => texture = value; }
+        //public float Radius { get => radius; set => radius = value; }
 
-        public int Life { get => life; set => life = value; }
-
-        Transform IUpdatable.Transform { get => transform; set => transform = value; }
-        public CircleCollider CircleCollider { get => circleCollider; set => circleCollider = value; }
-        //Renderer ICharacter.Renderer { get => renderer; set => renderer=value; }
-        //public Renderer Rendererer { get => renderer; set => renderer = value; }
-
-        public float TimerShoot { get => timerShoot; set => timerShoot = value; }
-        public float TimetoShoot { get => timetoShoot; set => timetoShoot = value; }
-        public float Angle { get => angle; set => angle = value; }
-        public Renderer Renderer { get => renderer; set => renderer=value; }
+        //public float TimerShoot { get => timerShoot; set => timerShoot = value; }
+        //public float TimetoShoot { get => timetoShoot; set => timetoShoot = value; }
+        //public float Angle { get => angle; set => angle = value; }
+        //public Renderer Renderer { get => renderer; set => renderer = value; }
 
 
         //
 
-        public Enemy(Vector2 position, float rotation, Vector2 scale, Vector2 size, Vector2 enemySpeed, string texture, int life, float angle, float radius) : base (radius)/*(position, rotation, scale, size, enemySpeed, texture, life)*/
+        public Enemy(Vector2 _position, float _rotation, Vector2 _scale, Vector2 _size, Vector2 _enemySpeed, string _texture, int _life, float _angle, float _colliderRadius) : base(_colliderRadius)/*(position, rotation, scale, size, enemySpeed, texture, life)*/
         {
-            
-            transform = new Transform(enemyPosition, scale, rotation);
-            renderer = new Renderer(size, texture, transform);
 
-            this.enemyPosition = position;
-            this.Angle = angle - 90;
+            transform = new Transform(enemyPosition, _scale, _rotation);
+            renderer = new Renderer(_size, _texture, transform);
 
-            circleCollider = new CircleCollider(enemyPosition, scale, rotation, size, radius);
+            this.enemyPosition = _position;
+            Angle = _angle/* - 90*/;
 
-            this.life = life;
+            //circleCollider = new CircleCollider(enemyPosition, _scale, _rotation, _size, _colliderRadius);
 
-            lifeTime = 5;
-            EnemySpeed = enemySpeed;
+            //life = life;
+
+            LifeTime = 5;
+            //EnemySpeed = enemySpeed;
             timetoShoot = 0.8f;
 
 
         }
 
-        public void Update()//Ver bien esto
+        public override void Update()//Ver bien esto
         {
-            if (!destroyed)
+            if (!Destroyed)
             {
-                lifeTimer += Time.DeltaTime;
-                if (lifeTimer >= lifeTime)
+                LifeTime += Time.DeltaTime;
+                if (LifeTimer >= LifeTime)
                     Level1Screen.RenderizableObjects.Remove(this);
 
                 CheckforCollisions();
@@ -101,7 +94,7 @@ namespace Game
             }
 
         }
-          
+
         public void Shoot()
         {
             //var enemyBullet = bulletsPool.Get();
@@ -115,9 +108,19 @@ namespace Game
             //circleCollider.CheckforCollisions(Enemy enemy[i]);
         }
 
-        public void Render()
+        public override void TakeDamage()
         {
-            if (!destroyed)
+
+        }
+
+        public override void Die()
+        {
+
+        }
+
+        public override void Render()
+        {
+            if (!Destroyed)
             {
 
                 Engine.Draw(renderer.Texture, enemyPosition.X, enemyPosition.Y, transform.Scale.X, transform.Scale.Y, 0, renderer.GetRealWidth() / 2, renderer.GetRealHeight() / 2);
