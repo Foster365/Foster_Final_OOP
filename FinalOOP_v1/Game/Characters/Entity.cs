@@ -33,7 +33,7 @@ namespace Game
         //Vector2 enemySpeed;
 
         //Character attributes
-        
+
         float maxHealth = 100; float currentHealth;
         float damage;
 
@@ -62,7 +62,7 @@ namespace Game
         public float Radius { get => radius; set => radius = value; }
 
         public Renderer Renderer { get; set; }
-        public Transform Transform { get; set; }
+        public Transform Transform { get => transform; set => transform = value; }
         public float ColliderRadius { get => colliderRadius; set => colliderRadius = value; }
 
         public bool Destroyed { get => destroyed; set => destroyed = value; }
@@ -71,18 +71,23 @@ namespace Game
         public float LifeTimer { get => lifeTimer; set => lifeTimer = value; }
         public float Angle { get => angle; set => angle = value; }
 
-        public Entity(/*Transform _transform, Renderer _renderer, */float _colliderRadius)
+        public Entity(Vector2 _position, Vector2 _scale, Vector2 _size, float _rotation, string _texture, float _colliderRadius)
         {
             colliderRadius = _colliderRadius;
+
+            transform = new Transform(_position, _scale, _rotation);
+            renderer = new Renderer(_size, _texture, transform);
+
+            boxCollider = new BoxCollider(transform.Position, transform.Scale, transform.Rotation, renderer.Size, radius);
+            circleCollider = new CircleCollider(transform.Position, transform.Scale, transform.Rotation, renderer.Size, radius);
 
             //circleCollider = new CircleCollider(Transform.Position, Transform.Scale, Transform.Rotation, Renderer.Size, radius);
             //boxCollider = new BoxCollider(Transform.Position, Transform.Scale, Transform.Rotation, Renderer.Size, radius);
         }
 
         public abstract void Render();
-
         public abstract void Update();
-
+        public abstract void Move();
         public abstract void TakeDamage();
         public abstract void Die();
 

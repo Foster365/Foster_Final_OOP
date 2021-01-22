@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public class Player: ICharacter
+    public class Player: Entity, ICharacter
     {
         //Variables
-        
-        float rotation;
-        Vector2 scale;
 
-        Vector2 playerPos;
-        Vector2 playerSpeed;
+        //float rotation;
+        //Vector2 scale;
 
-        Vector2 size;
-        string texture;
-        float radius;
+        Vector2 position;
 
-        /*int maxLife;*/ int currentLife;
+        //Vector2 size;
+        //string texture;
+        //float radius;
+
+        /*int maxLife;*/
+        //int currentLife;
 
         bool destroyed;
 
@@ -38,20 +38,7 @@ namespace Game
         //
 
         //Encapsuladas
-        public Vector2 PlayerPos { get => playerPos; set => playerPos = value; }
-        public Vector2 PlayerSpeed { get => playerSpeed; set => playerSpeed = value; }
-
-        public Vector2 Scale { get => scale; set => scale = value; }
-        public float Rotation { get => rotation; set => rotation = value; }
-
-        public Vector2 Size { get => size; set => size = value; }
-        public string Texture { get => texture; set => texture = value; }
-        public float Radius { get => radius; set => radius = value; }
-
-        public int CurrentLife { get => currentLife; set => currentLife = value; }
-
-        public bool Destroyed { get => destroyed; set => destroyed = false; }
-
+        public Vector2 PlayerPos { get => position; set => position = value; }
 
         Transform IUpdatable.Transform { get => transform; set => transform = value; }
         Renderer IRenderizable.Renderer { get =>renderer; set => renderer = value; }
@@ -64,28 +51,28 @@ namespace Game
 
         //
 
-        public Player(Vector2 playerPos, Vector2 scale, float rotation, Vector2 size, Vector2 playerSpeed, int maxLife, string texture, float radius)/* : base(radius)*/
+        public Player(Vector2 _position, Vector2 _scale, float _rotation, Vector2 _size, Vector2 _speed, int _maxLife, string _texture, float _radius) : base(_position, _scale, _size, _rotation, _texture, _radius)
         {
 
-            transform = new Transform(playerPos, scale, rotation);
-            renderer = new Renderer(size, texture, transform);
+            transform = new Transform(_position, _scale, _rotation);
+            renderer = new Renderer(_size, _texture, transform);
 
-            circleCollider = new CircleCollider(playerPos, scale, rotation, size, radius);
+            circleCollider = new CircleCollider(transform.Position, _scale, _rotation, _size, _radius);
 
-            this.radius = radius;
-            currentLife = maxLife;
-            PlayerPos = transform.Position;
-            PlayerSpeed = playerSpeed;
+            Radius = _radius;
+            CurrentHealth = _maxLife;
+            position = transform.Position;
+            Speed = _speed;
             timetoShoot = 0.8f;
             bulletsPool = new ObjectsPool<PlayerBullet>();
         }
 
-        public void Update()
+        public override void Update()
         {
             if (!destroyed)
             {
                 ScreenLimits();
-                CheckInputs();
+                Move();
 
                 TimerShoot += Time.DeltaTime;
 
@@ -99,7 +86,8 @@ namespace Game
                 for (int i = 0; i < Level1Screen.Enemies.Count; i++)
                 {
 
-                    circleCollider.CheckforCollisions(Level1Screen.Enemies[i]);
+                    if (circleCollider.CheckforCollisions(Level1Screen.Enemies[i]))
+                        Console.Write("Collision");
                 }
 
             }
@@ -108,32 +96,32 @@ namespace Game
         
         public void ScreenLimits()
         {
-            if (playerPos.Y <= 0)
-                playerPos.Y=0;
+            if (position.Y <= 0)
+                position.Y=0;
 
-            if (playerPos.Y > 600)
-                playerPos.Y = 0;
+            if (position.Y > 600)
+                position.Y = 0;
 
-            if (playerPos.X <= 0)
-                playerPos.X = 0;
+            if (position.X <= 0)
+                position.X = 0;
 
-            if (playerPos.X > 800)
-                playerPos.X = 0;
+            if (position.X > 800)
+                position.X = 0;
         }
 
-        public void CheckInputs()
+        public override void Move()
         {
             if (Engine.GetKey(Keys.W))
-                playerPos.Y -= playerSpeed.Y * Time.DeltaTime;
+                position.Y -= Speed.Y * Time.DeltaTime;
 
             if (Engine.GetKey(Keys.S))
-                playerPos.Y += playerSpeed.Y * Time.DeltaTime;
+                position.Y += Speed.Y * Time.DeltaTime;
 
             if (Engine.GetKey(Keys.A))
-                playerPos.X -= playerSpeed.X * Time.DeltaTime;
+                position.X -= Speed.X * Time.DeltaTime;
 
             if (Engine.GetKey(Keys.D))
-                playerPos.X += playerSpeed.X * Time.DeltaTime;
+                position.X += Speed.X * Time.DeltaTime;
             //Console.WriteLine("Moving");
 
         }
@@ -141,13 +129,23 @@ namespace Game
         public void Shoot()
         {
             var playerBullet = bulletsPool.Get();
-            playerBullet.Init(playerPos, new Vector2(1, 1), new Vector2(20, 10), 0, "Textures/BulletPj.png", 1, 3, new Vector2(100, 100));
+            playerBullet.Init(position, new Vector2(1, 1), new Vector2(20, 10), 0, "Textures/BulletPj.png", 1, 3, new Vector2(100, 100));
             //Console.Write("Playerposition" + playerPos.X, playerPos.Y);
             //Console.WriteLine("PlayerPos.X"+ playerPos.X + "PlayerPos.Y" + playerPos.Y, "bulletScale.X" + bullet.BulletScale.X + "bulletScale.Y" + bullet.BulletScale.Y + "bulletSize.X" + bullet.BulletSize.X + "bulletSize.Y" + bullet.BulletSize.Y, "bulletRotation" + bullet.BulletRotation + "bulletTexture" + bullet.BulletTexture);
 
         }
 
-        public void Render()
+        public override void TakeDamage()
+        {
+
+        }
+
+        public override void Die()
+        {
+
+        }
+
+        public override void Render()
         {
             if (!destroyed)
             {

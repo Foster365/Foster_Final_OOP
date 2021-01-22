@@ -9,10 +9,8 @@ namespace Game
     public class Level1Screen
     {
 
-        Player _player;
-
         float timer;
-        float timetoCreate = 0.5f;
+        float timetoCreate;
 
         int points;
 
@@ -35,7 +33,7 @@ namespace Game
         public Level1Screen()
         {
             timer = 0;
-            timetoCreate = 0.5f;
+            timetoCreate = 1.5f;
             levelTimer = 60;
             ResetLevel();
             AddTextures();
@@ -44,14 +42,18 @@ namespace Game
         public void Update()
         {
 
-
             levelTimer -= Time.DeltaTime;
             //Console.WriteLine("LevelTimer" + levelTimer);
             timer += Time.DeltaTime;
 
             for (int i = 0; i < RenderizableObjects.Count; i++)
             {
-                RenderizableObjects[i].Update();
+                for (int j = 0; j < Enemies.Count; j++)
+                {
+                    Enemies[j].Update();
+                }
+
+                    RenderizableObjects[i].Update();
             }
 
             if (timer >= timetoCreate)
@@ -75,7 +77,13 @@ namespace Game
 
             for (int j = 0; j < RenderizableObjects.Count; j++)
             {
-                RenderizableObjects[j].Render();
+                for (int i = 0; i < Enemies.Count; i++)
+                {
+
+                    RenderizableObjects[j].Render();
+                    Enemies[i].Render();
+
+                }
             }
 
             //if (ActualAnimstate == Animations.lifeStack)
@@ -85,6 +93,7 @@ namespace Game
 
         public void ResetLevel()
         {
+
             Engine.Clear();
             //Timer para crear enemigos
             timer += Time.DeltaTime;
@@ -100,7 +109,6 @@ namespace Game
 
             Vector2 enemyPosition = new Vector2(random.Next(600, 750), random.Next(0, 500));
 
-            //RenderizableObjects.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, enemyPosition));
             Enemies.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, enemyPosition));
 
         }
@@ -145,7 +153,7 @@ namespace Game
         public void AddTextures()
         {
 
-            RenderizableObjects.Add(new Player(new Vector2(200, 400), new Vector2(0.15f, 0.15f), 90, new Vector2(166, 304), new Vector2(200, 200), 50, "Textures/Player.png", 1));
+            RenderizableObjects.Add(new Player(new Vector2(200, 400), new Vector2(0.15f, 0.15f), 90, new Vector2(166, 304), new Vector2(200, 200), 50, "Textures/Player.png", 10));
 
             RenderizableObjects.Add(new HealthIcon(new Vector2(10, 10), new Vector2(0.03f, 0.03f), 0, new Vector2(788, 663), "Textures/Heart.png"));
             RenderizableObjects.Add(new HealthIcon(new Vector2(40, 10), new Vector2(0.03f, 0.03f), 0, new Vector2(788, 663), "Textures/Heart.png"));

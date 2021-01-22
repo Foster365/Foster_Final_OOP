@@ -66,7 +66,7 @@ namespace Game
 
         private void CheckDefeat()
         {
-            if (player.CurrentLife<= 0)
+            if (player.CurrentHealth<= 0)
             {
                 Program.ActualScreenState = Program.ScreenFlow.gameOverScreen;
             }
@@ -77,7 +77,7 @@ namespace Game
             for (var i = 0; i < Level1Screen.RenderizableObjects.Count; i--)
             {
 
-                if (player.CurrentLife == (player.CurrentLife - 0.2f))
+                if (player.CurrentHealth == (player.CurrentHealth - 0.2f))
                     Level1Screen.RenderizableObjects.Remove(Level1Screen.RenderizableObjects[Level1Screen.RenderizableObjects.Count]);
             }
         }

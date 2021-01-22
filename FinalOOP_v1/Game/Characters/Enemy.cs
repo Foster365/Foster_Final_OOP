@@ -15,8 +15,7 @@ namespace Game
         //float rotation;
         //Vector2 scale;
 
-        Vector2 enemyPosition;
-        //Vector2 enemySpeed;
+        Vector2 position;
 
         //Vector2 size;
         //string texture;
@@ -61,21 +60,23 @@ namespace Game
 
         //
 
-        public Enemy(Vector2 _position, float _rotation, Vector2 _scale, Vector2 _size, Vector2 _enemySpeed, string _texture, int _life, float _angle, float _colliderRadius) : base(_colliderRadius)/*(position, rotation, scale, size, enemySpeed, texture, life)*/
+        public Enemy(Vector2 _position, float _rotation, Vector2 _scale, Vector2 _size, Vector2 _enemySpeed, string _texture, int _life, float _angle, float _colliderRadius) : base(_position, _scale, _size, _rotation, _texture, _colliderRadius)/*(position, rotation, scale, size, enemySpeed, texture, life)*/
         {
 
-            transform = new Transform(enemyPosition, _scale, _rotation);
+            transform = new Transform(_position, _scale, _rotation);
             renderer = new Renderer(_size, _texture, transform);
+            circleCollider = new CircleCollider(transform.Position, _scale, _rotation, _size, _colliderRadius);
 
-            this.enemyPosition = _position;
-            Angle = _angle/* - 90*/;
+
+            position = transform.Position;
+            Angle = _angle - 90;
 
             //circleCollider = new CircleCollider(enemyPosition, _scale, _rotation, _size, _colliderRadius);
 
             //life = life;
 
             LifeTime = 5;
-            //EnemySpeed = enemySpeed;
+            Speed = _enemySpeed;
             timetoShoot = 0.8f;
 
 
@@ -85,6 +86,9 @@ namespace Game
         {
             if (!Destroyed)
             {
+
+                Move();
+
                 LifeTime += Time.DeltaTime;
                 if (LifeTimer >= LifeTime)
                     Level1Screen.RenderizableObjects.Remove(this);
@@ -103,9 +107,14 @@ namespace Game
 
         }
 
+        public override void Move()
+        {
+            position.X -= Speed.X * Time.DeltaTime;
+        }
+
         public void CheckforCollisions()
         {
-            //circleCollider.CheckforCollisions(Enemy enemy[i]);
+
         }
 
         public override void TakeDamage()
@@ -123,7 +132,7 @@ namespace Game
             if (!Destroyed)
             {
 
-                Engine.Draw(renderer.Texture, enemyPosition.X, enemyPosition.Y, transform.Scale.X, transform.Scale.Y, 0, renderer.GetRealWidth() / 2, renderer.GetRealHeight() / 2);
+                Engine.Draw(renderer.Texture, position.X, position.Y, transform.Scale.X, transform.Scale.Y, Angle, renderer.GetRealWidth() / 2, renderer.GetRealHeight() / 2);
 
             }
         }
