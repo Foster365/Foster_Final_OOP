@@ -33,6 +33,7 @@ namespace Game
         Transform transform;
         Renderer renderer;
         CircleCollider circleCollider;
+        BoxCollider boxCollider;
 
         //ObjectsPool<EnemyBullet> bulletsPool;
 
@@ -65,8 +66,9 @@ namespace Game
 
             transform = new Transform(_position, _scale, _rotation);
             renderer = new Renderer(_size, _texture, transform);
-            circleCollider = new CircleCollider(transform.Position, _scale, _rotation, _size, _colliderRadius);
 
+            circleCollider = new CircleCollider(_position, _scale, _rotation, renderer.Size, _colliderRadius);
+            boxCollider = new BoxCollider(transform.Position, transform.Scale, transform.Rotation, renderer.Size, _colliderRadius);
 
             position = transform.Position;
             Angle = _angle - 90;
@@ -117,14 +119,19 @@ namespace Game
 
         }
 
-        public override void TakeDamage()
+        public override void TakeDamage(float damage)
         {
-
+            if(Damaged)
+            {
+                CurrentHealth -= damage;
+                if (CurrentHealth <= 0)
+                    Die();
+            }
         }
 
         public override void Die()
         {
-
+            Level1Screen.Enemies.Remove(this);
         }
 
         public override void Render()

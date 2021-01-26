@@ -14,6 +14,7 @@ namespace Game
         public CircleCollider(Vector2 _position, Vector2 _scale, float _rotation, Vector2 _size, float radius):base(_position, _scale, _size, _rotation, radius)
         {
             Transform = new Transform(_position, _scale, _rotation);
+            Renderer = new Renderer(_size, null, Transform);
             this.radius = radius;
         }
 
@@ -29,9 +30,12 @@ namespace Game
             float diffX = Math.Abs(Transform.Position.X - target.Transform.Position.X);
             float diffY = Math.Abs(Transform.Position.Y - target.Transform.Position.Y);
 
-            float distance = (float)Math.Sqrt(diffX * diffX + diffY * diffY);
+            float dist = (float)Math.Sqrt(diffX * diffX + diffY * diffY);
 
-            if (distance <= radius + target.Radius)
+            Console.WriteLine("Dist" + dist);
+            Console.WriteLine("Radius calc" + (radius + target.ColliderRadius));
+
+            if (dist <= (radius + target.ColliderRadius))
             {
 
                 colliding = true;
@@ -39,6 +43,7 @@ namespace Game
                 Console.WriteLine("Collision w/" + target);
 
             }
+
             return colliding;
 
         }

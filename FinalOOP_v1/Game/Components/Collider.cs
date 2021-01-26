@@ -20,7 +20,7 @@ namespace Game
         public float Radius { get => radius; set => radius = value; }
 
         public Transform Transform { get => transform; set => transform = value; }
-        //public Renderer Renderer { get => renderer; set => renderer = value; }
+        public Renderer Renderer { get => renderer; set => renderer = value; }
 
         public List<Collider> Colliders = new List<Collider>();
 
@@ -29,7 +29,7 @@ namespace Game
         public Collider(Vector2 position, Vector2 scale, Vector2 size, float rotation, float radius)
         {
             transform = new Transform(position, scale, rotation);
-            //renderer = new Renderer(size, null, transform);
+            renderer = new Renderer(size, null, transform);
         }
 
         public abstract bool CheckforCollisions(Entity target);

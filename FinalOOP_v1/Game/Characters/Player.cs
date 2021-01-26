@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public class Player: Entity, ICharacter
+
+    public class Player : Entity, ICharacter
     {
         //Variables
 
@@ -15,6 +16,11 @@ namespace Game
 
         Vector2 position;
 
+        event SimpleEventHandler<Player> OnInmunity;
+
+        bool inmunity;
+        float inmunityTimer = 3;
+
         //Vector2 size;
         //string texture;
         //float radius;
@@ -22,11 +28,10 @@ namespace Game
         /*int maxLife;*/
         //int currentLife;
 
-        bool destroyed;
-
         Transform transform;
         Renderer renderer;
         CircleCollider circleCollider;
+        BoxCollider boxCollider;
 
         //PoolBullets bulletsPool;
 
@@ -41,14 +46,15 @@ namespace Game
         public Vector2 PlayerPos { get => position; set => position = value; }
 
         Transform IUpdatable.Transform { get => transform; set => transform = value; }
-        Renderer IRenderizable.Renderer { get =>renderer; set => renderer = value; }
-        public CircleCollider CircleCollider { get => circleCollider; set => circleCollider = value; }
+        Renderer IRenderizable.Renderer { get => renderer; set => renderer = value; }
+        //public CircleCollider CircleCollider { get => circleCollider; set => circleCollider = value; }
         //Renderer ICharacter.Renderer { get => renderer; set => renderer=value; }
         //public Renderer Rendererer { get => renderer; set => renderer = value; }
 
         public float TimerShoot { get => timerShoot; set => timerShoot = value; }
         public float TimetoShoot { get => timetoShoot; set => timetoShoot = value; }
 
+        float timertest = 3;
         //
 
         public Player(Vector2 _position, Vector2 _scale, float _rotation, Vector2 _size, Vector2 _speed, int _maxLife, string _texture, float _radius) : base(_position, _scale, _size, _rotation, _texture, _radius)
@@ -57,41 +63,81 @@ namespace Game
             transform = new Transform(_position, _scale, _rotation);
             renderer = new Renderer(_size, _texture, transform);
 
-            circleCollider = new CircleCollider(transform.Position, _scale, _rotation, _size, _radius);
+            circleCollider = new CircleCollider(transform.Position, transform.Scale, transform.Rotation, renderer.Size, _radius);
+            boxCollider = new BoxCollider(transform.Position, transform.Scale, transform.Rotation, renderer.Size, _radius);
 
-            Radius = _radius;
+            Console.WriteLine("Position" + circleCollider.Transform.Position);
+            Console.WriteLine("Scale" + circleCollider.Transform.Scale);
+            Console.Write("Rotation" + circleCollider.Transform.Rotation);
+            Console.WriteLine("Size" + circleCollider.Renderer.Size);
+            Console.WriteLine("Radius" + _radius);
+
             CurrentHealth = _maxLife;
             position = transform.Position;
             Speed = _speed;
             timetoShoot = 0.8f;
             bulletsPool = new ObjectsPool<PlayerBullet>();
+
+            inmunity = true;
+            //inmunityTimer = 5f;
+
+            //timertest = 3f;
+
+            //OnInmunity += OnInmunityHandler();
         }
 
         public override void Update()
         {
-            if (!destroyed)
+            if (!Destroyed)
             {
-                ScreenLimits();
-                Move();
+                //ScreenLimits();
+                //Move();
 
-                TimerShoot += Time.DeltaTime;
+                //TimerShoot += Time.DeltaTime;
 
-                if (Engine.GetKey(Keys.SPACE) && TimerShoot >= TimetoShoot)
-                {
+                //if (Engine.GetKey(Keys.SPACE) && TimerShoot >= TimetoShoot)
+                //{
 
-                    Shoot();
-                    TimerShoot = 0;
+                //    Shoot();
+                //    TimerShoot = 0;
 
-                }
-                for (int i = 0; i < Level1Screen.Enemies.Count; i++)
-                {
+                //}
 
-                    if (circleCollider.CheckforCollisions(Level1Screen.Enemies[i]))
-                        Console.Write("Collision");
-                }
+                //CheckforCollisions();
+
+                Respawn();
 
             }
             
+        }
+
+        public void Test()
+        {
+
+            float timer = 0;
+            timer += Time.DeltaTime;
+
+            if (timer >= timertest)
+            {
+
+                Respawn();
+                Console.WriteLine("Hi");
+
+            }
+
+            timer = 0;
+        }
+
+        void CheckforCollisions()
+        {
+
+            for (int i = 0; i < Level1Screen.Enemies.Count; i++)
+            {
+
+                boxCollider.CheckforCollisions(Level1Screen.Enemies[i]);
+
+            }
+
         }
         
         public void ScreenLimits()
@@ -126,6 +172,23 @@ namespace Game
 
         }
 
+        public void Respawn()
+        {
+            Damaged = true;
+
+            Random random = new Random();
+
+            Vector2 randomPosition = new Vector2(random.Next(200, 600), random.Next(100, 500));
+
+            if (Damaged)
+            {
+                position = randomPosition;
+                inmunity = true;
+                PlayerInmunity();
+                //OnInmunity.Invoke(this);
+            }
+        }
+
         public void Shoot()
         {
             var playerBullet = bulletsPool.Get();
@@ -135,19 +198,41 @@ namespace Game
 
         }
 
-        public override void TakeDamage()
+        public void PlayerInmunity()
         {
+            float timer = 0;
 
+            timer += Time.DeltaTime;
+
+            if (timer >= inmunityTimer)
+                Damaged = false;
+
+            Console.Write("Inmune");
+
+            inmunity = false;
+
+        }
+
+        public override void TakeDamage(float damage)
+        {
+            if (Damaged)
+            {
+
+                CurrentHealth -= Damage;
+
+                if (CurrentHealth <= 0)
+                    Die();
+            }
         }
 
         public override void Die()
         {
-
+            //Level1Screen.RenderizableObjects.Remove(this);
         }
 
         public override void Render()
         {
-            if (!destroyed)
+            if (!Destroyed)
             {
 
                 Engine.Draw(renderer.Texture, PlayerPos.X, PlayerPos.Y, transform.Scale.X, transform.Scale.Y, 0, renderer.GetRealWidth()/2, renderer.GetRealHeight() / 2);

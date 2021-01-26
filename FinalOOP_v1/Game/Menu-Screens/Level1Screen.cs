@@ -33,7 +33,7 @@ namespace Game
         public Level1Screen()
         {
             timer = 0;
-            timetoCreate = 1.5f;
+            timetoCreate = 4f;
             levelTimer = 60;
             ResetLevel();
             AddTextures();
@@ -153,7 +153,7 @@ namespace Game
         public void AddTextures()
         {
 
-            RenderizableObjects.Add(new Player(new Vector2(200, 400), new Vector2(0.15f, 0.15f), 90, new Vector2(166, 304), new Vector2(200, 200), 50, "Textures/Player.png", 10));
+            RenderizableObjects.Add(new Player(new Vector2(200, 400), new Vector2(0.15f, 0.15f), 90, new Vector2(166, 304), new Vector2(200, 200), 50, "Textures/Player.png", 100));
 
             RenderizableObjects.Add(new HealthIcon(new Vector2(10, 10), new Vector2(0.03f, 0.03f), 0, new Vector2(788, 663), "Textures/Heart.png"));
             RenderizableObjects.Add(new HealthIcon(new Vector2(40, 10), new Vector2(0.03f, 0.03f), 0, new Vector2(788, 663), "Textures/Heart.png"));
