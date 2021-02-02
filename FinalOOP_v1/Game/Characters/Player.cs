@@ -55,6 +55,7 @@ namespace Game
         public float TimetoShoot { get => timetoShoot; set => timetoShoot = value; }
 
         float timertest = 3;
+        float timer = 0;
         //
 
         public Player(Vector2 _position, Vector2 _scale, float _rotation, Vector2 _size, Vector2 _speed, int _maxLife, string _texture, float _radius) : base(_position, _scale, _size, _rotation, _texture, _radius)
@@ -90,22 +91,22 @@ namespace Game
         {
             if (!Destroyed)
             {
-                //ScreenLimits();
-                //Move();
+                ScreenLimits();
+                Move();
 
-                //TimerShoot += Time.DeltaTime;
+                TimerShoot += Time.DeltaTime;
 
-                //if (Engine.GetKey(Keys.SPACE) && TimerShoot >= TimetoShoot)
-                //{
+                if (Engine.GetKey(Keys.SPACE) && TimerShoot >= TimetoShoot)
+                {
 
-                //    Shoot();
-                //    TimerShoot = 0;
+                    Shoot();
+                    TimerShoot = 0;
 
-                //}
+                }
 
-                //CheckforCollisions();
+                CheckforCollisions();
 
-                Respawn();
+                //Test();
 
             }
             
@@ -114,18 +115,20 @@ namespace Game
         public void Test()
         {
 
-            float timer = 0;
+           
             timer += Time.DeltaTime;
+            Console.WriteLine(timer);
 
             if (timer >= timertest)
             {
 
                 Respawn();
                 Console.WriteLine("Hi");
+                timer = 0;
 
             }
 
-            timer = 0;
+           
         }
 
         void CheckforCollisions()
@@ -134,7 +137,7 @@ namespace Game
             for (int i = 0; i < Level1Screen.Enemies.Count; i++)
             {
 
-                boxCollider.CheckforCollisions(Level1Screen.Enemies[i]);
+                circleCollider.CheckforCollisions(Level1Screen.Enemies[i]);
 
             }
 
@@ -222,11 +225,13 @@ namespace Game
 
                 if (CurrentHealth <= 0)
                     Die();
+
             }
         }
 
         public override void Die()
         {
+            Destroyed = true;
             //Level1Screen.RenderizableObjects.Remove(this);
         }
 

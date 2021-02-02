@@ -35,7 +35,7 @@ namespace Game
             Console.WriteLine("Dist" + dist);
             Console.WriteLine("Radius calc" + (radius + target.ColliderRadius));
 
-            if (dist <= (radius + target.ColliderRadius))
+            if (dist <= (radius + target.ColliderRadius))//No se cumple la condición.
             {
 
                 colliding = true;

@@ -76,7 +76,7 @@ namespace Game
         public Entity(Vector2 _position, Vector2 _scale, Vector2 _size, float _rotation, string _texture, float _colliderRadius)
         {
 
-            colliderRadius = _colliderRadius;
+            ColliderRadius = _colliderRadius;
 
             transform = new Transform(_position, _scale, _rotation);
             renderer = new Renderer(_size, _texture, transform);

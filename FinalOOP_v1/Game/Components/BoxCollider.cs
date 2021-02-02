@@ -37,8 +37,13 @@ namespace Game
             float diffX = Math.Abs(transform.Position.X - target.Transform.Position.X);
             float diffY = Math.Abs(transform.Position.Y - target.Transform.Position.Y);
 
-            float halfWidthSum = renderer.Size.X / 2 + target.Renderer.Size.X / 2;
-            float halfHeightSum = renderer.Size.Y / 2 + target.Renderer.Size.Y / 2;
+            float halfWidthSum = renderer.GetRealWidth() / 2 + target.Renderer.GetRealWidth() / 2;
+            float halfHeightSum = renderer.GetRealHeight() / 2 + target.Renderer.GetRealHeight() / 2;
+
+            Console.WriteLine("Diff x: " + diffX);
+            Console.WriteLine("Diff y: " + diffY);
+            Console.WriteLine("Half Width Sum: " + halfWidthSum);
+            Console.WriteLine("Half Height Sum: " + halfHeightSum);
 
             // Si se cumple hay colision
             if (diffX <= halfWidthSum && diffY <= halfHeightSum)
