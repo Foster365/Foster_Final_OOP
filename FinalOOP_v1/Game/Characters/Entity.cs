@@ -72,6 +72,8 @@ namespace Game
         public float LifeTime { get => lifeTime; set => lifeTime = value; }
         public float LifeTimer { get => lifeTimer; set => lifeTimer = value; }
         public float Angle { get => angle; set => angle = value; }
+        public CircleCollider CircleCollider { get => circleCollider; set => circleCollider = value; }
+        public BoxCollider BoxCollider { get => boxCollider; set => boxCollider = value; }
 
         public Entity(Vector2 _position, Vector2 _scale, Vector2 _size, float _rotation, string _texture, float _colliderRadius)
         {
@@ -81,8 +83,8 @@ namespace Game
             transform = new Transform(_position, _scale, _rotation);
             renderer = new Renderer(_size, _texture, transform);
 
-            boxCollider = new BoxCollider(transform.Position, transform.Scale, transform.Rotation, renderer.Size, colliderRadius);
-            circleCollider = new CircleCollider(transform.Position, transform.Scale, transform.Rotation, renderer.Size, colliderRadius);
+            BoxCollider = new BoxCollider(transform, renderer, colliderRadius);
+            CircleCollider = new CircleCollider(transform, renderer, colliderRadius);
 
             //circleCollider = new CircleCollider(Transform.Position, Transform.Scale, Transform.Rotation, Renderer.Size, radius);
             //boxCollider = new BoxCollider(Transform.Position, Transform.Scale, Transform.Rotation, Renderer.Size, radius);

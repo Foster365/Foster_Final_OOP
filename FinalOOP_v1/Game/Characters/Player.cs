@@ -28,11 +28,6 @@ namespace Game
         /*int maxLife;*/
         //int currentLife;
 
-        Transform transform;
-        Renderer renderer;
-        CircleCollider circleCollider;
-        BoxCollider boxCollider;
-
         //PoolBullets bulletsPool;
 
         float timerShoot;
@@ -45,8 +40,6 @@ namespace Game
         //Encapsuladas
         public Vector2 PlayerPos { get => position; set => position = value; }
 
-        Transform IUpdatable.Transform { get => transform; set => transform = value; }
-        Renderer IRenderizable.Renderer { get => renderer; set => renderer = value; }
         //public CircleCollider CircleCollider { get => circleCollider; set => circleCollider = value; }
         //Renderer ICharacter.Renderer { get => renderer; set => renderer=value; }
         //public Renderer Rendererer { get => renderer; set => renderer = value; }
@@ -61,20 +54,20 @@ namespace Game
         public Player(Vector2 _position, Vector2 _scale, float _rotation, Vector2 _size, Vector2 _speed, int _maxLife, string _texture, float _radius) : base(_position, _scale, _size, _rotation, _texture, _radius)
         {
 
-            transform = new Transform(_position, _scale, _rotation);
-            renderer = new Renderer(_size, _texture, transform);
+            //Transform = new Transform(_position, _scale, _rotation);
+            //Renderer = new Renderer(_size, _texture, Transform);
 
-            circleCollider = new CircleCollider(transform.Position, transform.Scale, transform.Rotation, renderer.Size, _radius);
-            boxCollider = new BoxCollider(transform.Position, transform.Scale, transform.Rotation, renderer.Size, _radius);
+            CircleCollider = new CircleCollider(Transform, Renderer, _radius);
+            BoxCollider = new BoxCollider(Transform, Renderer, _radius);
 
-            Console.WriteLine("Position" + circleCollider.Transform.Position);
-            Console.WriteLine("Scale" + circleCollider.Transform.Scale);
-            Console.Write("Rotation" + circleCollider.Transform.Rotation);
-            Console.WriteLine("Size" + circleCollider.Renderer.Size);
-            Console.WriteLine("Radius" + _radius);
+            //Console.WriteLine("Position" + circleCollider.Transform.Position);
+            //Console.WriteLine("Scale" + circleCollider.Transform.Scale);
+            //Console.Write("Rotation" + circleCollider.Transform.Rotation);
+            //Console.WriteLine("Size" + circleCollider.Renderer.Size);
+            //Console.WriteLine("Radius" + _radius);
 
             CurrentHealth = _maxLife;
-            position = transform.Position;
+            position = Transform.Position;
             Speed = _speed;
             timetoShoot = 0.8f;
             bulletsPool = new ObjectsPool<PlayerBullet>();
@@ -137,7 +130,7 @@ namespace Game
             for (int i = 0; i < Level1Screen.Enemies.Count; i++)
             {
 
-                circleCollider.CheckforCollisions(Level1Screen.Enemies[i]);
+                BoxCollider.CheckforCollisions(Level1Screen.Enemies[i]);
 
             }
 
@@ -240,7 +233,7 @@ namespace Game
             if (!Destroyed)
             {
 
-                Engine.Draw(renderer.Texture, PlayerPos.X, PlayerPos.Y, transform.Scale.X, transform.Scale.Y, 0, renderer.GetRealWidth()/2, renderer.GetRealHeight() / 2);
+                Engine.Draw(Renderer.Texture, PlayerPos.X, PlayerPos.Y, Transform.Scale.X, Transform.Scale.Y, 0, Renderer.GetRealWidth()/2, Renderer.GetRealHeight() / 2);
             
             }
         }

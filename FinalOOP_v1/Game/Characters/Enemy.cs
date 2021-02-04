@@ -30,11 +30,6 @@ namespace Game
 
         //float angle;
 
-        Transform transform;
-        Renderer renderer;
-        CircleCollider circleCollider;
-        BoxCollider boxCollider;
-
         //ObjectsPool<EnemyBullet> bulletsPool;
 
         float timerShoot;
@@ -64,13 +59,13 @@ namespace Game
         public Enemy(Vector2 _position, float _rotation, Vector2 _scale, Vector2 _size, Vector2 _enemySpeed, string _texture, int _life, float _angle, float _colliderRadius) : base(_position, _scale, _size, _rotation, _texture, _colliderRadius)/*(position, rotation, scale, size, enemySpeed, texture, life)*/
         {
 
-            transform = new Transform(_position, _scale, _rotation);
-            renderer = new Renderer(_size, _texture, transform);
+            //Transform = new Transform(_position, _scale, _rotation);
+            //Renderer = new Renderer(_size, _texture, Transform);
 
-            circleCollider = new CircleCollider(transform.Position, transform.Scale, transform.Rotation, renderer.Size, _colliderRadius);
-            boxCollider = new BoxCollider(transform.Position, transform.Scale, transform.Rotation, renderer.Size, _colliderRadius);
+            CircleCollider = new CircleCollider(Transform, Renderer, _colliderRadius);
+            BoxCollider = new BoxCollider(Transform, Renderer, _colliderRadius);
 
-            position = transform.Position;
+            position = Transform.Position;
             Angle = _angle - 90;
 
             //circleCollider = new CircleCollider(enemyPosition, _scale, _rotation, _size, _colliderRadius);
@@ -139,7 +134,7 @@ namespace Game
             if (!Destroyed)
             {
 
-                Engine.Draw(renderer.Texture, position.X, position.Y, transform.Scale.X, transform.Scale.Y, Angle, renderer.GetRealWidth() / 2, renderer.GetRealHeight() / 2);
+                Engine.Draw(Renderer.Texture, position.X, position.Y, Transform.Scale.X, Transform.Scale.Y, Angle, Renderer.GetRealWidth() / 2, Renderer.GetRealHeight() / 2);
 
             }
         }

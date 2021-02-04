@@ -11,10 +11,10 @@ namespace Game
 
         float radius;
 
-        public CircleCollider(Vector2 _position, Vector2 _scale, float _rotation, Vector2 _size, float radius):base(_position, _scale, _size, _rotation, radius)
+        public CircleCollider(Transform _transform, Renderer _renderer, float radius):base(_transform, _renderer, radius)
         {
-            Transform = new Transform(_position, _scale, _rotation);
-            Renderer = new Renderer(_size, null, Transform);
+            Transform = new Transform(_transform.Position, _transform.Scale, _transform.Rotation);
+            Renderer = new Renderer(_renderer.Size, null, _transform);
             this.radius = radius;
         }
 

@@ -9,23 +9,10 @@ namespace Game
     public class BoxCollider : Collider
     {
 
-        Vector2 position;
-        Vector2 scale;
-        float rotation;
-
-        Vector2 size;
-
-        float radius;
-
-        Transform transform;
-        Renderer renderer;
-        public Transform Transform { get => transform; set => transform = value; }
-        public Renderer Renderer { get => renderer; set => renderer = value; }
-
-        public BoxCollider(Vector2 _position, Vector2 _scale, float _rotation, Vector2 _size, float _radius) : base(_position, _scale, _size, _rotation, _radius)
+        public BoxCollider(Transform _transform, Renderer _renderer, float _radius) : base(_transform, _renderer, _radius)
         {
-            transform = new Transform(_position, _scale, _rotation);
-            renderer = new Renderer(_size, null, transform);
+            Transform = new Transform(_transform.Position, _transform.Scale, _transform.Rotation);
+            Renderer = new Renderer(_renderer.Size, null, _transform);
         }
 
         // AABB
@@ -34,11 +21,11 @@ namespace Game
 
             bool colliding = false;
 
-            float diffX = Math.Abs(transform.Position.X - target.Transform.Position.X);
-            float diffY = Math.Abs(transform.Position.Y - target.Transform.Position.Y);
+            float diffX = Math.Abs(Transform.Position.X - target.Transform.Position.X);
+            float diffY = Math.Abs(Transform.Position.Y - target.Transform.Position.Y);
 
-            float halfWidthSum = renderer.GetRealWidth() / 2 + target.Renderer.GetRealWidth() / 2;
-            float halfHeightSum = renderer.GetRealHeight() / 2 + target.Renderer.GetRealHeight() / 2;
+            float halfWidthSum = Renderer.GetRealWidth() / 2 + target.Renderer.GetRealWidth() / 2;
+            float halfHeightSum = Renderer.GetRealHeight() / 2 + target.Renderer.GetRealHeight() / 2;
 
             Console.WriteLine("Diff x: " + diffX);
             Console.WriteLine("Diff y: " + diffY);

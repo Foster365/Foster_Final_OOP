@@ -26,10 +26,10 @@ namespace Game
 
         //public List<Collider> Colliders = new List<Collider>();
 
-        public Collider(Vector2 position, Vector2 scale, Vector2 size, float rotation, float radius)
+        public Collider(Transform transform, Renderer renderer, float radius)
         {
-            transform = new Transform(position, scale, rotation);
-            renderer = new Renderer(size, null, transform);
+            transform = new Transform(transform.Position, transform.Scale, transform.Rotation);
+            renderer = new Renderer(renderer.Size, null, transform);
         }
 
         public abstract bool CheckforCollisions(Entity target);
