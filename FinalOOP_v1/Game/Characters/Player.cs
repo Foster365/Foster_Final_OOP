@@ -57,8 +57,8 @@ namespace Game
             //Transform = new Transform(_position, _scale, _rotation);
             //Renderer = new Renderer(_size, _texture, Transform);
 
-            CircleCollider = new CircleCollider(Transform, Renderer, _radius);
-            BoxCollider = new BoxCollider(Transform, Renderer, _radius);
+            //CircleCollider = new CircleCollider(Transform, Renderer, _radius);
+            //BoxCollider = new BoxCollider(Transform, Renderer, _radius);
 
             //Console.WriteLine("Position" + circleCollider.Transform.Position);
             //Console.WriteLine("Scale" + circleCollider.Transform.Scale);

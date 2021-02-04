@@ -11,8 +11,8 @@ namespace Game
 
         public BoxCollider(Transform _transform, Renderer _renderer, float _radius) : base(_transform, _renderer, _radius)
         {
-            Transform = new Transform(_transform.Position, _transform.Scale, _transform.Rotation);
-            Renderer = new Renderer(_renderer.Size, null, _transform);
+            //Transform = new Transform(_transform.Position, _transform.Scale, _transform.Rotation);
+            //Renderer = new Renderer(_renderer.Size, null, _transform);
         }
 
         // AABB

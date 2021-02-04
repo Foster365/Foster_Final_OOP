@@ -81,10 +81,10 @@ namespace Game
             ColliderRadius = _colliderRadius;
 
             transform = new Transform(_position, _scale, _rotation);
-            renderer = new Renderer(_size, _texture, transform);
+            renderer = new Renderer(_size, _texture, Transform);
 
-            BoxCollider = new BoxCollider(transform, renderer, colliderRadius);
-            CircleCollider = new CircleCollider(transform, renderer, colliderRadius);
+            boxCollider = new BoxCollider(transform, renderer, colliderRadius);
+            circleCollider = new CircleCollider(transform, renderer, colliderRadius);
 
             //circleCollider = new CircleCollider(Transform.Position, Transform.Scale, Transform.Rotation, Renderer.Size, radius);
             //boxCollider = new BoxCollider(Transform.Position, Transform.Scale, Transform.Rotation, Renderer.Size, radius);

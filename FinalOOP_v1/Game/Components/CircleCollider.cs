@@ -13,8 +13,8 @@ namespace Game
 
         public CircleCollider(Transform _transform, Renderer _renderer, float radius):base(_transform, _renderer, radius)
         {
-            Transform = new Transform(_transform.Position, _transform.Scale, _transform.Rotation);
-            Renderer = new Renderer(_renderer.Size, null, _transform);
+            //Transform = new Transform(_transform.Position, _transform.Scale, _transform.Rotation);
+            //Renderer = new Renderer(_renderer.Size, null, _transform);
             this.radius = radius;
         }
 

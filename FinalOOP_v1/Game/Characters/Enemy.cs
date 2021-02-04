@@ -62,8 +62,8 @@ namespace Game
             //Transform = new Transform(_position, _scale, _rotation);
             //Renderer = new Renderer(_size, _texture, Transform);
 
-            CircleCollider = new CircleCollider(Transform, Renderer, _colliderRadius);
-            BoxCollider = new BoxCollider(Transform, Renderer, _colliderRadius);
+            //CircleCollider = new CircleCollider(Transform, Renderer, _colliderRadius);
+            //BoxCollider = new BoxCollider(Transform, Renderer, _colliderRadius);
 
             position = Transform.Position;
             Angle = _angle - 90;
