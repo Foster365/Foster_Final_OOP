@@ -72,7 +72,7 @@ namespace Game
             timetoShoot = 0.8f;
             bulletsPool = new ObjectsPool<PlayerBullet>();
 
-            inmunity = true;
+            inmunity = false;
             //inmunityTimer = 5f;
 
             //timertest = 3f;
@@ -130,7 +130,7 @@ namespace Game
             for (int i = 0; i < Level1Screen.Enemies.Count; i++)
             {
 
-                BoxCollider.CheckforCollisions(Level1Screen.Enemies[i]);
+                CircleCollider.CheckforCollisions(Level1Screen.Enemies[i]);
 
             }
 

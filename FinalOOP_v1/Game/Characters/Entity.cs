@@ -78,10 +78,10 @@ namespace Game
         public Entity(Vector2 _position, Vector2 _scale, Vector2 _size, float _rotation, string _texture, float _colliderRadius)
         {
 
-            ColliderRadius = _colliderRadius;
+            colliderRadius = _colliderRadius;
 
             transform = new Transform(_position, _scale, _rotation);
-            renderer = new Renderer(_size, _texture, Transform);
+            renderer = new Renderer(_size, _texture, transform);
 
             boxCollider = new BoxCollider(transform, renderer, colliderRadius);
             circleCollider = new CircleCollider(transform, renderer, colliderRadius);

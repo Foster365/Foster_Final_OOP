@@ -29,7 +29,7 @@ namespace Game
         public Collider(Transform _transform, Renderer _renderer, float radius)
         {
             transform = new Transform(_transform.Position, _transform.Scale, _transform.Rotation);
-            renderer = new Renderer(_renderer.Size, null, _transform);
+            renderer = new Renderer(_renderer.Size, null, transform);
         }
 
         public abstract bool CheckforCollisions(Entity target);
