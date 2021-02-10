@@ -65,7 +65,6 @@ namespace Game
             //CircleCollider = new CircleCollider(Transform, Renderer, _colliderRadius);
             //BoxCollider = new BoxCollider(Transform, Renderer, _colliderRadius);
 
-            position = Transform.Position;
             Angle = _angle - 90;
 
             //circleCollider = new CircleCollider(enemyPosition, _scale, _rotation, _size, _colliderRadius);
@@ -90,7 +89,6 @@ namespace Game
                 if (LifeTimer >= LifeTime)
                     Level1Screen.RenderizableObjects.Remove(this);
 
-                CheckforCollisions();
 
             }
 

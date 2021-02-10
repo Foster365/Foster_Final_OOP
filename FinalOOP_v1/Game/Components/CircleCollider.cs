@@ -11,7 +11,7 @@ namespace Game
 
         float radius;
 
-        public CircleCollider(Transform _transform, Renderer _renderer, float radius):base(_transform, _renderer, radius)
+        public CircleCollider(Transform _transform/*, Renderer _renderer*/, float radius):base(_transform/*, _renderer*/, radius)
         {
             //Transform = new Transform(_transform.Position, _transform.Scale, _transform.Rotation);
             //Renderer = new Renderer(_renderer.Size, null, _transform);
@@ -29,11 +29,15 @@ namespace Game
 
             float diffX = Math.Abs(Transform.Position.X - target.Transform.Position.X);
             float diffY = Math.Abs(Transform.Position.Y - target.Transform.Position.Y);
+            Console.WriteLine("Player pos" + Transform.Position.X);
+            Console.WriteLine("Player pos" + Transform.Position.Y);
+            Console.WriteLine("Target pos" + target.Transform.Position.X);
+            Console.WriteLine("Target pos" + target.Transform.Position.Y);
 
             float dist = (float)Math.Sqrt(diffX * diffX + diffY * diffY);
 
-            Console.WriteLine("Dist" + dist);
-            Console.WriteLine("Radius calc" + (radius + target.ColliderRadius));
+            //Console.WriteLine("Dist" + dist);
+            //Console.WriteLine("Radius calc" + (radius + target.ColliderRadius));
 
             if (dist <= (radius + target.ColliderRadius))//No se cumple la condición.
             {

@@ -15,21 +15,20 @@ namespace Game
         float radius;
 
         Transform transform;
-        Renderer renderer;
 
         public float Radius { get => radius; set => radius = value; }
 
         public Transform Transform { get => transform; set => transform = value; }
-        public Renderer Renderer { get => renderer; set => renderer = value; }
+        //public Renderer Renderer { get => renderer; set => renderer = value; }
 
         public List<Collider> Colliders = new List<Collider>();
 
         //public List<Collider> Colliders = new List<Collider>();
 
-        public Collider(Transform _transform, Renderer _renderer, float radius)
+        public Collider(Transform _transform/*, Renderer _renderer*/, float radius)
         {
             transform = new Transform(_transform.Position, _transform.Scale, _transform.Rotation);
-            renderer = new Renderer(_renderer.Size, null, transform);
+            //renderer = new Renderer(_renderer.Size, null, transform);
         }
 
         public abstract bool CheckforCollisions(Entity target);
