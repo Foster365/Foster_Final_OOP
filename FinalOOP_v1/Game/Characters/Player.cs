@@ -67,7 +67,7 @@ namespace Game
             //Console.WriteLine("Radius" + _radius);
 
             CurrentHealth = _maxLife;
-            position = Transform.Position;
+            position = new Vector2(Transform.Position.X, Transform.Position.Y);
             Speed = _speed;
             timetoShoot = 0.8f;
             bulletsPool = new ObjectsPool<PlayerBullet>();

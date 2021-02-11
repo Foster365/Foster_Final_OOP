@@ -27,7 +27,7 @@ namespace Game
 
         public Collider(Transform _transform/*, Renderer _renderer*/, float radius)
         {
-            transform = new Transform(_transform.Position, _transform.Scale, _transform.Rotation);
+            transform = new Transform(new Vector2(_transform.Position.X, _transform.Position.Y), new Vector2(_transform.Scale.X, _transform.Scale.Y), _transform.Rotation);
             //renderer = new Renderer(_renderer.Size, null, transform);
         }
 

@@ -71,6 +71,7 @@ namespace Game
 
             //life = life;
 
+            position = new Vector2(Transform.Position.X, Transform.Position.Y);
             LifeTime = 5;
             Speed = _enemySpeed;
             timetoShoot = 0.8f;
