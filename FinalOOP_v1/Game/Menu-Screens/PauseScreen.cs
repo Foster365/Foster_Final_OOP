@@ -11,7 +11,7 @@ namespace Game
         Button backButton;
         Button actualButton;
 
-        Background backgroundPauseScreen;
+        Image backgroundPauseScreen;
         
         //
         public Vector2 TextPosition { get; set; } = new Vector2(300, 200);
@@ -19,7 +19,7 @@ namespace Game
 
         public PauseScreen()
         {
-            backgroundPauseScreen = new Background(new Vector2(200, 455), new Vector2(1, 1), new Vector2(1920, 1080), 0, "Textures/ScreenFlow/SpaceBk.png");
+            backgroundPauseScreen = new Image(new Vector2(200, 455), new Vector2(1, 1), new Vector2(1920, 1080), 0, "Textures/ScreenFlow/SpaceBk.png");
         }
 
         public void Update()
@@ -33,7 +33,7 @@ namespace Game
 
         public void Render()
         {
-            backgroundPauseScreen.Draw();
+            backgroundPauseScreen.Render();
 
             Engine.Draw("Textures/ScreenFlow/PauseB.png", TextPosition.X, TextPosition.Y, TextScale.X, TextScale.Y);
         }

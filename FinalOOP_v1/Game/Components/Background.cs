@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public class Background
+    public class Image: IRenderizable
     {
         Vector2 position;
         float rotation;
@@ -28,13 +28,13 @@ namespace Game
         public Transform Transform { get => transform; set => transform = value; }
         public Renderer Renderer { get => renderer; set => renderer = value; }
 
-        public Background(Vector2 position, Vector2 scale, Vector2 size, float rotation, string texture)
+        public Image(Vector2 position, Vector2 scale, Vector2 size, float rotation, string texture)
         {
             transform = new Transform(position, scale, rotation);
             renderer = new Renderer(size, texture, transform);
         }
 
-        public void Draw()
+        public void Render()
         {
             Engine.Draw(renderer.Texture, transform.Position.X, transform.Position.Y, transform.Scale.X, transform.Scale.Y, transform.Rotation, renderer.GetRealHeight() / 2, renderer.GetRealHeight() / 2);
         }

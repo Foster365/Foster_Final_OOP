@@ -350,6 +350,9 @@
     <Content Include="Textures\Enemy4.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Textures\Level1Background.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Textures\Player.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

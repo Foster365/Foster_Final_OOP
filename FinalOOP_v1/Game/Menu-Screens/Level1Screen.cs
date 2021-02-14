@@ -19,12 +19,15 @@ namespace Game
         public static List<Enemy> Enemies { get; set; } = new List<Enemy>();
 
         float levelTimer;
+        float levelMaxTimer;
 
-        Animation lifeStack;
+        Image backgroundLevel1;
 
-        public enum Animations { lifeStack }
+        Animation levelCountdown;
 
-        Animations actualAnimstate = Animations.lifeStack;
+        public enum Animations { levelCountdown }
+
+        Animations actualAnimstate = Animations.levelCountdown;
 
         public Animations ActualAnimstate { get => actualAnimstate; set => actualAnimstate = value; }
 
@@ -34,9 +37,9 @@ namespace Game
         {
             timer = 0;
             timetoCreate = 4f;
-            levelTimer = 60;
+            levelTimer = 0;
+            levelMaxTimer = 1f;
             ResetLevel();
-            AddTextures();
         }
 
         public void Update()
@@ -62,8 +65,8 @@ namespace Game
                 timer = 0;
             }
 
-            UpdateLifeStack();
-            //UpdateAnimation();
+            UpdateLevelCounter();
+            UpdateAnimation();
 
             if (Engine.GetKey(Keys.ESCAPE))
             {
@@ -75,19 +78,24 @@ namespace Game
         public void Render()
         {
 
+            backgroundLevel1.Render();
+
             for (int j = 0; j < RenderizableObjects.Count; j++)
             {
-                for (int i = 0; i < Enemies.Count; i++)
-                {
-
+     
                     RenderizableObjects[j].Render();
-                    Enemies[i].Render();
 
-                }
             }
 
-            //if (ActualAnimstate == Animations.lifeStack)
-            //    Engine.Draw(lifeStack.AnimList[lifeStack.ActualAnimationFrame], 10, 10, 0.05f, 0.05f, 0, 0, 0);
+            for (int i = 0; i < Enemies.Count; i++)
+            {
+
+                Enemies[i].Render();
+
+            }
+
+            if (ActualAnimstate == Animations.levelCountdown)
+                Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
 
         }
 
@@ -95,6 +103,7 @@ namespace Game
         {
 
             Engine.Clear();
+            AddTextures();
             //Timer para crear enemigos
             timer += Time.DeltaTime;
 
@@ -113,45 +122,46 @@ namespace Game
 
         }
 
-        void UpdateLifeStack()
+        void UpdateLevelCounter()
         {
 
-            //for (var i = 0; i < Level1Screen.RenderizableObjects.Count; i--)
-            //{
-                
-            //    if (_player.CurrentLife == (_player.CurrentLife - 0.2f))
-            //        Level1Screen.RenderizableObjects.Remove(Level1Screen.RenderizableObjects[Level1Screen.RenderizableObjects.Count]);
+            levelTimer += Time.DeltaTime;
 
-            //}
+            if (levelTimer >= levelMaxTimer) /*Console.WriteLine("Game over!");*/
+                Program.ActualScreenState = Program.ScreenFlow.gameOverScreen;
 
         }
 
         public void AnimationParameters()
         {
 
-            //List<Texture> lifeStackFrames = new List<Texture>();
+            List<Texture> lifeStackFrames = new List<Texture>();
 
-            //lifeStackFrames.Add(Engine.GetTexture("Textures/Heart.png"));
-            //lifeStackFrames.Add(Engine.GetTexture("Textures/Heart.png"));
-            //lifeStackFrames.Add(Engine.GetTexture("Textures/Heart.png"));
-            //lifeStackFrames.Add(Engine.GetTexture("Textures/Heart.png"));
-            //lifeStackFrames.Add(Engine.GetTexture("Textures/Heart.png"));
+            for (int i = 60; i >= 0; i--)
+            {
 
-            //lifeStack = new Animation(lifeStackFrames, 0.1f, false);
+                lifeStackFrames.Add(Engine.GetTexture("Textures/Countdown/" + i.ToString() + ".png"));
+
+            }
+
+            levelCountdown = new Animation(lifeStackFrames, 1f, false);
 
         }
 
         public void UpdateAnimation()
         {
-            if (ActualAnimstate == Animations.lifeStack)
+            if (ActualAnimstate == Animations.levelCountdown)
             {
-                ActualAnimstate = Animations.lifeStack;
-                lifeStack.Play();
+                ActualAnimstate = Animations.levelCountdown;
+                levelCountdown.Play();
             }
+
         }
 
         public void AddTextures()
         {
+
+            backgroundLevel1 = new Image(new Vector2(0, 150), new Vector2(.8f, .8f), new Vector2(1920, 1200), 0, "Textures/Level1Background.jpg");
 
             RenderizableObjects.Add(new Player(new Vector2(200, 400), new Vector2(0.15f, 0.15f), 90, new Vector2(166, 304), new Vector2(200, 200), 50, "Textures/Player.png", 100));
 

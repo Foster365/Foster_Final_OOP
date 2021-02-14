@@ -80,9 +80,11 @@ namespace Game
 
             colliderRadius = _colliderRadius;
 
+            Vector2 position = new Vector2(_position.X, _position.Y);
+
             //transform = new Transform(_position, _scale, _rotation);
-            transform = new Transform(new Vector2(_position.X, _position.Y), new Vector2(_scale.X, _scale.Y), _rotation);
-            renderer = new Renderer(new Vector2(_size.X, _size.Y), _texture, transform);
+            transform = new Transform(position,_scale, _rotation);
+            renderer = new Renderer(_size, _texture, transform);
 
             //position = transform.Position;
 

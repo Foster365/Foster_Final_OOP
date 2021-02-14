@@ -14,7 +14,7 @@ namespace Game
         Button actualButton;
         List<Button> buttons = new List<Button>();
 
-        Background mainMenuBackground;
+        Image mainMenuBackground;
 
         //Vectores Backg
         public Vector2 Position { get; set; } = new Vector2(200, 455);
@@ -30,7 +30,7 @@ namespace Game
         {
 
             //Background
-            mainMenuBackground = new Background(new Vector2(200, 455), new Vector2(1, 1), new Vector2(1920, 1080), 0, "Textures/ScreenFlow/SpaceBk.png");
+            mainMenuBackground = new Image(new Vector2(200, 455), new Vector2(1, 1), new Vector2(1920, 1080), 0, "Textures/ScreenFlow/SpaceBk.png");
 
             //// Dibujo el fondo
 
@@ -76,7 +76,7 @@ namespace Game
         public void Render()
         {
 
-            mainMenuBackground.Draw();
+            mainMenuBackground.Render();
 
             // Dibujo los Botones
             foreach (var button in Buttons)

@@ -67,7 +67,6 @@ namespace Game
             //Console.WriteLine("Radius" + _radius);
 
             CurrentHealth = _maxLife;
-            position = new Vector2(Transform.Position.X, Transform.Position.Y);
             Speed = _speed;
             timetoShoot = 0.8f;
             bulletsPool = new ObjectsPool<PlayerBullet>();
@@ -135,24 +134,25 @@ namespace Game
             }
 
         }
-        
+
         public void ScreenLimits()
         {
-            if (position.Y <= 0)
-                position.Y=0;
+            if (Transform.Position.Y <= 0)
+                Transform.Position = new Vector2(Transform.Position.X, 0);
 
             if (position.Y > 600)
-                position.Y = 0;
+                Transform.Position = new Vector2(Transform.Position.X, 0);
 
             if (position.X <= 0)
-                position.X = 0;
+                Transform.Position = new Vector2(0, Transform.Position.Y);
 
             if (position.X > 800)
-                position.X = 0;
+                Transform.Position = new Vector2(0, Transform.Position.Y);
         }
 
         public override void Move()
         {
+
             if (Engine.GetKey(Keys.W))
                 position.Y -= Speed.Y * Time.DeltaTime;
 

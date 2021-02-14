@@ -13,7 +13,7 @@ namespace Game
         Button playBtn;
         Button actualBtn;
 
-        Background background;
+        Image background;
 
         Renderer renderer;
         Transform transform;
@@ -35,7 +35,7 @@ namespace Game
 
         public SplashScreen()
         {
-            background = new Background(new Vector2(200, 455), new Vector2(1, 1), new Vector2(1920, 1080), 0, "Textures/ScreenFlow/SpaceBk.png");
+            background = new Image(new Vector2(200, 455), new Vector2(1, 1), new Vector2(1920, 1080), 0, "Textures/ScreenFlow/SpaceBk.png");
             playBtn = new Button("Textures/ScreenFlow/TextPlay.png", new Vector2(300f, 400f), new Vector2(1f, 1f), new Vector2(166, 87));
             buttons.Add(playBtn);
 
@@ -66,7 +66,7 @@ namespace Game
         public void Render()
         {
 
-            background.Draw();
+            background.Render();
 
             foreach (var boton in buttons)
             {

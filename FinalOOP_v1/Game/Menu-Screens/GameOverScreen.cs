@@ -8,7 +8,7 @@ namespace Game
 {
     public class GameOverScreen
     {
-        Background backgroundGameOverScreen;
+        Image backgroundGameOverScreen;
 
         Button backButton;
         Button actualButton;
@@ -16,7 +16,7 @@ namespace Game
 
         public GameOverScreen()
         {
-            backgroundGameOverScreen = new Background(new Vector2(200, 455), new Vector2(1, 1), new Vector2(1920, 1080), 0, "Textures/ScreenFlow/SpaceBk.png");
+            backgroundGameOverScreen = new Image(new Vector2(200, 455), new Vector2(1, 1), new Vector2(1920, 1080), 0, "Textures/ScreenFlow/SpaceBk.png");
 
         }
 
@@ -31,7 +31,7 @@ namespace Game
         public void Render()
         {
 
-            backgroundGameOverScreen.Draw();
+            backgroundGameOverScreen.Render();
 
         }
         private void EnterButon()
