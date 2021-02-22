@@ -45,8 +45,8 @@ namespace Game
 
             //life = life;
 
-            position = new Vector2(Transform.Position.X, Transform.Position.Y);
-            LifeTime = 5;
+            //position = new Vector2(Transform.Position.X, Transform.Position.Y);
+            LifeTime = 3f;
             Speed = _enemySpeed;
             timetoShoot = 0.8f;
 
@@ -59,10 +59,10 @@ namespace Game
 
                 Move();
 
-                LifeTime += Time.DeltaTime;
+                LifeTimer += Time.DeltaTime;
                 if (LifeTimer >= LifeTime)
                     Level1Screen.RenderizableObjects.Remove(this);
-
+                LifeTimer = 0;
 
             }
 

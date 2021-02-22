@@ -78,6 +78,7 @@ namespace Game
         {
 
             colliderRadius = _colliderRadius;
+            lifeTimer = 0;
 
             //transform = new Transform(_position, _scale, _rotation);
             transform = new Transform(new Vector2(_position.X, _position.Y),_scale, _rotation);

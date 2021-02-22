@@ -14,20 +14,11 @@ namespace Game
 
         public override event SimpleEventHandler<PlayerBullet> OnDeactivate;
 
-        public override void Init(Vector2 position, Vector2 scale, Vector2 size, float rotation, string texture, float radius, float lifetime, Vector2 speed)
+        public PlayerBullet(Vector2 _position, Vector2 _scale, Vector2 _size, Vector2 _speed, float _rotation, string _texture, float _bulletRadius, float _lifetime) : base (_position, _scale, _size, _speed, _rotation, _texture, _bulletRadius, _lifetime)
         {
 
-            Transform = new Transform(position, scale, rotation);
-            Renderer = new Renderer(size, texture, Transform);
+            BulletLifetime = _lifetime;
 
-            bulletPos = Transform.Position;
-
-            BulletPosition = bulletPos;
-            BulletLifetime = lifetime;
-            BulletSpeed = speed;
-
-            Timer = 0;
-            Destroyed = false;
              
             Level1Screen.RenderizableObjects.Add(this);
 
@@ -64,13 +55,13 @@ namespace Game
         }
         public override void Move()
         {
-            bulletPos.X += BulletSpeed.X * Time.DeltaTime;
-            Engine.Debug(bulletPos.X);
+            Transform.Position += new Vector2 (BulletSpeed.X * Time.DeltaTime, Transform.Position.Y);
+
         }
 
         public override void Render()
         {
-            Engine.Draw(Renderer.Texture, bulletPos.X, bulletPos.Y, Transform.Scale.X, Transform.Scale.Y, Transform.Rotation, Renderer.GetRealWidth()/2, Renderer.GetRealHeight()/2);
+            Engine.Draw(Renderer.Texture, Transform.Position.X, Transform.Position.Y, Transform.Scale.X, Transform.Scale.Y, Transform.Rotation, Renderer.GetRealWidth()/2, Renderer.GetRealHeight()/2);
         }
 
     }

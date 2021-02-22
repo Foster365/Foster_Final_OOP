@@ -126,27 +126,17 @@ namespace Game
         public override void Move()
         {
 
-            //Vector2 pos = new Vector2(Transform.Position.X, Transform.Position.Y);
             if (Engine.GetKey(Keys.W))
-                //Transform.Position = new Vector2(Transform.Position.X, (Transform.Position.Y - Speed.Y * Time.DeltaTime));
                 Transform.Position -= new Vector2(0, Speed.Y * Time.DeltaTime);
 
-            //position.Y += Speed.Y * Time.DeltaTime;
-            ////Transform.Position += new Vector2(0, Speed.Y * Time.DeltaTime);
-
             if (Engine.GetKey(Keys.S))
-                //position += new Vector2(Transform.Position.X, (Transform.Position.Y + Speed.Y * Time.DeltaTime));
                 Transform.Position += new Vector2(0, Speed.Y * Time.DeltaTime);
 
             if (Engine.GetKey(Keys.A))
-                //position -= new Vector2((Transform.Position.X - Speed.X * Time.DeltaTime), Transform.Position.Y);
                 Transform.Position -= new Vector2(Speed.X * Time.DeltaTime, 0);
 
             if (Engine.GetKey(Keys.D))
-                //position += new Vector2((Transform.Position.X + Speed.X * Time.DeltaTime), Transform.Position.Y);
                 Transform.Position += new Vector2(Speed.X * Time.DeltaTime, 0);
-
-            //Console.WriteLine("Transform player x " + Transform.Position.X + "Transform player y" + Transform.Position.Y);
 
         }
 
@@ -154,17 +144,22 @@ namespace Game
         {
             Damaged = true;
 
-            Random random = new Random();
-
-            Vector2 randomPosition = new Vector2(random.Next(200, 600), random.Next(100, 500));
-
             if (Damaged)
             {
-                Transform.Position = randomPosition;
+                Transform.Position = RandomPosition();
                 inmunity = true;
                 PlayerInmunity();
                 //OnInmunity.Invoke(this);
             }
+        }
+
+        Vector2 RandomPosition()
+        {
+            Random random = new Random();
+
+            Vector2 randomPosition = new Vector2(random.Next(200, 600), random.Next(100, 500));
+
+            return randomPosition;
         }
 
         public void Shoot()
@@ -173,7 +168,7 @@ namespace Game
             {
 
                 var playerBullet = bulletsPool.Get();
-                playerBullet.Init(Transform.Position, new Vector2(1, 1), new Vector2(20, 10), 0, "Textures/BulletPj.png", 1, 3, new Vector2(100, 100));
+                playerBullet = new PlayerBullet(Transform.Position, new Vector2(1, 1), new Vector2(20, 10), new Vector2(100, 100), 0, "Textures/BulletPj.png", 1, 3);
                 //Console.Write("Playerposition" + playerPos.X, playerPos.Y);
                 //Console.WriteLine("PlayerPos.X"+ playerPos.X + "PlayerPos.Y" + playerPos.Y, "bulletScale.X" + bullet.BulletScale.X + "bulletScale.Y" + bullet.BulletScale.Y + "bulletSize.X" + bullet.BulletSize.X + "bulletSize.Y" + bullet.BulletSize.Y, "bulletRotation" + bullet.BulletRotation + "bulletTexture" + bullet.BulletTexture);
 
