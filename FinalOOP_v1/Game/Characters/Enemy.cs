@@ -10,16 +10,7 @@ namespace Game
     {
         //Variables
 
-        //
-
-        //float rotation;
-        //Vector2 scale;
-
         Vector2 position;
-
-        //Vector2 size;
-        //string texture;
-        //float radius;
 
         //int life;
 
@@ -41,33 +32,16 @@ namespace Game
         //public Vector2 EnemyPosition { get => enemyPosition; set => enemyPosition = value; }
         //public Vector2 EnemySpeed { get => enemySpeed; set => enemySpeed = value; }
 
-        //public Vector2 Scale { get => scale; set => scale = value; }
-        //public float Rotation { get => rotation; set => rotation = value; }
-
-        //public Vector2 Size { get => size; set => size = value; }
-        //public string Texture { get => texture; set => texture = value; }
-        //public float Radius { get => radius; set => radius = value; }
-
         //public float TimerShoot { get => timerShoot; set => timerShoot = value; }
         //public float TimetoShoot { get => timetoShoot; set => timetoShoot = value; }
         //public float Angle { get => angle; set => angle = value; }
-        //public Renderer Renderer { get => renderer; set => renderer = value; }
-
 
         //
 
         public Enemy(Vector2 _position, float _rotation, Vector2 _scale, Vector2 _size, Vector2 _enemySpeed, string _texture, int _life, float _angle, float _colliderRadius) : base(_position, _scale, _size, _rotation, _texture, _colliderRadius)/*(position, rotation, scale, size, enemySpeed, texture, life)*/
         {
 
-            //Transform = new Transform(_position, _scale, _rotation);
-            //Renderer = new Renderer(_size, _texture, Transform);
-
-            //CircleCollider = new CircleCollider(Transform, Renderer, _colliderRadius);
-            //BoxCollider = new BoxCollider(Transform, Renderer, _colliderRadius);
-
             Angle = _angle - 90;
-
-            //circleCollider = new CircleCollider(enemyPosition, _scale, _rotation, _size, _colliderRadius);
 
             //life = life;
 
@@ -75,7 +49,6 @@ namespace Game
             LifeTime = 5;
             Speed = _enemySpeed;
             timetoShoot = 0.8f;
-
 
         }
 
@@ -105,7 +78,9 @@ namespace Game
 
         public override void Move()
         {
-            position.X -= Speed.X * Time.DeltaTime;
+
+            Transform.Position = new Vector2(Transform.Position.X - Speed.X * Time.DeltaTime, Transform.Position.Y);
+
         }
 
         public void CheckforCollisions()
@@ -115,7 +90,7 @@ namespace Game
 
         public override void TakeDamage(float damage)
         {
-            if(Damaged)
+            if (Damaged)
             {
                 CurrentHealth -= damage;
                 if (CurrentHealth <= 0)
@@ -133,7 +108,7 @@ namespace Game
             if (!Destroyed)
             {
 
-                Engine.Draw(Renderer.Texture, position.X, position.Y, Transform.Scale.X, Transform.Scale.Y, Angle, Renderer.GetRealWidth() / 2, Renderer.GetRealHeight() / 2);
+                Engine.Draw(Renderer.Texture, Transform.Position.X, Transform.Position.Y, Transform.Scale.X, Transform.Scale.Y, Angle, Renderer.GetRealWidth() / 2, Renderer.GetRealHeight() / 2);
 
             }
         }

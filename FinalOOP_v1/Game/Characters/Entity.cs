@@ -10,7 +10,7 @@ namespace Game
     {
 
         //Transform and Renderer Variables
-        //Vector2 position;
+
         float rotation;
         Vector2 scale;
 
@@ -53,7 +53,6 @@ namespace Game
         public float CurrentHealth { get => currentHealth; set => currentHealth = maxHealth; }
         public float Damage { get => damage; set => damage = value; }
 
-        //public Vector2 Position { get => position; set => position = value; }
         public Vector2 Speed { get => speed; set => speed = value; }
 
         public Vector2 Scale { get => scale; set => scale = value; }
@@ -80,13 +79,13 @@ namespace Game
 
             colliderRadius = _colliderRadius;
 
-            Vector2 position = new Vector2(_position.X, _position.Y);
-
             //transform = new Transform(_position, _scale, _rotation);
-            transform = new Transform(position,_scale, _rotation);
+            transform = new Transform(new Vector2(_position.X, _position.Y),_scale, _rotation);
             renderer = new Renderer(_size, _texture, transform);
 
-            //position = transform.Position;
+            //position = new Vector2(transform.Position.X, transform.Position.Y);
+
+            Console.WriteLine(this + "Transform x " + transform.Position.X + "Transform y " + transform.Position.Y);
 
             boxCollider = new BoxCollider(transform, colliderRadius);
             circleCollider = new CircleCollider(transform, colliderRadius);

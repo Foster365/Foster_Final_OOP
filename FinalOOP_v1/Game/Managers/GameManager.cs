@@ -26,6 +26,8 @@ namespace Game
         private int enemyKillstoWin;
         private int points;
         private Player player { get; set; }
+        PowerUpsFactory.PowerUps actualPowerUp;
+
         //BossEnemy bossEnemy{get;set;}
 
         public int Points
@@ -72,14 +74,28 @@ namespace Game
             }
         }
 
-        void UpdateLifeStack()
+        //void UpdateLifeStack()
+        //{
+        //    for (var i = 0; i < Level1Screen.RenderizableObjects.Count; i--)
+        //    {
+
+        //        if (player.CurrentHealth == (player.CurrentHealth - 0.2f))
+        //            Level1Screen.RenderizableObjects.Remove(Level1Screen.RenderizableObjects[Level1Screen.RenderizableObjects.Count]);
+        //    }
+        //}
+
+        void SpawnPowerUp()
         {
-            for (var i = 0; i < Level1Screen.RenderizableObjects.Count; i--)
+
+            foreach (PowerUpsFactory.PowerUps actualPowerUp in Enum.GetValues(typeof(PowerUpsFactory.PowerUps)))
             {
 
-                if (player.CurrentHealth == (player.CurrentHealth - 0.2f))
-                    Level1Screen.RenderizableObjects.Remove(Level1Screen.RenderizableObjects[Level1Screen.RenderizableObjects.Count]);
+                if (player.Damaged)
+                    Level1Screen.RenderizableObjects.Add(PowerUpsFactory.CreatePowerUp(actualPowerUp));
+
+
             }
+                
         }
 
     }

@@ -16,6 +16,7 @@ namespace Game
 
         Renderer renderer;
         Transform transform;
+        CircleCollider circleCollider;
 
         public Vector2 Position { get => position; set => position = value; }
         public Vector2 Size { get => size; set => size = value; }
@@ -23,24 +24,22 @@ namespace Game
         public float Rotation { get => rotation; set => rotation = value; }
         public string Texture { get => texture; set => texture = value; }
 
-        Transform IUpdatable.Transform { get => transform; set => transform = value; }
-        Renderer IRenderizable.Renderer { get => renderer; set => renderer = value; }
-
+        public Transform Transform { get => transform; set => transform = value; }
+        public Renderer Renderer { get => renderer; set => renderer = value; }
         public Item(Vector2 position, Vector2 size, Vector2 scale, float rotation, string texture)
         {
-            Position = position;
+
+            transform = new Transform(new Vector2(position.X, position.Y), Scale, Rotation);
+            renderer = new Renderer(size, texture, transform);
+
             Size = size;
             Scale = scale;
             Rotation = rotation;
             Texture = texture;
 
-            transform = new Transform(Position, Scale, Rotation);
-            renderer = new Renderer(Size, Texture, transform);
-
-
         }
-        public abstract void Update();
 
+        public abstract void Update();
         public abstract  void Render();
     }
 }

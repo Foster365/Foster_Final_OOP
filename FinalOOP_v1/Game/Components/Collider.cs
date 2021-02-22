@@ -9,26 +9,27 @@ namespace Game
     public abstract class Collider
     {
 
-        //Vector2 position;
-        //Vector2 scale;
-        //float rotation;
         float radius;
+
+        Vector2 position;
 
         Transform transform;
 
         public float Radius { get => radius; set => radius = value; }
 
         public Transform Transform { get => transform; set => transform = value; }
-        //public Renderer Renderer { get => renderer; set => renderer = value; }
+        public Vector2 Position { get => position; set => position = value; }
 
         public List<Collider> Colliders = new List<Collider>();
 
-        //public List<Collider> Colliders = new List<Collider>();
-
         public Collider(Transform _transform/*, Renderer _renderer*/, float radius)
         {
-            transform = new Transform(new Vector2(_transform.Position.X, _transform.Position.Y), new Vector2(_transform.Scale.X, _transform.Scale.Y), _transform.Rotation);
-            //renderer = new Renderer(_renderer.Size, null, transform);
+            transform = new Transform(_transform.Position, new Vector2(_transform.Scale.X, _transform.Scale.Y), _transform.Rotation);
+
+            position = transform.Position;
+
+            this.radius = radius;
+
         }
 
         public abstract bool CheckforCollisions(Entity target);

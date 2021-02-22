@@ -11,10 +11,15 @@ namespace Game
 
         float radius;
         bool colliding = false;
+
+        Vector2 position;
+
         public CircleCollider(Transform _transform/*, Renderer _renderer*/, float radius):base(_transform/*, _renderer*/, radius)
         {
+            position = Transform.Position;
             //Transform = new Transform(_transform.Position, _transform.Scale, _transform.Rotation);
             //Renderer = new Renderer(_renderer.Size, null, _transform);
+            
             this.radius = radius;
         }
 
@@ -25,12 +30,10 @@ namespace Game
         public override bool CheckforCollisions(Entity target)
         {
 
-            float diffX = Math.Abs(Transform.Position.X - target.Transform.Position.X);
-            float diffY = Math.Abs(Transform.Position.Y - target.Transform.Position.Y);
-            //Console.WriteLine("Player pos" + Transform.Position.X);
-            //Console.WriteLine("Player pos" + Transform.Position.Y);
-            //Console.WriteLine("Target pos" + target.Transform.Position.X);
-            //Console.WriteLine("Target pos" + target.Transform.Position.Y);
+            float diffX = Math.Abs(Position.X - target.Transform.Position.X);
+            float diffY = Math.Abs(Position.Y - target.Transform.Position.Y);
+            Console.WriteLine("Player pos" + target.Transform.Position.X);
+            Console.WriteLine("Player pos" + target.Transform.Position.Y);
 
             float dist = (float)Math.Sqrt(diffX * diffX + diffY * diffY);
 
@@ -46,7 +49,6 @@ namespace Game
 
             }
 
-            Console.WriteLine(colliding);
             return colliding;
 
         }

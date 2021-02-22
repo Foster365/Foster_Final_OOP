@@ -11,25 +11,13 @@ namespace Game
     {
         //Variables
 
-        //float rotation;
-        //Vector2 scale;
-
-        Vector2 position;
-
         event SimpleEventHandler<Player> OnInmunity;
 
         bool inmunity;
-        float inmunityTimer = 3;
+        float inmunityMaxTimer = 3;
+        float inmunityTimer = 0;
 
-        //Vector2 size;
-        //string texture;
-        //float radius;
-
-        /*int maxLife;*/
-        //int currentLife;
-
-        //PoolBullets bulletsPool;
-
+        bool canShoot;
         float timerShoot;
         float timetoShoot;
 
@@ -38,33 +26,18 @@ namespace Game
         //
 
         //Encapsuladas
-        public Vector2 PlayerPos { get => position; set => position = value; }
-
-        //public CircleCollider CircleCollider { get => circleCollider; set => circleCollider = value; }
-        //Renderer ICharacter.Renderer { get => renderer; set => renderer=value; }
-        //public Renderer Rendererer { get => renderer; set => renderer = value; }
 
         public float TimerShoot { get => timerShoot; set => timerShoot = value; }
         public float TimetoShoot { get => timetoShoot; set => timetoShoot = value; }
 
-        float timertest = 3;
+        float timertest = 5;
         float timer = 0;
         //
 
         public Player(Vector2 _position, Vector2 _scale, float _rotation, Vector2 _size, Vector2 _speed, int _maxLife, string _texture, float _radius) : base(_position, _scale, _size, _rotation, _texture, _radius)
         {
 
-            //Transform = new Transform(_position, _scale, _rotation);
-            //Renderer = new Renderer(_size, _texture, Transform);
-
-            //CircleCollider = new CircleCollider(Transform, Renderer, _radius);
-            //BoxCollider = new BoxCollider(Transform, Renderer, _radius);
-
-            //Console.WriteLine("Position" + circleCollider.Transform.Position);
-            //Console.WriteLine("Scale" + circleCollider.Transform.Scale);
-            //Console.Write("Rotation" + circleCollider.Transform.Rotation);
-            //Console.WriteLine("Size" + circleCollider.Renderer.Size);
-            //Console.WriteLine("Radius" + _radius);
+            //Console.WriteLine("Transform player x " + position.X + "Transform player y" + position.Y);
 
             CurrentHealth = _maxLife;
             Speed = _speed;
@@ -90,7 +63,7 @@ namespace Game
 
                 if (Engine.GetKey(Keys.SPACE) && TimerShoot >= TimetoShoot)
                 {
-
+                    canShoot = true;
                     Shoot();
                     TimerShoot = 0;
 
@@ -101,13 +74,13 @@ namespace Game
                 //Test();
 
             }
-            
+
         }
 
         public void Test()
         {
 
-           
+
             timer += Time.DeltaTime;
             Console.WriteLine(timer);
 
@@ -120,7 +93,7 @@ namespace Game
 
             }
 
-           
+
         }
 
         void CheckforCollisions()
@@ -128,8 +101,8 @@ namespace Game
 
             for (int i = 0; i < Level1Screen.Enemies.Count; i++)
             {
-
                 CircleCollider.CheckforCollisions(Level1Screen.Enemies[i]);
+                //if (CircleCollider.CheckforCollisions(Level1Screen.Enemies[i]) && CurrentHealth > 0) Respawn();
 
             }
 
@@ -140,31 +113,40 @@ namespace Game
             if (Transform.Position.Y <= 0)
                 Transform.Position = new Vector2(Transform.Position.X, 0);
 
-            if (position.Y > 600)
+            if (Transform.Position.Y > 600)
                 Transform.Position = new Vector2(Transform.Position.X, 0);
 
-            if (position.X <= 0)
+            if (Transform.Position.X <= 0)
                 Transform.Position = new Vector2(0, Transform.Position.Y);
 
-            if (position.X > 800)
+            if (Transform.Position.X > 800)
                 Transform.Position = new Vector2(0, Transform.Position.Y);
         }
 
         public override void Move()
         {
 
+            //Vector2 pos = new Vector2(Transform.Position.X, Transform.Position.Y);
             if (Engine.GetKey(Keys.W))
-                position.Y -= Speed.Y * Time.DeltaTime;
+                //Transform.Position = new Vector2(Transform.Position.X, (Transform.Position.Y - Speed.Y * Time.DeltaTime));
+                Transform.Position -= new Vector2(0, Speed.Y * Time.DeltaTime);
+
+            //position.Y += Speed.Y * Time.DeltaTime;
+            ////Transform.Position += new Vector2(0, Speed.Y * Time.DeltaTime);
 
             if (Engine.GetKey(Keys.S))
-                position.Y += Speed.Y * Time.DeltaTime;
+                //position += new Vector2(Transform.Position.X, (Transform.Position.Y + Speed.Y * Time.DeltaTime));
+                Transform.Position += new Vector2(0, Speed.Y * Time.DeltaTime);
 
             if (Engine.GetKey(Keys.A))
-                position.X -= Speed.X * Time.DeltaTime;
+                //position -= new Vector2((Transform.Position.X - Speed.X * Time.DeltaTime), Transform.Position.Y);
+                Transform.Position -= new Vector2(Speed.X * Time.DeltaTime, 0);
 
             if (Engine.GetKey(Keys.D))
-                position.X += Speed.X * Time.DeltaTime;
-            //Console.WriteLine("Moving");
+                //position += new Vector2((Transform.Position.X + Speed.X * Time.DeltaTime), Transform.Position.Y);
+                Transform.Position += new Vector2(Speed.X * Time.DeltaTime, 0);
+
+            //Console.WriteLine("Transform player x " + Transform.Position.X + "Transform player y" + Transform.Position.Y);
 
         }
 
@@ -178,7 +160,7 @@ namespace Game
 
             if (Damaged)
             {
-                position = randomPosition;
+                Transform.Position = randomPosition;
                 inmunity = true;
                 PlayerInmunity();
                 //OnInmunity.Invoke(this);
@@ -187,25 +169,35 @@ namespace Game
 
         public void Shoot()
         {
-            var playerBullet = bulletsPool.Get();
-            playerBullet.Init(position, new Vector2(1, 1), new Vector2(20, 10), 0, "Textures/BulletPj.png", 1, 3, new Vector2(100, 100));
-            //Console.Write("Playerposition" + playerPos.X, playerPos.Y);
-            //Console.WriteLine("PlayerPos.X"+ playerPos.X + "PlayerPos.Y" + playerPos.Y, "bulletScale.X" + bullet.BulletScale.X + "bulletScale.Y" + bullet.BulletScale.Y + "bulletSize.X" + bullet.BulletSize.X + "bulletSize.Y" + bullet.BulletSize.Y, "bulletRotation" + bullet.BulletRotation + "bulletTexture" + bullet.BulletTexture);
+            if(canShoot)
+            {
 
+                var playerBullet = bulletsPool.Get();
+                playerBullet.Init(Transform.Position, new Vector2(1, 1), new Vector2(20, 10), 0, "Textures/BulletPj.png", 1, 3, new Vector2(100, 100));
+                //Console.Write("Playerposition" + playerPos.X, playerPos.Y);
+                //Console.WriteLine("PlayerPos.X"+ playerPos.X + "PlayerPos.Y" + playerPos.Y, "bulletScale.X" + bullet.BulletScale.X + "bulletScale.Y" + bullet.BulletScale.Y + "bulletSize.X" + bullet.BulletSize.X + "bulletSize.Y" + bullet.BulletSize.Y, "bulletRotation" + bullet.BulletRotation + "bulletTexture" + bullet.BulletTexture);
+
+            }
         }
 
         public void PlayerInmunity()
         {
-            float timer = 0;
+            inmunity = true;
+            canShoot = false;
 
-            timer += Time.DeltaTime;
+            inmunityTimer += Time.DeltaTime;
 
-            if (timer >= inmunityTimer)
-                Damaged = false;
+            if (inmunityTimer >= inmunityMaxTimer)
+            {
 
-            Console.Write("Inmune");
+                inmunity = false;
+                canShoot = false;
 
-            inmunity = false;
+                //Damaged = false;
+
+            }
+
+            inmunityTimer = 0;
 
         }
 
@@ -233,7 +225,7 @@ namespace Game
             if (!Destroyed)
             {
 
-                Engine.Draw(Renderer.Texture, PlayerPos.X, PlayerPos.Y, Transform.Scale.X, Transform.Scale.Y, 0, Renderer.GetRealWidth()/2, Renderer.GetRealHeight() / 2);
+                Engine.Draw(Renderer.Texture, Transform.Position.X, Transform.Position.Y, Transform.Scale.X, Transform.Scale.Y, 0, Renderer.GetRealWidth()/2, Renderer.GetRealHeight() / 2);
             
             }
         }

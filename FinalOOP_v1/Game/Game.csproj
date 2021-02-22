@@ -37,11 +37,18 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AI\Roulette Wheel\ActionNode.cs" />
+    <Compile Include="AI\Roulette Wheel\Node.cs" />
     <Compile Include="AI\Roulette Wheel\Roulette.cs" />
     <Compile Include="Animation.cs" />
     <Compile Include="Characters\Entity.cs" />
     <Compile Include="Components\Background.cs" />
     <Compile Include="Bullet.cs" />
+    <Compile Include="Factory\PowerUpsFactory.cs" />
+    <Compile Include="Items\PowerUp.cs" />
+    <Compile Include="Items\PowerUps\DamagePowerUp.cs" />
+    <Compile Include="Items\PowerUps\RandomPowerUp.cs" />
+    <Compile Include="Items\PowerUps\SpeedPowerUp.cs" />
     <Compile Include="Menu-Screens\Button.cs" />
     <Compile Include="Components\BoxCollider.cs" />
     <Compile Include="Components\Collider.cs" />
@@ -81,6 +88,7 @@
     <Compile Include="Components\Transform.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Characters\Player.cs" />
+    <Compile Include="Items\PowerUps\HealthPowerUp.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Time.cs" />
     <Compile Include="Vector2.cs" />
@@ -354,6 +362,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Textures\Player.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\PowerUps\DamagePowerUp.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\PowerUps\HealthPowerUp.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\PowerUps\RandomPowerUp.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\PowerUps\SpeedPowerUp.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Textures\ScreenFlow\Game_Over.png">

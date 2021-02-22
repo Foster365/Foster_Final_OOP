@@ -10,16 +10,23 @@ namespace Game
     {
 
         #region Attributes
-        public float X { get; set; }
-        public float Y { get; set; }
+
+        float x; float y;
+
+        public float X { get => x ; set => x = value; }
+        public float Y { get => y ; set => y = value; }
+
         #endregion
 
         #region Construct
         public Vector2(float x, float y)
         {
-            this.X = x;
-            this.Y = y;
+            //new Vector2(x, y);
+
+            this.x = x;
+            this.y = y;
         }
+
         #endregion
 
         #region Static
@@ -100,7 +107,45 @@ namespace Game
             Vector2 vec = new Vector2(x, y);
             return vec.X;
         }
+
+        public static float GetYComponent(float x, float y)
+        {
+            Vector2 v = new Vector2(x, y);
+            return v.y;
+        }
         #endregion
-        
+
+        public static Vector2 operator +(Vector2 a, Vector2 b)
+        {
+            Vector2 c = new Vector2(a.X+b.X, a.Y+b.Y);;
+
+            return c;
+        }
+
+        public static Vector2 operator -(Vector2 a, Vector2 b)
+        {
+            Vector2 c = new Vector2(a.X - b.X, a.Y - b.Y); ;
+
+            return c;
+        }
+
+        public static Vector2 operator *(Vector2 a, float b)
+        {
+
+            Vector2 c = new Vector2(a.X * b, a.Y * b);
+
+            return c;
+
+        }
+
+        public static Vector2 operator *(float a, Vector2 b)
+        {
+
+            Vector2 c = new Vector2(b.X * a, b.Y * a);
+
+            return c;
+
+        }
+
     }
 }

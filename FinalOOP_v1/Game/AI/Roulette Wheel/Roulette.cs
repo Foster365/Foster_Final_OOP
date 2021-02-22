@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game.AI.Roulette_Wheel
+namespace Game
 {
     public class Roulette
     {
