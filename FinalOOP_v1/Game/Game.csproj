@@ -45,7 +45,6 @@
     <Compile Include="Components\Background.cs" />
     <Compile Include="Bullet.cs" />
     <Compile Include="Factory\PowerUpsFactory.cs" />
-    <Compile Include="Interfaces\ICollider.cs" />
     <Compile Include="Items\PowerUp.cs" />
     <Compile Include="Items\PowerUps\DamagePowerUp.cs" />
     <Compile Include="Items\PowerUps\RandomPowerUp.cs" />
