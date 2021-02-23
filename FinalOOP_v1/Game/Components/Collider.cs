@@ -11,22 +11,18 @@ namespace Game
 
         float radius;
 
-        Vector2 position;
-
         Transform transform;
 
         public float Radius { get => radius; set => radius = value; }
 
         public Transform Transform { get => transform; set => transform = value; }
-        public Vector2 Position { get => position; set => position = value; }
 
         public List<Collider> Colliders = new List<Collider>();
 
         public Collider(Transform _transform/*, Renderer _renderer*/, float radius)
         {
-            transform = new Transform(_transform.Position, new Vector2(_transform.Scale.X, _transform.Scale.Y), _transform.Rotation);
 
-            position = transform.Position;
+            transform = _transform;
 
             this.radius = radius;
 
