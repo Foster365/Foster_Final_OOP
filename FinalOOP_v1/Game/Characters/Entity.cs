@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public abstract class Entity : ICharacter
+    public abstract class Entity : Collideable, ICharacter
     {
 
         //Transform and Renderer Variables

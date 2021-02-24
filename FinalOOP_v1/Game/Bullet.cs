@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public abstract class Bullet<T>: ICharacter, IPoolable<T>
+    public abstract class Bullet<T>: Entity, ICharacter, IPoolable<T>
     {
         Vector2 bulletPosition;
         Vector2 bulletSpeed;
@@ -30,7 +30,6 @@ namespace Game
 
         public abstract event SimpleEventHandler<T> OnDeactivate;
 
-        public Vector2 BulletPosition { get => bulletPosition; set => bulletPosition = value; }
         public Vector2 BulletSpeed { get => bulletSpeed; set => bulletSpeed = value; }
 
         public float BulletRotation { get => bulletRotation; set => bulletRotation = value; }

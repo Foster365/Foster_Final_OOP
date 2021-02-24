@@ -20,9 +20,6 @@ namespace Game
             Transform = new Transform(position, scale, rotation);
             Renderer = new Renderer(size, texture, Transform);
 
-            bulletPos = Transform.Position;
-
-            BulletPosition = bulletPos;
             BulletLifetime = lifetime;
             BulletSpeed = speed;
 
@@ -64,13 +61,13 @@ namespace Game
         }
         public override void Move()
         {
-            bulletPos.X += BulletSpeed.X * Time.DeltaTime;
+            Transform.Position += new Vector2(BulletSpeed.X * Time.DeltaTime, 0);
             Engine.Debug(bulletPos.X);
         }
 
         public override void Render()
         {
-            Engine.Draw(Renderer.Texture, bulletPos.X, bulletPos.Y, Transform.Scale.X, Transform.Scale.Y, Transform.Rotation, Renderer.GetRealWidth()/2, Renderer.GetRealHeight()/2);
+            Engine.Draw(Renderer.Texture, Transform.Position.X, Transform.Position.Y, Transform.Scale.X, Transform.Scale.Y, Transform.Rotation, Renderer.GetRealWidth()/2, Renderer.GetRealHeight()/2);
         }
 
     }
