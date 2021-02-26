@@ -11,7 +11,6 @@ namespace Game
     {
         //Variables
 
-        event SimpleEventHandler<Player> OnInmunity;
 
         bool inmunity;
         float inmunityMaxTimer = 3;
@@ -173,7 +172,7 @@ namespace Game
             {
 
                 var playerBullet = bulletsPool.Get();
-                playerBullet.Init(Transform.Position, new Vector2(1, 1), new Vector2(20, 10), 0, "Textures/BulletPj.png", 1, 3, new Vector2(100, 100));
+                playerBullet.Init(Transform.Position, new Vector2(1, 1), new Vector2(20, 10), 0, "Textures/BulletPj.png", 1, new Vector2(100, 100), 3);
                 //Console.Write("Playerposition" + playerPos.X, playerPos.Y);
                 //Console.WriteLine("PlayerPos.X"+ playerPos.X + "PlayerPos.Y" + playerPos.Y, "bulletScale.X" + bullet.BulletScale.X + "bulletScale.Y" + bullet.BulletScale.Y + "bulletSize.X" + bullet.BulletSize.X + "bulletSize.Y" + bullet.BulletSize.Y, "bulletRotation" + bullet.BulletRotation + "bulletTexture" + bullet.BulletTexture);
 
@@ -201,31 +200,31 @@ namespace Game
 
         }
 
-        public override void TakeDamage(float damage)
-        {
-            if (Damaged)
-            {
+        //public override void TakeDamage(float damage)
+        //{
+        //    if (Damaged)
+        //    {
 
-                CurrentHealth -= Damage;
+        //        CurrentHealth -= Damage;
 
-                if (CurrentHealth <= 0)
-                    Die();
+        //        if (CurrentHealth <= 0)
+        //            Die();
 
-            }
-        }
+        //    }
+        //}
 
-        public override void Die()
-        {
-            Destroyed = true;
-            //Level1Screen.RenderizableObjects.Remove(this);
-        }
+        //public override void Die()
+        //{
+        //    Destroyed = true;
+        //    //Level1Screen.RenderizableObjects.Remove(this);
+        //}
 
         public override void Render()
         {
             if (!Destroyed)
             {
 
-                Engine.Draw(Renderer.Texture, Transform.Position.X, Transform.Position.Y, Transform.Scale.X, Transform.Scale.Y, 0, Renderer.GetRealWidth()/2, Renderer.GetRealHeight() / 2);
+                Engine.Draw(Renderer.Texture, Transform.Position.X, Transform.Position.Y, Transform.Scale.X, Transform.Scale.Y, transform.Rotation, Renderer.GetRealWidth()/2, Renderer.GetRealHeight() / 2);
             
             }
         }

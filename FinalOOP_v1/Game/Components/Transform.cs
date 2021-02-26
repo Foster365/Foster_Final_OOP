@@ -10,7 +10,6 @@ namespace Game
     {
         Vector2 position;
         Vector2 scale;
-
         float rotation;
 
         public Vector2 Position { get => position; set => position = value; }

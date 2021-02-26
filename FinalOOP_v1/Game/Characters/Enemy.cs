@@ -41,8 +41,6 @@ namespace Game
         public Enemy(Vector2 _position, float _rotation, Vector2 _scale, Vector2 _size, Vector2 _enemySpeed, string _texture, int _life, float _angle, float _colliderRadius) : base(_position, _scale, _size, _rotation, _texture, _colliderRadius)/*(position, rotation, scale, size, enemySpeed, texture, life)*/
         {
 
-            Angle = _angle - 90;
-
             //life = life;
 
             LifeTime = 5;
@@ -87,27 +85,27 @@ namespace Game
 
         }
 
-        public override void TakeDamage(float damage)
-        {
-            if (Damaged)
-            {
-                CurrentHealth -= damage;
-                if (CurrentHealth <= 0)
-                    Die();
-            }
-        }
+        //public override void TakeDamage(float damage)
+        //{
+        //    if (Damaged)
+        //    {
+        //        CurrentHealth -= damage;
+        //        if (CurrentHealth <= 0)
+        //            Die();
+        //    }
+        //}
 
-        public override void Die()
-        {
-            Level1Screen.Enemies.Remove(this);
-        }
+        //public override void Die()
+        //{
+        //    Level1Screen.Enemies.Remove(this);
+        //}
 
         public override void Render()
         {
             if (!Destroyed)
             {
 
-                Engine.Draw(Renderer.Texture, Transform.Position.X, Transform.Position.Y, Transform.Scale.X, Transform.Scale.Y, Angle, Renderer.GetRealWidth() / 2, Renderer.GetRealHeight() / 2);
+                Engine.Draw(Renderer.Texture, Transform.Position.X, Transform.Position.Y, Transform.Scale.X, Transform.Scale.Y, transform.Rotation, Renderer.GetRealWidth() / 2, Renderer.GetRealHeight() / 2);
 
             }
         }

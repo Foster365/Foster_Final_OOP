@@ -8,58 +8,26 @@ namespace Game
 {
     public abstract class Entity : Collideable, ICharacter
     {
+        protected Transform transform;
+        protected Renderer renderer;
+        protected float colliderRadius;
+        protected CircleCollider circleCollider;
+        protected BoxCollider boxCollider;
+        protected Vector2 speed;
 
-        //Transform and Renderer Variables
+        // TODO: esto tendria que estar en componentes diferentes (HealthController por ejemplo)
 
-        float rotation;
-        Vector2 scale;
-
-        Vector2 size;
-        string texture;
-        float radius;
-
-        Transform transform;
-        Renderer renderer;
-        //
-
-        //Collider Variables
-        float colliderRadius;
-
-        CircleCollider circleCollider;
-        BoxCollider boxCollider;
-
-        //
-
-        //Vector2 enemySpeed;
-
-        //Character attributes
-
-        float maxHealth = 100; float currentHealth;
-        float damage;
-
-        float lifeTime; float lifeTimer;
-
-        Vector2 speed;
-
-        float angle;
-
-        bool damaged;
-        bool destroyed;
-
-        ////
-
-        //Encapsuladas
+        protected float maxHealth = 100; float currentHealth;
+        protected float damage;
+        protected float lifeTime;
+        protected float lifeTimer;
+        protected bool damaged;
+        protected bool destroyed;
 
         public float CurrentHealth { get => currentHealth; set => currentHealth = maxHealth; }
         public float Damage { get => damage; set => damage = value; }
 
         public Vector2 Speed { get => speed; set => speed = value; }
-
-        public Vector2 Scale { get => scale; set => scale = value; }
-        public float Rotation { get => rotation; set => rotation = value; }
-
-        public Vector2 Size { get => size; set => size = value; }
-        public string Texture { get => texture; set => texture = value; }
 
         public Renderer Renderer { get => renderer; set => renderer = value; }
         public Transform Transform { get => transform; set => transform = value; }
@@ -70,36 +38,45 @@ namespace Game
 
         public float LifeTime { get => lifeTime; set => lifeTime = value; }
         public float LifeTimer { get => lifeTimer; set => lifeTimer = value; }
-        public float Angle { get => angle; set => angle = value; }
         public CircleCollider CircleCollider { get => circleCollider; set => circleCollider = value; }
         public BoxCollider BoxCollider { get => boxCollider; set => boxCollider = value; }
 
-        public Entity(Vector2 _position, Vector2 _scale, Vector2 _size, float _rotation, string _texture, float _colliderRadius)
+        public Entity()
         {
+            transform = new Transform(new Vector2(0f, 0f), new Vector2(1, 1), 0f);
+            renderer = new Renderer(new Vector2(1, 1), null, transform);
+        }
 
+        public Entity(Vector2 _position, Vector2 _scale, Vector2 _size, float _rotation, string _texture, float _colliderRadius, Vector2 _speed)
+        {
+            transform = new Transform(new Vector2(0f, 0f), new Vector2(1, 1), 0f);
+            renderer = new Renderer(new Vector2(1, 1), null, transform);
+            Initialize(_position, _scale, _size, _rotation, _texture, _colliderRadius, _speed);
+        }
+
+        public void Initialize(Vector2 _position, Vector2 _scale, Vector2 _size, float _rotation, string _texture, float _colliderRadius, Vector2 _speed)
+        {
             colliderRadius = _colliderRadius;
+            speed = _speed;
 
-            //transform = new Transform(_position, _scale, _rotation);
-            transform = new Transform(new Vector2(_position.X, _position.Y),_scale, _rotation);
-            renderer = new Renderer(_size, _texture, transform);
+            transform.Position = _position;
+            transform.Scale = _scale;
+            transform.Rotation = _rotation;
 
-            //position = new Vector2(transform.Position.X, transform.Position.Y);
+            renderer.Texture = _texture;
+            renderer.Size = _size;
 
             Console.WriteLine(this + "Transform x " + transform.Position.X + "Transform y " + transform.Position.Y);
 
             boxCollider = new BoxCollider(transform, colliderRadius);
             circleCollider = new CircleCollider(transform, colliderRadius);
-
-
-            //circleCollider = new CircleCollider(Transform.Position, Transform.Scale, Transform.Rotation, Renderer.Size, radius);
-            //boxCollider = new BoxCollider(Transform.Position, Transform.Scale, Transform.Rotation, Renderer.Size, radius);
         }
 
         public abstract void Render();
         public abstract void Update();
         public abstract void Move();
-        public abstract void TakeDamage(float damage);
-        public abstract void Die();
+        //public abstract void TakeDamage(float damage);
+        //public abstract void Die();
 
     }
 }

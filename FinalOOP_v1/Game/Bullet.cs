@@ -6,61 +6,29 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public abstract class Bullet<T>: Entity, ICharacter, IPoolable<T>
+    public abstract class Bullet: Entity, ICharacter, IPoolable<Bullet>
     {
-        Vector2 bulletPosition;
-        Vector2 bulletSpeed;
+        public abstract event Action<Bullet> OnDeactivate;
 
-        float bulletRotation;
-        Vector2 bulletScale;
+        public float BulletLifetime { get; private set; }
 
-        Vector2 bulletSize;
-        string bulletTexture;
+        protected float timer;
 
-        float bulletLifetime;
-        float timer;
-        bool destroyed;
-        int direction;
-
-        float bulletRadius;
-
-        Transform transform;
-        Renderer renderer;
-        Collider circleCollider;
-
-        public abstract event SimpleEventHandler<T> OnDeactivate;
-
-        public Vector2 BulletSpeed { get => bulletSpeed; set => bulletSpeed = value; }
-
-        public float BulletRotation { get => bulletRotation; set => bulletRotation = value; }
-        public Vector2 BulletScale { get => bulletScale; set => bulletScale = value; }
-
-        public Vector2 BulletSize { get => bulletSize; set => bulletSize = value; }
-        public string BulletTexture { get => bulletTexture; set => bulletTexture = value; }
-
-        public float BulletLifetime { get => bulletLifetime; set => bulletLifetime = value; }
-
-        public Transform Transform { get => transform; set => transform = value; }
-        public Collider CircleCollider { get => circleCollider; set => circleCollider = value; }
-        public Renderer Renderer { get => renderer; set => renderer = value; }
-        public float Timer { get => timer; set => timer = value; }
-        public bool Destroyed { get => destroyed; set => destroyed = value; }
-        public int Direction { get => direction; set => direction = value; }
-        public float BulletRadius { get => bulletRadius; set => bulletRadius = value; }
-
-
-        //public Bullet(Vector2 bulletPosition, Vector2 bulletSpeed, float bulletRotation, Vector2 bulletScale, Vector2 bulletSize, int bulletLifetime, string texture)
-        public Bullet()
+        public Bullet() : base ()
         {
-
         }
 
-        public abstract void Init(Vector2 position, Vector2 scale, Vector2 size, float rotation, string texture, float radius, float lifeTime, Vector2 speed);
+        public virtual void Init(Vector2 position, Vector2 scale, Vector2 size, float rotation, string texture, float radius, Vector2 speed, float lifeTime)
+        {
+            Initialize(position, scale, size, rotation, texture, radius, speed);
 
-        public abstract void Update();
-        public abstract void Render();
-        public abstract void Move();
+            BulletLifetime = lifeTime;
+            timer = 0;
+            Destroyed = false;
+
+            Level1Screen.RenderizableObjects.Add(this);
+        }
+
         public abstract void Deactivate();
-
     }
 }

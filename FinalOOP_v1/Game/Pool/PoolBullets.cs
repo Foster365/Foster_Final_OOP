@@ -6,16 +6,13 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public delegate void SimpleEventHandler<T>(T arg1); //Chequear custom delegates
-
     public interface IPoolable<T>
     {
-        event SimpleEventHandler<T> OnDeactivate;
+        event Action<T> OnDeactivate;
     }
 
     public class ObjectsPool<T> where T : IPoolable<T>, new()
     {
-
         private List<T> inUse = new List<T>();
         private List<T> available = new List<T>();
 
