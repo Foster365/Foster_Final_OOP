@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public abstract class Bullet: Entity, ICharacter, IPoolable<Bullet>
+    public abstract class Bullet<T>: Entity, ICharacter, IPoolable<T>
     {
-        public abstract event Action<Bullet> OnDeactivate;
+        public abstract event Action<T> OnDeactivate;
 
         public float BulletLifetime { get; private set; }
 
@@ -18,13 +18,14 @@ namespace Game
         {
         }
 
-        public virtual void Init(Vector2 position, Vector2 scale, Vector2 size, float rotation, string texture, float radius, Vector2 speed, float lifeTime)
+        public virtual void Init(Vector2 position, Vector2 scale, Vector2 size, float rotation, string texture, float radius, Vector2 speed, int damage, float lifeTime)
         {
-            Initialize(position, scale, size, rotation, texture, radius, speed);
+
+            Initialize(position, scale, size, rotation, texture, damage, radius, speed);
 
             BulletLifetime = lifeTime;
             timer = 0;
-            Destroyed = false;
+            lifeController.Destroyed = false;
 
             Level1Screen.RenderizableObjects.Add(this);
         }

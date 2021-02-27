@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public class PlayerBullet : Bullet
+    public class PlayerBullet : Bullet<PlayerBullet>
     { 
         public PlayerBullet() : base()
         {
 
         }
 
-        public override event Action<Bullet> OnDeactivate;
+        public override event Action<PlayerBullet> OnDeactivate;
 
         public override void Update()
         {
@@ -25,20 +25,26 @@ namespace Game
                 Console.WriteLine("Deactivating");
                 Deactivate();
             }
-            //else
-            //{
 
-                //CheckforCollisions()
-
-            //}
+            CheckForCollisionsWEnemy();
         }
 
         public override void Deactivate()
         {
-            Destroyed = true;
+            lifeController.Destroyed = true;
             Level1Screen.RenderizableObjects.Remove(this);
             OnDeactivate?.Invoke(this);
         }
+
+        void CheckForCollisionsWEnemy()
+        {
+            for (int i = 0; i < Level1Screen.Enemies.Count; i++)
+            {
+                circleCollider.CheckforCollisions(Level1Screen.Enemies[i]);
+                if (circleCollider.CheckforCollisions(Level1Screen.Enemies[i])) Level1Screen.Enemies.Remove(Level1Screen.Enemies[i]);
+            }
+        }
+
         public override void Move()
         {
             Transform.Position += new Vector2(speed.X * Time.DeltaTime, 0);

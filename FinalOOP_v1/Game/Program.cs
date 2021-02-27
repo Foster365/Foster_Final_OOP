@@ -6,7 +6,7 @@ namespace Game
     public class Program
     {
 
-        static public List<Bullet<PlayerBullet>> Bullets { get; set; } = new List<Bullet<PlayerBullet>>();
+        static public List<PlayerBullet> Bullets { get; set; } = new List<PlayerBullet>();
         //Objetos pantallas
 
         public static bool canPressSpace;

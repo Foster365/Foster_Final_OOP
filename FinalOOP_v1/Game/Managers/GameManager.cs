@@ -66,13 +66,13 @@ namespace Game
             }
         }
 
-        private void CheckDefeat()
-        {
-            if (player.CurrentHealth<= 0)
-            {
-                Program.ActualScreenState = Program.ScreenFlow.gameOverScreen;
-            }
-        }
+        //private void CheckDefeat()
+        //{
+        //    if (player.lifeController.CurrentHealth<= 0)
+        //    {
+        //        Program.ActualScreenState = Program.ScreenFlow.gameOverScreen;
+        //    }
+        //}
 
         //void UpdateLifeStack()
         //{
@@ -90,8 +90,8 @@ namespace Game
             foreach (PowerUpsFactory.PowerUps actualPowerUp in Enum.GetValues(typeof(PowerUpsFactory.PowerUps)))
             {
 
-                if (player.Damaged)
-                    Level1Screen.RenderizableObjects.Add(PowerUpsFactory.CreatePowerUp(actualPowerUp));
+                //if (player.Damaged)
+                //    Level1Screen.RenderizableObjects.Add(PowerUpsFactory.CreatePowerUp(actualPowerUp));
 
 
             }

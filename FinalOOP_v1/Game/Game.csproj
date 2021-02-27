@@ -41,10 +41,10 @@
     <Compile Include="AI\Roulette Wheel\Node.cs" />
     <Compile Include="AI\Roulette Wheel\Roulette.cs" />
     <Compile Include="Animation.cs" />
-    <Compile Include="Characters\Collideable.cs" />
     <Compile Include="Characters\Entity.cs" />
     <Compile Include="Components\Background.cs" />
     <Compile Include="Bullet.cs" />
+    <Compile Include="Components\LifeController.cs" />
     <Compile Include="Factory\PowerUpsFactory.cs" />
     <Compile Include="Items\PowerUp.cs" />
     <Compile Include="Items\PowerUps\DamagePowerUp.cs" />
