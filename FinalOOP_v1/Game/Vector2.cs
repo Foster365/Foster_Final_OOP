@@ -29,7 +29,7 @@ namespace Game
 
         #endregion
 
-        #region Static
+        #region Static Properties
         public static Vector2 ZeroVector()
         {
 
@@ -114,7 +114,20 @@ namespace Game
             return v.y;
         }
         #endregion
+        #region Static Methods
+        public void MoveTowards(Vector2 current, Vector2 target, float maxDistanceDelta)
+        {
 
+            //Vector2 distance = target - current;
+            //float distMagnitude = Vector2.Magnitude(distance.X, distance.Y);
+
+            //if (distMagnitude <= maxDistanceDelta || distMagnitude == 0f)
+            //{
+            //    return target;
+            //}
+            //return current + distance / distMagnitude * maxDistanceDelta;
+        }
+        #endregion
         public static Vector2 operator +(Vector2 a, Vector2 b)
         {
             Vector2 c = new Vector2(a.X+b.X, a.Y+b.Y);;

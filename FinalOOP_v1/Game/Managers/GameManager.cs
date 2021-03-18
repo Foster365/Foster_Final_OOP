@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public class GameManager
+    public class GameManager: IManager
     {
+        #region Singleton
         private static GameManager instance;
 
         public static GameManager Instance
@@ -22,11 +23,13 @@ namespace Game
                 return instance;
             }
         }
-
-        private int enemyKillstoWin;
+        #endregion
+        int enemyKills = 0;
         private int points;
-        private Player player { get; set; }
+        Level actualLevel;
+
         PowerUpsFactory.PowerUps actualPowerUp;
+        //List<Program.ScreenFlow> levelScreens = new List<Program.ScreenFlow>();
 
         //BossEnemy bossEnemy{get;set;}
 
@@ -34,37 +37,76 @@ namespace Game
         {
             get
             {
+
                 return points;
+
             }
 
             set
             {
+
                 points = value;
                 Engine.Debug("Puntos: " + points);
-                CheckVictory();
+                //NextLevel();
+
             }
         }
 
-        public int WinPoints
+        public int EnemyKills
         {
             get
             {
-                return enemyKillstoWin;
+
+                return enemyKills;
+
             }
 
             set
             {
-                enemyKillstoWin = 10;
+
+                enemyKills = value;
+                Console.WriteLine("Enemy Kill Points" + enemyKills);
+
+                //if (enemyKills == 10)
+                //    NextLevel();
             }
         }
 
-        private void CheckVictory()
-        {
-            if (Program.ActualScreenState == Program.ScreenFlow.level5Screen/* && bossEnemy.destroyed && points >= enemyKillstoWin*/)
-            {
-                Program.ActualScreenState = Program.ScreenFlow.winScreen;
-            }
-        }
+        //void NextLevel()
+        //{
+
+        //    foreach (Program.ScreenFlow item in Enum.GetValues(typeof(Program.ScreenFlow)))
+        //    {
+
+        //        //if (enemyKills == 10 && Program.ActualScreenState != Program.ScreenFlow.level5Screen)
+        //        //    actualLevel.Update();
+
+        //        levelScreens.Add(item);
+        //        for (int i = 0; i < levelScreens.Count; i++)
+        //        {
+
+        //            if (enemyKills == 10 && Program.ActualScreenState != Program.ScreenFlow.level5Screen)
+        //                Program.ActualScreenState = levelScreens[i];
+        //            Console.WriteLine("Switching level");
+
+        //            enemyKills = 0;
+
+        //        }
+        //        //tiene que ser el siguiente estado.
+
+        //        //CheckVictory();
+
+        //    }
+            
+        //}
+
+        //private void CheckVictory()
+        //{
+        //    if (Program.ActualScreenState == Program.ScreenFlow.level5Screen/* && bossEnemy.destroyed && points >= enemyKillstoWin*/)
+        //    {
+        //        Program.ActualScreenState = Program.ScreenFlow.winScreen;
+        //    }
+        //}
 
         //private void CheckDefeat()
         //{
@@ -98,5 +140,20 @@ namespace Game
                 
         }
 
+        public void Start()//Init method
+        {
+            Console.WriteLine("Manager initialized");
+            //Program.Managers.Add(this);
+        }
+
+        public void Execute()
+        {
+            //NextLevel();
+        }
+
+        public void Destroy()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

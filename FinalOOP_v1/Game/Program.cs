@@ -6,7 +6,10 @@ namespace Game
     public class Program
     {
 
-        static public List<PlayerBullet> Bullets { get; set; } = new List<PlayerBullet>();
+        static public List<ICharacter> Environment { get; set; } = new List<ICharacter>();
+        static public List<Entity> Characters { get; set; } = new List<Entity>();
+        static public List<Entity> Enemies { get; set; } = new List<Entity>();
+        //static public List<Bullet<PlayerBullet>> Bullets { get; set; } = new List<Bullet<PlayerBullet>>();
         //Objetos pantallas
 
         public static bool canPressSpace;
@@ -23,6 +26,7 @@ namespace Game
         private static GameOverScreen gameOverScreen;
         private static PauseScreen pauseScreen;
 
+        //static readonly List<IManager> managers = new List<IManager>();
         public static float maxTimerSpace = 0.5f;
 
         public enum ScreenFlow { splashScreen, mainMenuScreen, level1Screen, level2Screen, level3Screen, level4Screen, level5Screen,
@@ -30,13 +34,9 @@ namespace Game
 
         static ScreenFlow actualScreenState;
 
-        public static List<Texture> Animation1Frames { get; set; } = new List<Texture>();
-
         //public static bool CanPressSpace { get => canPressSpace; set => canPressSpace = true; }
         //public static float TimerSpace { get => timerSpace; set => timerSpace = value; }
         //public static float MaxTimerSpace { get => maxTimerSpace; set => maxTimerSpace = value; }
-
-        public static List<ICharacter> Enemies = new List<ICharacter>();
 
         public static ScreenFlow ActualScreenState { get => actualScreenState; set => actualScreenState = value; }
 
@@ -51,6 +51,8 @@ namespace Game
         public static GameOverScreen GameOverScreen { get => gameOverScreen; set => gameOverScreen = value; }
         public static PauseScreen PauseScreen { get => pauseScreen; set => pauseScreen = value; }
 
+        //public static List<IManager> Managers => managers;
+
         static void Main(string[] args)
         {
 
@@ -59,17 +61,22 @@ namespace Game
 
             while (true)
             {
-                timerSpace += Time.DeltaTime;
-                if (timerSpace >= maxTimerSpace)
-                {
-                    canPressSpace = true;
-                    timerSpace = 0f;
-                }
+                TimerSpace();
                 Time.DeltaTimeUpdate();
                 Update();
                 Render();
             }
 
+        }
+
+        static void TimerSpace()
+        {
+            timerSpace += Time.DeltaTime;
+            if (timerSpace >= maxTimerSpace)
+            {
+                canPressSpace = true;
+                timerSpace = 0f;
+            }
         }
 
         static public void InitializeGame()
@@ -94,14 +101,10 @@ namespace Game
         static public void ActualScreen()
         {
 
-            ActualScreenState = ScreenFlow.splashScreen;
+            ActualScreenState = ScreenFlow.level1Screen;
 
         }
 
-        static public void CheckForCollisions()
-        {
-
-        }
         static public void Update()
         {
 
@@ -143,7 +146,7 @@ namespace Game
                 GameOverScreen.Update();
 
             else if (ActualScreenState == ScreenFlow.Exit)
-                Environment.Exit(1);
+                System.Environment.Exit(1);
 
         }
 

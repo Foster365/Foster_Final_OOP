@@ -22,7 +22,6 @@ namespace Game
 
             if (timer >= BulletLifetime)
             {
-                Console.WriteLine("Deactivating");
                 Deactivate();
             }
 
@@ -31,24 +30,34 @@ namespace Game
 
         public override void Deactivate()
         {
-            lifeController.Destroyed = true;
-            Level1Screen.RenderizableObjects.Remove(this);
+            LifeController.Destroyed = true;
+            Program.Environment.Remove(this);
             OnDeactivate?.Invoke(this);
         }
 
         void CheckForCollisionsWEnemy()
         {
-            for (int i = 0; i < Level1Screen.Enemies.Count; i++)
+            for (int i = 0; i < Program.Characters.Count; i++)
             {
-                circleCollider.CheckforCollisions(Level1Screen.Enemies[i]);
-                if (circleCollider.CheckforCollisions(Level1Screen.Enemies[i])) Level1Screen.Enemies.Remove(Level1Screen.Enemies[i]);
+
+                if (circleCollider.CheckforCollisions(Program.Characters[i]) && Program.Characters[i].LifeController.IsEnemy == true)
+                {
+
+                    Console.WriteLine("Colliding with player");
+                    Deactivate();
+                    Program.Characters[i].LifeController.GetDamage(Damage);
+                    GameManager.Instance.EnemyKills++;
+                    Console.WriteLine("Killcount" + GameManager.Instance.EnemyKills);
+                    //Console.WriteLine("Enemy current life" + Level1Screen.Enemies[i].LifeController.CurrentLife);
+
+                }
             }
         }
 
         public override void Move()
         {
             Transform.Position += new Vector2(speed.X * Time.DeltaTime, 0);
-            Engine.Debug(transform.Position.X);
+            //Engine.Debug(transform.Position.X);
         }
 
         public override void Render()

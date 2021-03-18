@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public class Image: IRenderizable
+    public class Image: ICharacter
     {
         Vector2 position;
         float rotation;
@@ -37,6 +37,11 @@ namespace Game
         public void Render()
         {
             Engine.Draw(renderer.Texture, transform.Position.X, transform.Position.Y, transform.Scale.X, transform.Scale.Y, transform.Rotation, renderer.GetRealHeight() / 2, renderer.GetRealHeight() / 2);
+        }
+
+        public void Update()
+        {
+
         }
     }
 }

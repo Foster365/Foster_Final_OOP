@@ -12,34 +12,55 @@ namespace Game
 
         Button backButton;
         Button actualButton;
-        
 
         public GameOverScreen()
         {
-            backgroundGameOverScreen = new Image(new Vector2(200, 455), new Vector2(1, 1), new Vector2(1920, 1080), 0, "Textures/ScreenFlow/SpaceBk.png");
-
+            Engine.Clear();
+            ResetLevel();
         }
 
         public void Update()
         {
-            if (Engine.GetKey(Keys.ESCAPE))
-            {
-                Program.ActualScreenState = Program.ScreenFlow.mainMenuScreen;
-            }
+
+            //for (int i = 0; i < Program.Renderizable.Count; i++)
+            //{
+            //    Program.Renderizable[i].Update();
+            //}
+
+            //if (Engine.GetKey(Keys.ESCAPE))
+            //{
+            //    Program.ActualScreenState = Program.ScreenFlow.mainMenuScreen;
+            //}
         }
 
         public void Render()
         {
 
-            backgroundGameOverScreen.Render();
+            //for (int i = 0; i < Program.Renderizable.Count; i++)
+            //{
+            //    Program.Renderizable[i].Render();
+            //}
 
         }
-        private void EnterButon()
+        void EnterButon()
         {
             if (actualButton == backButton)
             {
                 Program.ActualScreenState = Program.ScreenFlow.mainMenuScreen;
             }
+        }
+
+        void ResetLevel()
+        {
+            AddTextures();
+        }
+
+        void AddTextures()
+        {
+
+            //Program.Renderizable.Add(new Image(new Vector2(200, 455), new Vector2(1, 1), new Vector2(1920, 1080), 0, "Textures/ScreenFlow/SpaceBk.png"));
+            //Program.Renderizable.Add(new Image(new Vector2(200, 100), new Vector2(.6f, .6f), new Vector2(448, 56), 0, "Textures/ScreenFlow/Game_Over.png"));
+
         }
     }
 }

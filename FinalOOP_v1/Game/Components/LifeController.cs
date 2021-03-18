@@ -11,24 +11,44 @@ namespace Game
         Entity entity;
         bool damaged;
         bool destroyed;
+        float lifeTimer;
+        bool isEnemy;
+        bool isPlayer;
 
         public int MaxLife { get; set; }
         public int CurrentLife { get; set; }
         public float LifeTime { get; set; }
         public bool Damaged { get => damaged; set => damaged = value; }
         public bool Destroyed { get => destroyed; set => destroyed = value; }
+        public bool IsEnemy { get => isEnemy; set => isEnemy = value; }
+        public bool IsPlayer { get => isPlayer; set => isPlayer = value; }
 
-        public LifeController(int _maxLife, Entity _entity)
+        public event Action<LifeController> OnDeactivate;
+
+        //Animation Variables
+
+        Animation deathAnimation;
+
+        enum Animations { deathAnimation }
+
+        Animations actualAnimstate = Animations.deathAnimation;
+        //
+
+        public LifeController(int _maxLife, Entity _entity, bool _isEnemy, bool _isPlayer)
         {
 
             MaxLife = _maxLife;
             CurrentLife = _maxLife;
 
             entity = _entity;
+            isEnemy = _isEnemy;
+            isPlayer = _isPlayer;
+
+            AnimationParameters();
 
         }
 
-        public LifeController(int _maxLife, float _lifeTime, Entity _entity)
+        public LifeController(int _maxLife, float _lifeTime, Entity _entity, bool _isEnemy, bool _isPlayer)
         {
 
             MaxLife = _maxLife;
@@ -37,24 +57,39 @@ namespace Game
             LifeTime = _lifeTime;
 
             entity = _entity;
+            isEnemy = _isEnemy;
+            isPlayer = _isPlayer;
+
+            AnimationParameters();
 
         }
 
-        public LifeController(float _lifeTime, Entity _entity)
+        public LifeController(float _lifeTime, Entity _entity, bool _isEnemy, bool _isPlayer)
         {
 
             LifeTime = _lifeTime;
             entity = _entity;
+            isEnemy = _isEnemy;
+            isPlayer = _isPlayer;
+
+            AnimationParameters();
 
         }
 
-        public LifeController(Entity _entity)
+        public LifeController(Entity _entity, bool _isEnemy, bool _isPlayer)
         {
+
             entity = _entity;
+            isEnemy = _isEnemy;
+            isPlayer = _isPlayer;
+
+            AnimationParameters();
+
         }
 
         public void GetHealth(int healthPoints)
         {
+
             CurrentLife += healthPoints;
 
             if (CurrentLife > MaxLife)
@@ -62,20 +97,100 @@ namespace Game
 
         }
 
+        public void LifeTimer()
+        {
+
+            lifeTimer += Time.DeltaTime;
+            //Console.WriteLine("LifeTiner" + lifeTimer);
+
+            if (lifeTimer >= LifeTime)
+                Deactivate();
+
+        }
+        
         public void GetDamage(int damagePoints)
         {
+
             damaged = true;
             CurrentLife -= damagePoints;
 
-            Console.WriteLine("Life Points" + CurrentLife);
+            Console.WriteLine(entity + "Life Points" + CurrentLife);
 
-            if (CurrentLife <= 0) Die();
+            if (CurrentLife <= 0) Deactivate();
 
         }
 
-        public void Die()
+        public void Deactivate()
         {
-            Level1Screen.RenderizableObjects.Remove(entity);
+
+            Console.WriteLine("Deactivating entity");
+
+            Program.Environment.Remove(entity);
+
+            if(isEnemy)
+                Program.Characters.Remove(entity);
+
+            OnDeactivate?.Invoke(this);
+
+            //UpdateAnimation();
+            //RenderAnimation();
+
+        }
+
+        void AnimationParameters()
+        {
+
+            List<Texture> deathFrames = new List<Texture>();
+
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion1.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion2.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion3.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion4.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion5.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion6.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion7.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion8.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion9.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion10.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion11.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion12.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion13.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion14.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion15.png"));
+
+            //for (int i = 3; i < 9; i++)
+            //{
+
+            //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/" + i.ToString() + ".png"));
+
+            //}
+
+            deathAnimation = new Animation(deathFrames, 1f, false);
+
+        }
+
+        void UpdateAnimation()
+        {
+            if (actualAnimstate == Animations.deathAnimation)
+            {
+
+                actualAnimstate = Animations.deathAnimation;
+                deathAnimation.Play();
+
+            }
+
+        }
+
+        void RenderAnimation()
+        {
+
+            if (actualAnimstate == Animations.deathAnimation)
+            {
+
+                Engine.Draw(deathAnimation.AnimList[deathAnimation.ActualAnimationFrame], entity.Transform.Position.X, entity.Transform.Position.Y, 1, 1, 0, 0);
+                Console.WriteLine("Explosion rendered");
+
+            }
         }
     }
 }

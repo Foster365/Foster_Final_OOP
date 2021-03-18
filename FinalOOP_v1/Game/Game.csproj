@@ -40,12 +40,20 @@
     <Compile Include="AI\Roulette Wheel\ActionNode.cs" />
     <Compile Include="AI\Roulette Wheel\Node.cs" />
     <Compile Include="AI\Roulette Wheel\Roulette.cs" />
+    <Compile Include="AI\Steering Behaviours\ISteeringBehaviour.cs" />
+    <Compile Include="AI\Steering Behaviours\Pursuit.cs" />
     <Compile Include="Animation.cs" />
+    <Compile Include="Characters\Asteroid.cs" />
+    <Compile Include="Characters\BossEnemy.cs" />
     <Compile Include="Characters\Entity.cs" />
+    <Compile Include="Components\AnimationComponent.cs" />
     <Compile Include="Components\Background.cs" />
     <Compile Include="Bullet.cs" />
     <Compile Include="Components\LifeController.cs" />
+    <Compile Include="Factory\AsteroidsFactory.cs" />
     <Compile Include="Factory\PowerUpsFactory.cs" />
+    <Compile Include="Characters\Level.cs" />
+    <Compile Include="Interfaces\IManager.cs" />
     <Compile Include="Items\PowerUp.cs" />
     <Compile Include="Items\PowerUps\DamagePowerUp.cs" />
     <Compile Include="Items\PowerUps\RandomPowerUp.cs" />
@@ -96,6 +104,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Engine.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Entities\Asteroids\Asteroid1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Entities\Asteroids\Asteroid2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Entities\Asteroids\Asteroid3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Entities\Asteroids\Asteroid4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Entities\Asteroids\Asteroid5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Entities\Asteroids\Asteroid6.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Textures\Countdown\1.png">
@@ -278,91 +304,91 @@
     <Content Include="Textures\Countdown\9.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Textures\Explosion\Explosion1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Explosion\Explosion10.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Explosion\Explosion11.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Explosion\Explosion12.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Explosion\Explosion13.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Explosion\Explosion14.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Explosion\Explosion15.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Explosion\Explosion2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Explosion\Explosion3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Explosion\Explosion4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Explosion\Explosion5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Explosion\Explosion6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Explosion\Explosion7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Explosion\Explosion8.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Explosion\Explosion9.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Entities\Characters\Enemy2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Textures\Heart.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="ship.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Textures\Animations\Explosion\Explosion1.png">
+    <Content Include="Textures\Entities\Characters\Boss.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Textures\Animations\Explosion\Explosion10.png">
+    <Content Include="Textures\Entities\Characters\BulletEnemy2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Textures\Animations\Explosion\Explosion11.png">
+    <Content Include="Textures\Entities\Characters\BulletEnemy1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Textures\Animations\Explosion\Explosion12.png">
+    <Content Include="Textures\Entities\Characters\BulletEnemy3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Textures\Animations\Explosion\Explosion13.png">
+    <Content Include="Textures\Entities\Characters\BulletEnemy4.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Textures\Animations\Explosion\Explosion14.png">
+    <Content Include="Textures\Entities\Characters\BulletPj.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Textures\Animations\Explosion\Explosion15.png">
+    <Content Include="Textures\Entities\Characters\Enemy1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Textures\Animations\Explosion\Explosion2.png">
+    <Content Include="Textures\Entities\Characters\Enemy3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Textures\Animations\Explosion\Explosion3.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Textures\Animations\Explosion\Explosion4.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Textures\Animations\Explosion\Explosion5.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Textures\Animations\Explosion\Explosion6.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Textures\Animations\Explosion\Explosion7.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Textures\Animations\Explosion\Explosion8.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Textures\Animations\Explosion\Explosion9.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Textures\Boss.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Textures\BulletEnemy2.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Textures\BulletEnemy1.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Textures\BulletEnemy3.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Textures\BulletEnemy4.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Textures\BulletPj.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Textures\Enemy1.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Textures\Enemy2.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Textures\Enemy3.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Textures\Enemy4.png">
+    <Content Include="Textures\Entities\Characters\Enemy4.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Textures\Level1Background.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Textures\Player.png">
+    <Content Include="Textures\Entities\Characters\Player.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Textures\PowerUps\DamagePowerUp.png">

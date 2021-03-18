@@ -31,27 +31,29 @@ namespace Game
 
         //
 
-        public Enemy(Vector2 _position, float _rotation, Vector2 _scale, Vector2 _size, Vector2 _enemySpeed, string _texture, int _life, float _angle, int _damage, float _colliderRadius) : base(_position, _scale, _size, _rotation, _texture, _damage, _colliderRadius, _enemySpeed)/*(position, rotation, scale, size, enemySpeed, texture, life)*/
+        public Enemy(Vector2 _position, float _rotation, Vector2 _scale, Vector2 _size, Vector2 _enemySpeed, string _texture, int _maxHealth, float _angle, float _lifetime, int _damage, float _colliderRadius) : base(_position, _scale, _size, _rotation, _texture, _damage, _colliderRadius, _enemySpeed)/*(position, rotation, scale, size, enemySpeed, texture, life)*/
         {
 
-            //life = life;
-
-            lifeController.LifeTime = 5;
             Speed = _enemySpeed;
             timetoShoot = 0.8f;
 
+            LifeController = new LifeController(_maxHealth, _lifetime, this, true, false);
+                
         }
 
         public override void Update()//Ver bien esto
         {
-            if (!lifeController.Destroyed)
+            if (!LifeController.Destroyed)
             {
 
                 Move();
 
-                lifeController.LifeTime += Time.DeltaTime;
-                if (lifeTimer >= lifeController.LifeTime)
-                    Level1Screen.RenderizableObjects.Remove(this);
+                //LifeController.LifeTimer();
+
+                //lifeTimer += Time.DeltaTime;
+                //Console.WriteLine(LifeController.LifeTime);
+                //if (lifeTimer >= LifeController.LifeTime)
+                //    Level1Screen.RenderizableObjects.Remove(this);
 
                 //for (int i = 0; i < Program.Bullets.Count; i++)
                 //{
@@ -85,7 +87,7 @@ namespace Game
 
         public override void Render()
         {
-            if (!lifeController.Destroyed)
+            if (!LifeController.Destroyed)
             {
 
                 Engine.Draw(Renderer.Texture, Transform.Position.X, Transform.Position.Y, Transform.Scale.X, Transform.Scale.Y, transform.Rotation, Renderer.GetRealWidth() / 2, Renderer.GetRealHeight() / 2);

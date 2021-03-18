@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Game
 {
 
-    public class Player : Entity, ICharacter
+    public class Player : Entity
     {
         //Variables
 
@@ -39,7 +39,7 @@ namespace Game
         {
 
             Speed = _speed;
-            timetoShoot = 0.8f;
+            timetoShoot = 0.5f;
             bulletsPool = new ObjectsPool<PlayerBullet>();
 
             inmunity = false;
@@ -48,14 +48,20 @@ namespace Game
 
             canRespawn = false;
 
-            lifeController = new LifeController(_maxLife, this);
+            LifeController = new LifeController(_maxLife, this, false, true);
+            Console.WriteLine("Is Player?" + LifeController.IsPlayer);
+            Console.WriteLine("Is Enemy?" + LifeController.IsEnemy);
 
         }
 
         public override void Update()
         {
-            if (!lifeController.Destroyed)
+            if (!LifeController.Destroyed)
             {
+
+                //timer += Time.DeltaTime;
+                //Console.WriteLine("Respawn in" + timer);
+
                 ScreenLimits();
                 Move();
 
@@ -69,39 +75,62 @@ namespace Game
 
                 }
 
-                if (canReceiveDamage)
-                    CheckforCollisions();
+                //if (canReceiveDamage)
+                CheckForCollisions();
 
             }
 
         }
 
-        void CheckforCollisions()
+        void CheckForCollisions()
         {
-
-            timer += Time.DeltaTime;
-            Console.WriteLine("Respawn in" + timer);
-
-            for (int i = 0; i < Level1Screen.Enemies.Count; i++)
+            for (int i = 0; i < Program.Enemies.Count; i++)
             {
 
-                CircleCollider.CheckforCollisions(Level1Screen.Enemies[i]);
-
-                if (CircleCollider.CheckforCollisions(Level1Screen.Enemies[i]) && timer > respawnTimer && lifeController.CurrentLife > 0)
+                if (circleCollider.CheckforCollisions(Program.Enemies[i]) && Program.Enemies[i].LifeController.IsEnemy == true)
                 {
 
-                    lifeController.GetDamage(Level1Screen.Enemies[i].Damage);
+                    //if(inmunityTimer >= inmunityMaxTimer/*&& timer > respawnTimer*/ )
+                    //            //{
+
+                    //            //}
+
+                    LifeController.GetDamage(Program.Characters[i].Damage);
+                    canReceiveDamage = false;
+                    inmunityTimer = 0;
                     canRespawn = true;
                     Respawn();
                     timer = 0;
-
-                    if (lifeController.CurrentLife <= 0) lifeController.Die();
-
                 }
-
             }
         }
 
+        //void CheckforCollisions()
+        //{
+        //    inmunityTimer += Time.DeltaTime;
+
+        //    for (int i = 0; i < Program.Characters.Count; i++)
+        //    {
+
+        //        if (CircleCollider.CheckforCollisions(Program.Characters[i]) && Program.Characters[i].LifeController.IsEnemy == true && LifeController.CurrentLife > 0)
+        //        {
+
+        //            //if(inmunityTimer >= inmunityMaxTimer/*&& timer > respawnTimer*/ )
+        //            //{
+
+        //            //}
+        //            Console.WriteLine("Colliding with myself");
+        //            LifeController.GetDamage(Program.Characters[i].Damage);
+        //            canReceiveDamage = false;
+        //            inmunityTimer = 0;
+        //            //canRespawn = true;
+        //            //Respawn();
+        //            //timer = 0;
+
+        //        }
+
+        //    }
+        //}
         public void ScreenLimits()
         {
             if (Transform.Position.Y <= 0)
@@ -137,7 +166,7 @@ namespace Game
         public void Respawn()
         {
 
-            lifeController.Damaged = true;
+            LifeController.Damaged = true;
 
             Random random = new Random();
 
@@ -145,7 +174,7 @@ namespace Game
 
             Console.WriteLine("Respawning player");
 
-            if (lifeController.Damaged)
+            if (LifeController.Damaged)
             {
 
                 Transform.Position = randomPosition;
@@ -162,14 +191,15 @@ namespace Game
             {
 
                 var playerBullet = bulletsPool.Get();
-                playerBullet.Init(Transform.Position, new Vector2(1, 1), new Vector2(20, 10), 0, "Textures/BulletPj.png", 1, new Vector2(100, 100), 10, 3);
+                playerBullet.Init(Transform.Position, new Vector2(1, 1), new Vector2(20, 10), 0, "Textures/Entities/Characters/BulletPj.png", 1, new Vector2(30, 30), 10, 3);
 
             }
         }
 
         public void PlayerInmunity()
         {
-                canRespawn = false;
+
+            canRespawn = false;
             inmunity = true;
             canShoot = false;
 
@@ -192,7 +222,7 @@ namespace Game
 
         public override void Render()
         {
-            if (!lifeController.Destroyed)
+            if (!LifeController.Destroyed)
             {
 
                 Engine.Draw(Renderer.Texture, Transform.Position.X, Transform.Position.Y, Transform.Scale.X, Transform.Scale.Y, transform.Rotation, Renderer.GetRealWidth()/2, Renderer.GetRealHeight() / 2);

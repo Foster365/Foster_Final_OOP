@@ -1,0 +1,3 @@
+Fix animation rendering and update.
+Renderizable Objects list.
+Delete object after deactivating (Destructor?)

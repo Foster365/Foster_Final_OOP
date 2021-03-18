@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public abstract class Bullet<T>: Entity, ICharacter, IPoolable<T>
+    public abstract class Bullet<T> : Entity, ICharacter, IPoolable<T>
     {
         public abstract event Action<T> OnDeactivate;
 
@@ -25,9 +25,11 @@ namespace Game
 
             BulletLifetime = lifeTime;
             timer = 0;
-            lifeController.Destroyed = false;
+            LifeController.Destroyed = false;
 
-            Level1Screen.RenderizableObjects.Add(this);
+            circleCollider = new CircleCollider(transform, radius);
+
+            Program.Environment.Add(this);
         }
 
         public abstract void Deactivate();

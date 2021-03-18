@@ -22,5 +22,6 @@ namespace Game
             this.scale = scale;
             this.rotation = rotation;
         }
+
     }
 }

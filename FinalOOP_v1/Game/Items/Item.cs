@@ -16,26 +16,14 @@ namespace Game
 
         Renderer renderer;
         Transform transform;
-        CircleCollider circleCollider;
-
-        public Vector2 Position { get => position; set => position = value; }
-        public Vector2 Size { get => size; set => size = value; }
-        public Vector2 Scale { get => scale; set => scale = value; }
-        public float Rotation { get => rotation; set => rotation = value; }
-        public string Texture { get => texture; set => texture = value; }
 
         public Transform Transform { get => transform; set => transform = value; }
         public Renderer Renderer { get => renderer; set => renderer = value; }
-        public Item(Vector2 position, Vector2 size, Vector2 scale, float rotation, string texture)
+        public Item(Vector2 _position, Vector2 _size, Vector2 _scale, float _rotation, string _texture)
         {
 
-            transform = new Transform(new Vector2(position.X, position.Y), Scale, Rotation);
-            renderer = new Renderer(size, texture, transform);
-
-            Size = size;
-            Scale = scale;
-            Rotation = rotation;
-            Texture = texture;
+            transform = new Transform(new Vector2(_position.X, _position.Y), _scale, _rotation);
+            renderer = new Renderer(_size, _texture, transform);
 
         }
 

@@ -6,16 +6,21 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public class Level4Screen
+    public class Level4Screen : Level
     {
-        public void Update()
+        public override void Render()
         {
-
+            Console.WriteLine("Render4");
         }
 
-        public void Render()
+        public override void ResetLevel()
         {
+            Console.WriteLine("ResetLevel4");
+        }
 
+        public override void Update()
+        {
+            Console.WriteLine("Update4");
         }
     }
 }

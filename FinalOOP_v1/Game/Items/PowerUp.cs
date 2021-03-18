@@ -31,8 +31,8 @@ namespace Game
             float counter = 0;
 
             counter += Time.DeltaTime;
-            if (counter >= lifeTime)
-                Level1Screen.RenderizableObjects.Remove(this);
+            //if (counter >= lifeTime)
+                //Level1Screen.RenderizableObjects.Remove(this);
         }
 
         public override void Update()

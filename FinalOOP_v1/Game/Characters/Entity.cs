@@ -13,7 +13,7 @@ namespace Game
 
         protected float colliderRadius;
 
-        protected LifeController lifeController;
+        LifeController lifeController;
         protected CircleCollider circleCollider;
         protected BoxCollider boxCollider;
 
@@ -39,6 +39,7 @@ namespace Game
         //public float LifeTimer { get => lifeTimer; set => lifeTimer = value; }
         public CircleCollider CircleCollider { get => circleCollider; set => circleCollider = value; }
         public BoxCollider BoxCollider { get => boxCollider; set => boxCollider = value; }
+        public LifeController LifeController { get => lifeController; set => lifeController = value; }
 
         public Entity()
         {
@@ -81,9 +82,7 @@ namespace Game
             renderer.Texture = _texture;
             renderer.Size = _size;
 
-            Console.WriteLine(this + "Transform x " + transform.Position.X + "Transform y " + transform.Position.Y);
-
-            lifeController = new LifeController(_maxHealth, this);
+            LifeController = new LifeController(_maxHealth, this, false, false);
 
             boxCollider = new BoxCollider(transform, colliderRadius);
             circleCollider = new CircleCollider(transform, colliderRadius);
@@ -103,9 +102,7 @@ namespace Game
             renderer.Texture = _texture;
             renderer.Size = _size;
 
-            Console.WriteLine(this + "Transform x " + transform.Position.X + "Transform y " + transform.Position.Y);
-
-            lifeController = new LifeController(this);
+            LifeController = new LifeController(this, false, false);
 
             boxCollider = new BoxCollider(transform, colliderRadius);
             circleCollider = new CircleCollider(transform, colliderRadius);
@@ -126,8 +123,6 @@ namespace Game
             renderer.Texture = _texture;
             renderer.Size = _size;
 
-            Console.WriteLine(this + "Transform x " + transform.Position.X + "Transform y " + transform.Position.Y);
-
             boxCollider = new BoxCollider(transform, colliderRadius);
             circleCollider = new CircleCollider(transform, colliderRadius);
 
@@ -136,8 +131,6 @@ namespace Game
         public abstract void Render();
         public abstract void Update();
         public abstract void Move();
-        //public abstract void TakeDamage(float damage);
-        //public abstract void Die();
 
     }
 }
