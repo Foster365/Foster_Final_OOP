@@ -41,11 +41,11 @@ namespace Game
 
             for(int i = 0; i < Program.Characters.Count; i++)
             {
+                if(Program.Characters[i].LifeController.IsPlayer)
+                    if(CircleCollider.CheckforCollisions(Program.Characters[i]))
+                        Program.Characters[i].LifeController.GetDamage(Damage);
 
-                if(CircleCollider.CheckforCollisions(Program.Characters[i]) && LifeController.IsPlayer)
-                    Program.Characters[i].LifeController.GetDamage(Damage);
-
-                Console.WriteLine("Collision W/ Player");
+                //Console.WriteLine("Collision W/ Player");
 
             }
         }
@@ -53,7 +53,7 @@ namespace Game
         public override void Render()
         {
 
-            Engine.Draw(renderer.Texture, transform.Position.X, transform.Position.Y, transform.Scale.X, transform.Scale.Y, renderer.GetRealWidth() / 2, renderer.GetRealHeight() / 2);
+            Engine.Draw(Renderer.Texture, Transform.Position.X, Transform.Position.Y, Transform.Scale.X, Transform.Scale.Y, Renderer.GetRealWidth() / 2, Renderer.GetRealHeight() / 2);
 
         }
 

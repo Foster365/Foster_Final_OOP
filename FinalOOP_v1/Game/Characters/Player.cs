@@ -15,7 +15,7 @@ namespace Game
         float inmunityMaxTimer = 3; float inmunityTimer = 0;
 
         bool canShoot;
-        float timerShoot; float timetoShoot;
+        float timerShoot = 0; float timetoShoot = .5f;
 
         bool canReceiveDamage;
 
@@ -27,9 +27,6 @@ namespace Game
 
         //Encapsuladas
 
-        public float TimerShoot { get => timerShoot; set => timerShoot = value; }
-        public float TimetoShoot { get => timetoShoot; set => timetoShoot = value; }
-
         float respawnTimer = 3f;
         float timer = 0f;
 
@@ -39,7 +36,6 @@ namespace Game
         {
 
             Speed = _speed;
-            timetoShoot = 0.5f;
             bulletsPool = new ObjectsPool<PlayerBullet>();
 
             inmunity = false;
@@ -65,18 +61,19 @@ namespace Game
                 ScreenLimits();
                 Move();
 
-                TimerShoot += Time.DeltaTime;
-
-                if (Engine.GetKey(Keys.SPACE) && TimerShoot >= TimetoShoot)
+                timerShoot += Time.DeltaTime;
+                Console.WriteLine("Shoot Timer" + timerShoot);
+                if (Engine.GetKey(Keys.SPACE) && timerShoot >= timetoShoot)
                 {
+
                     canShoot = true;
                     Shoot();
-                    TimerShoot = 0;
+                    timerShoot = 0;
 
                 }
 
-                //if (canReceiveDamage)
-                CheckForCollisions();
+                if (canReceiveDamage)
+                    CheckForCollisions();
 
             }
 
@@ -84,53 +81,33 @@ namespace Game
 
         void CheckForCollisions()
         {
-            for (int i = 0; i < Program.Enemies.Count; i++)
+            for (int i = 0; i < Program.Characters.Count; i++)
             {
 
-                if (circleCollider.CheckforCollisions(Program.Enemies[i]) && Program.Enemies[i].LifeController.IsEnemy == true)
+                if (Program.Characters[i].LifeController.IsEnemy)
                 {
 
-                    //if(inmunityTimer >= inmunityMaxTimer/*&& timer > respawnTimer*/ )
-                    //            //{
+                    if (circleCollider.CheckforCollisions(Program.Characters[i]))
+                    {
 
-                    //            //}
+                        //if(inmunityTimer >= inmunityMaxTimer/*&& timer > respawnTimer*/ )
+                        //            //{
 
-                    LifeController.GetDamage(Program.Characters[i].Damage);
-                    canReceiveDamage = false;
-                    inmunityTimer = 0;
-                    canRespawn = true;
-                    Respawn();
-                    timer = 0;
+                        //            //}
+
+                        LifeController.GetDamage(Program.Characters[i].Damage);
+                        //canReceiveDamage = false;
+                        //inmunityTimer = 0;
+                        //canRespawn = true;
+                        //Respawn();
+                        //timer = 0;
+                    }
+
                 }
+                
             }
         }
 
-        //void CheckforCollisions()
-        //{
-        //    inmunityTimer += Time.DeltaTime;
-
-        //    for (int i = 0; i < Program.Characters.Count; i++)
-        //    {
-
-        //        if (CircleCollider.CheckforCollisions(Program.Characters[i]) && Program.Characters[i].LifeController.IsEnemy == true && LifeController.CurrentLife > 0)
-        //        {
-
-        //            //if(inmunityTimer >= inmunityMaxTimer/*&& timer > respawnTimer*/ )
-        //            //{
-
-        //            //}
-        //            Console.WriteLine("Colliding with myself");
-        //            LifeController.GetDamage(Program.Characters[i].Damage);
-        //            canReceiveDamage = false;
-        //            inmunityTimer = 0;
-        //            //canRespawn = true;
-        //            //Respawn();
-        //            //timer = 0;
-
-        //        }
-
-        //    }
-        //}
         public void ScreenLimits()
         {
             if (Transform.Position.Y <= 0)
@@ -191,7 +168,7 @@ namespace Game
             {
 
                 var playerBullet = bulletsPool.Get();
-                playerBullet.Init(Transform.Position, new Vector2(1, 1), new Vector2(20, 10), 0, "Textures/Entities/Characters/BulletPj.png", 1, new Vector2(30, 30), 10, 3);
+                playerBullet.Init(Transform.Position, new Vector2(1, 1), new Vector2(20, 10), 0, "Textures/Entities/Characters/BulletPj.png", 1, new Vector2(50, 50), 10, 3);
 
             }
         }

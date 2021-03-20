@@ -31,8 +31,8 @@ namespace Game
         public override void Deactivate()
         {
             LifeController.Destroyed = true;
-            Program.Environment.Remove(this);
             OnDeactivate?.Invoke(this);
+            Program.Environment.Remove(this);
         }
 
         void CheckForCollisionsWEnemy()
@@ -40,15 +40,21 @@ namespace Game
             for (int i = 0; i < Program.Characters.Count; i++)
             {
 
-                if (circleCollider.CheckforCollisions(Program.Characters[i]) && Program.Characters[i].LifeController.IsEnemy == true)
+                if (Program.Characters[i].LifeController.IsEnemy == true)
                 {
 
-                    Console.WriteLine("Colliding with player");
-                    Deactivate();
-                    Program.Characters[i].LifeController.GetDamage(Damage);
-                    GameManager.Instance.EnemyKills++;
-                    Console.WriteLine("Killcount" + GameManager.Instance.EnemyKills);
-                    //Console.WriteLine("Enemy current life" + Level1Screen.Enemies[i].LifeController.CurrentLife);
+                    if(circleCollider.CheckforCollisions(Program.Characters[i]))
+                    {
+
+                        Console.WriteLine("Colliding with player");
+                        Deactivate();
+                        Program.Characters[i].LifeController.GetDamage(Damage);
+                        GameManager.Instance.EnemyKills++;
+                        Console.WriteLine("Killcount" + GameManager.Instance.EnemyKills);
+                        //Console.WriteLine("Enemy current life" + Level1Screen.Enemies[i].LifeController.CurrentLife);
+
+                    }
+                     
 
                 }
             }

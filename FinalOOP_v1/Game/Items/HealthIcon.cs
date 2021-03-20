@@ -18,17 +18,32 @@ namespace Game
 
         public override void Update()
         {
-            //UpdateLifestack();
+            CheckPlayerLife();
         }
 
-        //public void UpdateLifestack()
-        //{
-        //    if (_player.LifeController.CurrentLife <= _player.LifeController.CurrentLife - .2f)
-        //        Program.Renderizable.Remove(this);
-        //}
         public override void Render()
         {
             Engine.Draw(Renderer.Texture, Transform.Position.X, Transform.Position.Y, Transform.Scale.X, Transform.Scale.Y, Transform.Rotation);
+        }
+
+        void CheckPlayerLife()
+        {
+            for (int i = 0; i < Program.Characters.Count; i++)
+            {
+                if (Program.Characters[i].LifeController.IsPlayer)
+                {
+
+                    //Console.WriteLine("IsPlayer" + Program.Characters[i].LifeController.MaxLife);
+
+                    if (Program.Characters[i].LifeController.CurrentLife == Program.Characters[i].LifeController.MaxLife - Program.Characters[i].LifeController.MaxLife * .2f)
+                    {
+                        Console.WriteLine("Life" + (Program.Characters[i].LifeController.MaxLife - Program.Characters[i].LifeController.MaxLife * .2f));
+                        Program.Environment.Remove(this);
+                        Console.WriteLine("Life Stack hearts" + Program.Environment.Count);
+                    }
+
+                }
+            }
         }
 
     }

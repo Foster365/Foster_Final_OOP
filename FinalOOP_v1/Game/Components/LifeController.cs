@@ -127,7 +127,7 @@ namespace Game
 
             Program.Environment.Remove(entity);
 
-            if(isEnemy)
+            //if(isEnemy)
                 Program.Characters.Remove(entity);
 
             OnDeactivate?.Invoke(this);

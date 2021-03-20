@@ -29,7 +29,7 @@ namespace Game
 
             circleCollider = new CircleCollider(transform, radius);
 
-            Program.Environment.Add(this);
+            Program.Characters.Add(this);
         }
 
         public abstract void Deactivate();

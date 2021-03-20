@@ -10,10 +10,10 @@ namespace Game
     {
 
         float enemySpawnerTimer = 0;
-        float timetoCreate = 4f ;
+        float timetoCreate;
 
         float asteroidTimer = 0;
-        float asteroidSpawnTime = 5f;
+        float asteroidSpawnTime;
 
         float levelTimer = 0;
         float levelMaxTimer = 60;
@@ -30,8 +30,10 @@ namespace Game
 
         public Level1Screen() : base()
         {
-
+            Engine.Clear();
             GameManager.Instance.EnemyKills = 0;
+            enemySpawnerTimer = 4f;
+            asteroidSpawnTime = 5f;
 
         }
 
@@ -47,24 +49,26 @@ namespace Game
 
             }
 
-            //for (int i = 0; i < Program.Environment.Count; i++)
-            //{
+            for (int i = 0; i < Program.Environment.Count; i++)
+            {
 
-            //    Program.Environment[i].Update();
+                Program.Environment[i].Update();
 
-            //}
+            }
+
+            UpdateAnimation();
 
         }
 
         public override void Render()
         {
 
-            //for (int j = 0; j < Program.Environment.Count; j++)
-            //{
+            for (int j = 0; j < Program.Environment.Count; j++)
+            {
 
-            //    Program.Environment[j].Render();
+                Program.Environment[j].Render();
 
-            //}
+            }
 
             for (var i = 0; i < Program.Characters.Count; i++ )
             {
@@ -73,20 +77,18 @@ namespace Game
 
             }
 
-            //if (ActualAnimstate == Animations.levelCountdown)
-            //    Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
+            if (ActualAnimstate == Animations.levelCountdown)
+                Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
 
         }
 
         public override void ResetLevel()
         {
 
-            //Environment_Textures();
+            Environment_Textures();
             CreateCharacters();
-            EnemySpawn();
-            //CreateAsteroid();
-            //UpdateAnimation();
-            //AnimationParameters();
+            CreateAsteroid();
+            AnimationParameters();
 
         }
 
@@ -170,21 +172,22 @@ namespace Game
         void CreateCharacters()
         {
 
-            Program.Characters.Add(new Player(new Vector2(400, 400), new Vector2(0.15f, 0.15f), 0, new Vector2(166, 304), new Vector2(100, 100), 80, "Textures/Entities/Characters/Player.png", 10, 10));
+            Program.Characters.Add(new Player(new Vector2(400, 400), new Vector2(0.15f, 0.15f), 0, new Vector2(166, 304), new Vector2(200, 200), 100, "Textures/Entities/Characters/Player.png", 10, 10));
 
+            EnemySpawn();
 
         }
 
         void Environment_Textures()
         {
 
-            Program.Environment.Add(new HealthIcon(new Vector2(10, 10), new Vector2(0.03f, 0.03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
-            Program.Environment.Add(new HealthIcon(new Vector2(40, 10), new Vector2(0.03f, 0.03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
-            Program.Environment.Add(new HealthIcon(new Vector2(70, 10), new Vector2(0.03f, 0.03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
-            Program.Environment.Add(new HealthIcon(new Vector2(100, 10), new Vector2(0.03f, 0.03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
-            Program.Environment.Add(new HealthIcon(new Vector2(130, 10), new Vector2(0.03f, 0.03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
-
             Program.Environment.Add(new Image(new Vector2(0, 150), new Vector2(.8f, .8f), new Vector2(1920, 1200), 0, "Textures/Level1Background.jpg"));
+
+            Program.Environment.Add(new HealthIcon(new Vector2(10, 10), new Vector2(.03f, .03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
+            Program.Environment.Add(new HealthIcon(new Vector2(40, 10), new Vector2(.03f, .03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
+            Program.Environment.Add(new HealthIcon(new Vector2(70, 10), new Vector2(.03f, .03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
+            Program.Environment.Add(new HealthIcon(new Vector2(100, 10), new Vector2(.03f, .03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
+            Program.Environment.Add(new HealthIcon(new Vector2(130, 10), new Vector2(.03f, .03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
 
         }
 

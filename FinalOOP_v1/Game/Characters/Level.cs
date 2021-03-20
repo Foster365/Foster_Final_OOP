@@ -11,6 +11,7 @@ namespace Game
 
         public Level()
         {
+
             Engine.Clear();
             ResetLevel();
             Console.Write("Level" + this);
