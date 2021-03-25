@@ -10,12 +10,14 @@ namespace Game
     {
 
         float radius;
+
         bool colliding = false;
 
         public CircleCollider(Transform _transform/*, Renderer _renderer*/, float radius):base(_transform/*, _renderer*/, radius)
         {
 
             this.radius = radius;
+
         }
 
         /*2 métodos:

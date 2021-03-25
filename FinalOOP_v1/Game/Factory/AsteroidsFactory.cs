@@ -19,7 +19,7 @@ namespace Game
             {
                 //Agrego opcion para agregar posicion random
                 case AsteroidFactory.asteroid1:
-                    return new Asteroid(position, new Vector2(0.5f, 0.5f), new Vector2(70, 61), 0, "Textures/Entities/Asteroids/Asteroid1.png", 5, 10, 50, new Vector2(30, 30));
+                    return new Asteroid(position, new Vector2(0.5f, 0.5f), new Vector2(70, 61), 0, "Textures/Entities/Asteroids/Asteroid1.png", 5, 10, 50, new Vector2(60, 60));
                 case AsteroidFactory.asteroid2:
                     return new Asteroid(position, new Vector2(0.5f, 0.5f), new Vector2(76, 63), 0, "Textures/Entities/Asteroids/Asteroid2.png", 5, 10, 10, new Vector2(10, 10));
                 case AsteroidFactory.asteroid3:

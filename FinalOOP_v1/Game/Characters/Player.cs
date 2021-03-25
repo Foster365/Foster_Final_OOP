@@ -22,7 +22,7 @@ namespace Game
         bool canRespawn;
 
         float collisionTimer = 0;
-        float collisionMaxTimer = 1f;
+        float collisionMaxTimer = 3f;
 
         ObjectsPool<PlayerBullet> bulletsPool;
 
@@ -67,8 +67,8 @@ namespace Game
                 timerShoot += Time.DeltaTime;
                 //Console.WriteLine("Shoot Timer" + timerShoot);
 
-                //collisionTimer += Time.DeltaTime;
-                //Console.WriteLine("Coll timer" + collisionTimer);
+                collisionTimer += Time.DeltaTime;
+                Console.WriteLine("Coll timer" + collisionTimer);
 
                 if (Engine.GetKey(Keys.SPACE) && timerShoot >= timetoShoot)
                 {
@@ -79,7 +79,7 @@ namespace Game
 
                 }
 
-                if (canReceiveDamage)
+                if (canReceiveDamage && collisionTimer >= collisionMaxTimer)
                     CheckForCollisions();
 
             }
@@ -92,20 +92,21 @@ namespace Game
             for (int i = 0; i < Program.Characters.Count; i++)
             {
 
-                if (Program.Characters[i].LifeController.IsEnemy == true)
+                if (Program.Characters[i].LifeController.IsEnemy)
                 {
 
-                    if (circleCollider.CheckforCollisions(Program.Characters[i]) && collisionTimer >= collisionMaxTimer)
+                    if (circleCollider.CheckforCollisions(Program.Characters[i]))
                     {
 
                         //if(inmunityTimer >= inmunityMaxTimer/*&& timer > respawnTimer*/ )
                         //{
 
                         //}
-
+                        Console.WriteLine("You got hit by an enemy");
                         LifeController.GetDamage(Program.Characters[i].Damage);
+                        Program.Characters[i].LifeController.Deactivate();
                         Console.WriteLine("Player current health" + LifeController.CurrentLife);
-                        //collisionTimer = 0;
+                        collisionTimer = 0;
                         //canReceiveDamage = false;
                         //inmunityTimer = 0;
                         //canRespawn = true;
@@ -116,7 +117,7 @@ namespace Game
                 }
 
             }
-            //collisionTimer = 0;
+            collisionTimer = 0;
         }
 
         public void ScreenLimits()
@@ -162,14 +163,14 @@ namespace Game
 
             Console.WriteLine("Respawning player");
 
-            if (LifeController.Damaged)
-            {
+            //if (LifeController.Damaged)
+            //{
 
                 Transform.Position = randomPosition;
                 inmunity = true;
                 PlayerInmunity();
 
-            }
+            //}
 
         }
 

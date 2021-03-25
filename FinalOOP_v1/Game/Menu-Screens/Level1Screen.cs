@@ -123,7 +123,7 @@ namespace Game
 
             Random random = new Random();
 
-            Vector2 asteroidPosition = new Vector2(random.Next(800, 850), random.Next(0, 150));
+            Vector2 asteroidPosition = new Vector2(random.Next(800, 850), random.Next(0, 600));
 
             if (asteroidTimer >= asteroidSpawnTime)
             {
