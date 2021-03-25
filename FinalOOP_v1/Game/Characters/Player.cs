@@ -21,6 +21,9 @@ namespace Game
 
         bool canRespawn;
 
+        float collisionTimer = 0;
+        float collisionMaxTimer = 1f;
+
         ObjectsPool<PlayerBullet> bulletsPool;
 
         //
@@ -45,8 +48,8 @@ namespace Game
             canRespawn = false;
 
             LifeController = new LifeController(_maxLife, this, false, true);
-            Console.WriteLine("Is Player?" + LifeController.IsPlayer);
-            Console.WriteLine("Is Enemy?" + LifeController.IsEnemy);
+            //Console.WriteLine("Is Player?" + LifeController.IsPlayer);
+            //Console.WriteLine("Is Enemy?" + LifeController.IsEnemy);
 
         }
 
@@ -62,7 +65,11 @@ namespace Game
                 Move();
 
                 timerShoot += Time.DeltaTime;
-                Console.WriteLine("Shoot Timer" + timerShoot);
+                //Console.WriteLine("Shoot Timer" + timerShoot);
+
+                //collisionTimer += Time.DeltaTime;
+                //Console.WriteLine("Coll timer" + collisionTimer);
+
                 if (Engine.GetKey(Keys.SPACE) && timerShoot >= timetoShoot)
                 {
 
@@ -81,21 +88,24 @@ namespace Game
 
         void CheckForCollisions()
         {
+
             for (int i = 0; i < Program.Characters.Count; i++)
             {
 
-                if (Program.Characters[i].LifeController.IsEnemy)
+                if (Program.Characters[i].LifeController.IsEnemy == true)
                 {
 
-                    if (circleCollider.CheckforCollisions(Program.Characters[i]))
+                    if (circleCollider.CheckforCollisions(Program.Characters[i]) && collisionTimer >= collisionMaxTimer)
                     {
 
                         //if(inmunityTimer >= inmunityMaxTimer/*&& timer > respawnTimer*/ )
-                        //            //{
+                        //{
 
-                        //            //}
+                        //}
 
                         LifeController.GetDamage(Program.Characters[i].Damage);
+                        Console.WriteLine("Player current health" + LifeController.CurrentLife);
+                        //collisionTimer = 0;
                         //canReceiveDamage = false;
                         //inmunityTimer = 0;
                         //canRespawn = true;
@@ -104,8 +114,9 @@ namespace Game
                     }
 
                 }
-                
+
             }
+            //collisionTimer = 0;
         }
 
         public void ScreenLimits()
@@ -168,7 +179,7 @@ namespace Game
             {
 
                 var playerBullet = bulletsPool.Get();
-                playerBullet.Init(Transform.Position, new Vector2(1, 1), new Vector2(20, 10), 0, "Textures/Entities/Characters/BulletPj.png", 1, new Vector2(50, 50), 10, 3);
+                playerBullet.Init(Transform.Position, new Vector2(1, 1), new Vector2(20, 10), 0, "Textures/Entities/Characters/BulletPj.png", 1, new Vector2(100, 100), 10, 3);
 
             }
         }
@@ -203,7 +214,7 @@ namespace Game
             {
 
                 Engine.Draw(Renderer.Texture, Transform.Position.X, Transform.Position.Y, Transform.Scale.X, Transform.Scale.Y, transform.Rotation, Renderer.GetRealWidth()/2, Renderer.GetRealHeight() / 2);
-            
+                //LifeController.RenderAnimation();
             }
         }
         

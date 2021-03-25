@@ -43,8 +43,12 @@ namespace Game
             {
                 if(Program.Characters[i].LifeController.IsPlayer)
                     if(CircleCollider.CheckforCollisions(Program.Characters[i]))
-                        Program.Characters[i].LifeController.GetDamage(Damage);
+                    {
 
+                        Program.Characters[i].LifeController.GetDamage(Damage);
+                        LifeController.Deactivate();
+
+                    }
                 //Console.WriteLine("Collision W/ Player");
 
             }

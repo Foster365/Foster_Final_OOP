@@ -16,7 +16,7 @@ namespace Game
         public int ActualAnimationFrame { get => actualAnimationFrame; set => actualAnimationFrame = value; }
         public List<Texture> AnimList { get => animList; set => animList = value; }
 
-        public Animation(List<Texture> _animationList, float _speed, bool isloop = true)
+        public Animation(List<Texture> _animationList, float _speed, bool isloop)
         {
 
             speed = _speed;

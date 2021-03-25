@@ -22,42 +22,44 @@ namespace Game
 
             if (timer >= BulletLifetime)
             {
-                Deactivate();
+                LifeController.Deactivate();
             }
 
             CheckForCollisionsWEnemy();
         }
 
-        public override void Deactivate()
-        {
-            LifeController.Destroyed = true;
-            OnDeactivate?.Invoke(this);
-            Program.Environment.Remove(this);
-        }
+        //public override void Deactivate()
+        //{
+        //    LifeController.Destroyed = true;
+        //    OnDeactivate?.Invoke(this);
+        //    Program.Environment.Remove(this);
+        //}
 
         void CheckForCollisionsWEnemy()
         {
+
             for (int i = 0; i < Program.Characters.Count; i++)
             {
 
-                if (Program.Characters[i].LifeController.IsEnemy == true)
+                if (Program.Characters[i].LifeController.IsEnemy)
                 {
 
                     if(circleCollider.CheckforCollisions(Program.Characters[i]))
                     {
 
-                        Console.WriteLine("Colliding with player");
-                        Deactivate();
+                        Console.WriteLine("Colliding with enemy");
                         Program.Characters[i].LifeController.GetDamage(Damage);
+                        LifeController.Deactivate();
                         GameManager.Instance.EnemyKills++;
                         Console.WriteLine("Killcount" + GameManager.Instance.EnemyKills);
                         //Console.WriteLine("Enemy current life" + Level1Screen.Enemies[i].LifeController.CurrentLife);
 
                     }
-                     
 
                 }
+
             }
+
         }
 
         public override void Move()

@@ -10,10 +10,10 @@ namespace Game
     {
 
         float enemySpawnerTimer = 0;
-        float timetoCreate;
+        float timetoCreate = 4f;
 
         float asteroidTimer = 0;
-        float asteroidSpawnTime;
+        float asteroidSpawnTime = 5f;
 
         float levelTimer = 0;
         float levelMaxTimer = 60;
@@ -30,10 +30,9 @@ namespace Game
 
         public Level1Screen() : base()
         {
-            Engine.Clear();
+
+            //Engine.Clear();
             GameManager.Instance.EnemyKills = 0;
-            enemySpawnerTimer = 4f;
-            asteroidSpawnTime = 5f;
 
         }
 
@@ -56,7 +55,10 @@ namespace Game
 
             }
 
-            UpdateAnimation();
+            EnemySpawn();
+            CreateAsteroid();
+
+            //UpdateAnimation();
 
         }
 
@@ -77,8 +79,8 @@ namespace Game
 
             }
 
-            if (ActualAnimstate == Animations.levelCountdown)
-                Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
+            //if (ActualAnimstate == Animations.levelCountdown)
+            //    Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
 
         }
 
@@ -87,7 +89,6 @@ namespace Game
 
             Environment_Textures();
             CreateCharacters();
-            CreateAsteroid();
             AnimationParameters();
 
         }
@@ -102,7 +103,7 @@ namespace Game
 
             enemySpawnerTimer += Time.DeltaTime;
 
-            Console.WriteLine("Enemy timer" + enemySpawnerTimer);
+            //Console.WriteLine("Enemy timer" + enemySpawnerTimer);
 
             if (enemySpawnerTimer >= timetoCreate)
             {
@@ -173,8 +174,6 @@ namespace Game
         {
 
             Program.Characters.Add(new Player(new Vector2(400, 400), new Vector2(0.15f, 0.15f), 0, new Vector2(166, 304), new Vector2(200, 200), 100, "Textures/Entities/Characters/Player.png", 10, 10));
-
-            EnemySpawn();
 
         }
 

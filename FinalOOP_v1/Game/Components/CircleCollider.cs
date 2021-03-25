@@ -38,7 +38,7 @@ namespace Game
 
                 colliding = true;
                 Colliders.Add(this);
-                Console.WriteLine("Collision w/" + target);
+                Console.WriteLine(this + "Collision w/" + target);
 
             }
 

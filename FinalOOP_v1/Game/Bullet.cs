@@ -32,6 +32,6 @@ namespace Game
             Program.Characters.Add(this);
         }
 
-        public abstract void Deactivate();
+        //public abstract void Deactivate();
     }
 }

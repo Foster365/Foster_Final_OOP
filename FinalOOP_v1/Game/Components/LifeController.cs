@@ -115,7 +115,6 @@ namespace Game
             CurrentLife -= damagePoints;
 
             Console.WriteLine(entity + "Life Points" + CurrentLife);
-
             if (CurrentLife <= 0) Deactivate();
 
         }
@@ -125,15 +124,14 @@ namespace Game
 
             Console.WriteLine("Deactivating entity");
 
-            Program.Environment.Remove(entity);
-
-            //if(isEnemy)
-                Program.Characters.Remove(entity);
-
             OnDeactivate?.Invoke(this);
 
-            //UpdateAnimation();
-            //RenderAnimation();
+            Program.Characters.Remove(entity);
+
+            Program.Environment.Remove(entity);
+
+            UpdateAnimation();
+            RenderAnimation();
 
         }
 
@@ -165,11 +163,11 @@ namespace Game
 
             //}
 
-            deathAnimation = new Animation(deathFrames, 1f, false);
+            deathAnimation = new Animation(deathFrames, .05f, false);
 
         }
 
-        void UpdateAnimation()
+        public void UpdateAnimation()
         {
             if (actualAnimstate == Animations.deathAnimation)
             {
@@ -181,7 +179,7 @@ namespace Game
 
         }
 
-        void RenderAnimation()
+        public void RenderAnimation()
         {
 
             if (actualAnimstate == Animations.deathAnimation)
