@@ -115,8 +115,12 @@ namespace Game
             CurrentLife -= damagePoints;
 
             Console.WriteLine(entity + "Life Points" + CurrentLife);
-            if (CurrentLife <= 0) Deactivate();
+            if (CurrentLife <= 0)
+            {
 
+                Deactivate();
+
+            }
         }
 
         public void Deactivate()
@@ -126,12 +130,13 @@ namespace Game
 
             OnDeactivate?.Invoke(this);
 
+            UpdateAnimation();
+            RenderAnimation();
+
             Program.Characters.Remove(entity);
 
             Program.Environment.Remove(entity);
 
-            UpdateAnimation();
-            RenderAnimation();
 
         }
 
@@ -156,7 +161,7 @@ namespace Game
             deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion14.png"));
             deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion15.png"));
 
-            //for (int i = 3; i < 9; i++)
+            //for (int i = 1; i < 15; i++)
             //{
 
             //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/" + i.ToString() + ".png"));
@@ -185,8 +190,7 @@ namespace Game
             if (actualAnimstate == Animations.deathAnimation)
             {
 
-                Engine.Draw(deathAnimation.AnimList[deathAnimation.ActualAnimationFrame], entity.Transform.Position.X, entity.Transform.Position.Y, 1, 1, 0, 0);
-                Console.WriteLine("Explosion rendered");
+                
 
             }
         }

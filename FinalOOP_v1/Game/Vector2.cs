@@ -76,7 +76,8 @@ namespace Game
 
         public static Vector2 NormalizedVector(float x, float y)
         {
-            return new Vector2(1, 1);
+            float magnitude = Magnitude(x, y);
+            return new Vector2(x / magnitude, y / magnitude);
         }
 
         public static float SqrMagnitude(float x, float y)

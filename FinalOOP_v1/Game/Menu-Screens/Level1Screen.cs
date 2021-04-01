@@ -58,7 +58,7 @@ namespace Game
             EnemySpawn();
             CreateAsteroid();
 
-            //UpdateAnimation();
+            UpdateAnimation();
 
         }
 
@@ -79,8 +79,8 @@ namespace Game
 
             }
 
-            //if (ActualAnimstate == Animations.levelCountdown)
-            //    Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
+            if (ActualAnimstate == Animations.levelCountdown)
+                Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
 
         }
 
@@ -175,6 +175,7 @@ namespace Game
 
             Program.Characters.Add(new Player(new Vector2(400, 400), new Vector2(0.15f, 0.15f), 0, new Vector2(166, 304), new Vector2(200, 200), 100, "Textures/Entities/Characters/Player.png", 10, 10));
 
+            //Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.finalBossEnemy, new Vector2(100, 200)));
         }
 
         void Environment_Textures()
@@ -190,18 +191,18 @@ namespace Game
 
         }
 
-        //public void NextLevel()
-        //{
+        public void NextLevel()
+        {
 
-        //    if (GameManager.Instance.EnemyKills == 10)
-        //    {
+            if (GameManager.Instance.EnemyKills == 10)
+            {
 
-        //        Program.ActualScreenState = Program.ScreenFlow.level2Screen;
-        //        Engine.Clear();
+                Program.ActualScreenState = Program.ScreenFlow.level2Screen;
+                Engine.Clear();
 
-        //    }
+            }
 
-        //}
+        }
 
     }
 }

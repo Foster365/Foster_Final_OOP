@@ -48,8 +48,6 @@ namespace Game
             canRespawn = false;
 
             LifeController = new LifeController(_maxLife, this, false, true);
-            //Console.WriteLine("Is Player?" + LifeController.IsPlayer);
-            //Console.WriteLine("Is Enemy?" + LifeController.IsEnemy);
 
         }
 
@@ -79,8 +77,8 @@ namespace Game
 
                 }
 
-                if (canReceiveDamage && collisionTimer >= collisionMaxTimer)
-                    CheckForCollisions();
+                //if (canReceiveDamage && collisionTimer >= collisionMaxTimer)
+                //    CheckForCollisions();
 
             }
 

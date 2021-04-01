@@ -14,67 +14,78 @@ namespace Game
 
         float lifeTimer = 0;
 
-        //ObjectsPool<EnemyBullet> bulletsPool;
+        ObjectsPool<EnemyBullet> bulletsPool;
 
-        float timerShoot;
-        float timetoShoot;
-
-        ////
-
-        ////Encapsuladas
-        //public Vector2 EnemyPosition { get => enemyPosition; set => enemyPosition = value; }
-        //public Vector2 EnemySpeed { get => enemySpeed; set => enemySpeed = value; }
-
-        //public float TimerShoot { get => timerShoot; set => timerShoot = value; }
-        //public float TimetoShoot { get => timetoShoot; set => timetoShoot = value; }
-        //public float Angle { get => angle; set => angle = value; }
-
-        //
+        float shootTimer;
+        float shootMaxTimer;
 
         public Enemy(Vector2 _position, float _rotation, Vector2 _scale, Vector2 _size, Vector2 _enemySpeed, string _texture, int _maxHealth, float _angle, float _lifetime, int _damage, float _colliderRadius) : base(_position, _scale, _size, _rotation, _texture, _damage, _colliderRadius, _enemySpeed)/*(position, rotation, scale, size, enemySpeed, texture, life)*/
         {
 
             Speed = _enemySpeed;
-            timetoShoot = 0.8f;
+            shootMaxTimer = 1.5f;
+
+            bulletsPool = new ObjectsPool<EnemyBullet>();
 
             LifeController = new LifeController(_maxHealth, _lifetime, this, true, false);
                 
         }
 
-        public override void Update()//Ver bien esto
+        public override void Update()
         {
+
             if (!LifeController.Destroyed)
             {
 
                 Move();
 
-                //LifeController.LifeTimer();
+                LifeController.LifeTimer();
 
-                //lifeTimer += Time.DeltaTime;
-                //Console.WriteLine(LifeController.LifeTime);
-                //if (lifeTimer >= LifeController.LifeTime)
-                //    Level1Screen.RenderizableObjects.Remove(this);
+                CheckForCollisions();
 
-                //for (int i = 0; i < Program.Bullets.Count; i++)
-                //{
+                shootTimer += Time.DeltaTime;
 
-                //    if (circleCollider.CheckforCollisions(Program.Bullets[i]))
-                //    {
+                if (shootTimer >= shootMaxTimer)
+                {
 
-                //        Level1Screen.Enemies.Remove(this);
-                //        Console.WriteLine("Enemy destroyed");
+                    Shoot();
+                    shootTimer = 0;
 
-                //    }
-                //}
+                }
+
+            }
+
+        }
+        void CheckForCollisions()
+        {
+
+            for (int i = 0; i < Program.Characters.Count; i++)
+            {
+
+                if (Program.Characters[i].LifeController.IsPlayer)
+                {
+
+                    if (circleCollider.CheckforCollisions(Program.Characters[i]))
+                    {
+
+                        Console.WriteLine("You got hit by an enemy");
+                        Program.Characters[i].LifeController.GetDamage(Program.Characters[i].Damage);
+                        LifeController.Deactivate();
+
+                    }
+
+                }
+
             }
 
         }
 
+
         public void Shoot()
         {
-            //var enemyBullet = bulletsPool.Get();
-            //enemyBullet.Init(enemyPosition, new Vector2(1, 1), new Vector2(24, 27), 0, "Textures/BulletEnemy1.png", 3);
-            //Console.WriteLine("PlayerPos.X"+ playerPos.X + "PlayerPos.Y" + playerPos.Y, "bulletScale.X" + bullet.BulletScale.X + "bulletScale.Y" + bullet.BulletScale.Y + "bulletSize.X" + bullet.BulletSize.X + "bulletSize.Y" + bullet.BulletSize.Y, "bulletRotation" + bullet.BulletRotation + "bulletTexture" + bullet.BulletTexture);
+
+            var enemybullet = bulletsPool.Get();
+            enemybullet.Init(transform.Position, new Vector2(1, 1), new Vector2(24, 27), 0, "Textures/Entities/Characters/BulletEnemy1.png", 3, new Vector2(200, 200), 10, 5);
 
         }
 

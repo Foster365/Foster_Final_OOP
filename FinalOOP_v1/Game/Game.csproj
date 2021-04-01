@@ -46,6 +46,7 @@
     <Compile Include="Characters\Asteroid.cs" />
     <Compile Include="Characters\BossEnemy.cs" />
     <Compile Include="Characters\Entity.cs" />
+    <Compile Include="EnemyBullet.cs" />
     <Compile Include="Components\AnimationComponent.cs" />
     <Compile Include="Components\Background.cs" />
     <Compile Include="Bullet.cs" />
