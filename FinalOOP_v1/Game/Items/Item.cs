@@ -8,11 +8,6 @@ namespace Game
 {
     public abstract class Item : IItem
     {
-        Vector2 position;
-        Vector2 size;
-        Vector2 scale;
-        float rotation;
-        string texture;
 
         Renderer renderer;
         Transform transform;

@@ -53,7 +53,7 @@
     <Compile Include="Components\LifeController.cs" />
     <Compile Include="Factory\AsteroidsFactory.cs" />
     <Compile Include="Factory\PowerUpsFactory.cs" />
-    <Compile Include="Characters\Level.cs" />
+    <Compile Include="Characters\Screen.cs" />
     <Compile Include="Interfaces\IManager.cs" />
     <Compile Include="Items\PowerUp.cs" />
     <Compile Include="Items\PowerUps\DamagePowerUp.cs" />
@@ -386,10 +386,13 @@
     <Content Include="Textures\Entities\Characters\Enemy4.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Textures\Level1Background.jpg">
+    <Content Include="Textures\Level_Backgrounds\Level1Background.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Textures\Entities\Characters\Player.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Level_Backgrounds\Level2Background.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Textures\PowerUps\DamagePowerUp.png">

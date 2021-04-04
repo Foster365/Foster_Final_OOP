@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public class Level1Screen : Level
+    public class Level1Screen : Screen
     {
 
         float enemySpawnerTimer = 0;
@@ -16,7 +16,7 @@ namespace Game
         float asteroidSpawnTime = 5f;
 
         float levelTimer = 0;
-        float levelMaxTimer = 60;
+        float maxLevelTimer = 60;
 
         Animation levelCountdown;
 
@@ -26,27 +26,15 @@ namespace Game
 
         public Animations ActualAnimstate { get => actualAnimstate; set => actualAnimstate = value; }
 
-        //public Animation Explosion { get => explosion; set => explosion = value; }
-
         public Level1Screen() : base()
         {
 
-            //Engine.Clear();
             GameManager.Instance.EnemyKills = 0;
 
         }
 
         public override void Update()
         {
-
-            levelTimer -= Time.DeltaTime;
-
-            for(int i = 0; i < Program.Characters.Count; i++)
-            {
-
-                Program.Characters[i].Update();
-
-            }
 
             for (int i = 0; i < Program.Environment.Count; i++)
             {
@@ -55,10 +43,18 @@ namespace Game
 
             }
 
+            for(int i = 0; i < Program.Characters.Count; i++)
+            {
+
+                Program.Characters[i].Update();
+
+            }
+
+            LevelCounter();
             EnemySpawn();
             CreateAsteroid();
-
             UpdateAnimation();
+            NextLevel();
 
         }
 
@@ -84,6 +80,18 @@ namespace Game
 
         }
 
+        void LevelCounter()
+        {
+
+            levelTimer += Time.DeltaTime;
+            Console.WriteLine(levelTimer);
+
+            if (levelTimer >= maxLevelTimer)
+                Program.ActualScreenState = Program.ScreenFlow.gameOverScreen;
+
+        }
+
+
         public override void ResetLevel()
         {
 
@@ -103,8 +111,6 @@ namespace Game
 
             enemySpawnerTimer += Time.DeltaTime;
 
-            //Console.WriteLine("Enemy timer" + enemySpawnerTimer);
-
             if (enemySpawnerTimer >= timetoCreate)
             {
 
@@ -119,7 +125,6 @@ namespace Game
         {
 
             asteroidTimer += Time.DeltaTime;
-            //Console.WriteLine("Asteroid timer" + asteroidTimer);
 
             Random random = new Random();
 
@@ -127,19 +132,11 @@ namespace Game
 
             if (asteroidTimer >= asteroidSpawnTime)
             {
+
                 Program.Environment.Add(AsteroidsFactory.CreateAsteroid(AsteroidsFactory.AsteroidFactory.asteroid1, asteroidPosition));
                 asteroidTimer = 0;
+
             }
-
-        }
-
-        void UpdateLevelCounter()
-        {
-
-            levelTimer += Time.DeltaTime;
-
-            if (levelTimer >= levelMaxTimer) /*Console.WriteLine("Game over!");*/
-                Program.ActualScreenState = Program.ScreenFlow.gameOverScreen;
 
         }
 
@@ -148,7 +145,7 @@ namespace Game
 
             List<Texture> countdownFrames = new List<Texture>();
 
-            for (int i = 60; i >= 0; i--)
+            for (int i = 60; i >= 1; i--)
             {
 
                 countdownFrames.Add(Engine.GetTexture("Textures/Countdown/" + i.ToString() + ".png"));
@@ -173,15 +170,14 @@ namespace Game
         void CreateCharacters()
         {
 
-            Program.Characters.Add(new Player(new Vector2(400, 400), new Vector2(0.15f, 0.15f), 0, new Vector2(166, 304), new Vector2(200, 200), 100, "Textures/Entities/Characters/Player.png", 10, 10));
+            Program.Characters.Add(new Player(new Vector2(400, 400), new Vector2(0.15f, 0.15f), 0, new Vector2(166, 304), new Vector2(300, 300), 100, "Textures/Entities/Characters/Player.png", 10, 10));
 
-            //Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.finalBossEnemy, new Vector2(100, 200)));
         }
 
         void Environment_Textures()
         {
 
-            Program.Environment.Add(new Image(new Vector2(0, 150), new Vector2(.8f, .8f), new Vector2(1920, 1200), 0, "Textures/Level1Background.jpg"));
+            Program.Environment.Add(new Image(new Vector2(0, 150), new Vector2(.8f, .8f), new Vector2(1920, 1200), 0, "Textures/Level_Backgrounds/Level1Background.jpg"));
 
             Program.Environment.Add(new HealthIcon(new Vector2(10, 10), new Vector2(.03f, .03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
             Program.Environment.Add(new HealthIcon(new Vector2(40, 10), new Vector2(.03f, .03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
@@ -198,7 +194,6 @@ namespace Game
             {
 
                 Program.ActualScreenState = Program.ScreenFlow.level2Screen;
-                Engine.Clear();
 
             }
 

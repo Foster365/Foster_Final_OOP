@@ -12,9 +12,6 @@ namespace Game
         //Variables
         Pursuit pursuitBehaviour;
         ObjectsPool<PlayerBullet> poolBullets = new ObjectsPool<PlayerBullet>();
-        Vector2 position;
-
-        float lifeTimer = 0;
 
         float timerShoot;
         float timetoShoot;

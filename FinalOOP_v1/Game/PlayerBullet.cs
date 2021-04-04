@@ -28,13 +28,6 @@ namespace Game
             CheckForCollisionsWEnemy();
         }
 
-        //public override void Deactivate()
-        //{
-        //    LifeController.Destroyed = true;
-        //    OnDeactivate?.Invoke(this);
-        //    Program.Environment.Remove(this);
-        //}
-
         void CheckForCollisionsWEnemy()
         {
 
@@ -64,13 +57,16 @@ namespace Game
 
         public override void Move()
         {
+
             Transform.Position += new Vector2(speed.X * Time.DeltaTime, 0);
-            //Engine.Debug(transform.Position.X);
+
         }
 
         public override void Render()
         {
+
             Engine.Draw(Renderer.Texture, Transform.Position.X, Transform.Position.Y, Transform.Scale.X, Transform.Scale.Y, Transform.Rotation, Renderer.GetRealWidth()/2, Renderer.GetRealHeight()/2);
+
         }
     }
 }

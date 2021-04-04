@@ -67,9 +67,11 @@ namespace Game
 
             if (Engine.GetKey(Keys.SPACE) && Program.canPressSpace)
             {
+
                 Program.canPressSpace = false;
                 Program.timerSpace = 0f;
                 EnterButton();
+
             }
         }
 

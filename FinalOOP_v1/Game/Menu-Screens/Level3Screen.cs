@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public class Level3Screen : Level
+    public class Level3Screen : Screen
     {
         public override void Render()
         {

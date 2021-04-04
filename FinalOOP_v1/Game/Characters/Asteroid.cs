@@ -27,10 +27,6 @@ namespace Game
         {
 
             Transform.Position -= new Vector2(speed.X * Time.DeltaTime, 0);
-            //Transform.Position += new Vector2(0, speed.Y * Time.DeltaTime);
-
-            //angularSpeed += angularAceleration * Time.DeltaTime;
-            //angle += angularSpeed * Time.DeltaTime + 0.5f * angularAceleration * Time.DeltaTime * Time.DeltaTime;
 
         }
 
@@ -39,10 +35,17 @@ namespace Game
 
             Move();
 
-            for(int i = 0; i < Program.Characters.Count; i++)
+            CheckForCollisionsWPlayer();
+
+        }
+
+        void CheckForCollisionsWPlayer()
+        {
+
+            for (int i = 0; i < Program.Characters.Count; i++)
             {
-                if(Program.Characters[i].LifeController.IsPlayer)
-                    if(CircleCollider.CheckforCollisions(Program.Characters[i]))
+                if (!Program.Characters[i].LifeController.IsEnemy)
+                    if (CircleCollider.CheckforCollisions(Program.Characters[i]))
                     {
 
                         Program.Characters[i].LifeController.GetDamage(Damage);
@@ -52,6 +55,7 @@ namespace Game
                 //Console.WriteLine("Collision W/ Player");
 
             }
+
         }
 
         public override void Render()

@@ -15,7 +15,7 @@ namespace Game
         float inmunityMaxTimer = 3; float inmunityTimer = 0;
 
         bool canShoot;
-        float timerShoot = 0; float timetoShoot = .5f;
+        float timerShoot = 0; float timetoShoot = .3f;
 
         bool canReceiveDamage;
 
@@ -66,7 +66,7 @@ namespace Game
                 //Console.WriteLine("Shoot Timer" + timerShoot);
 
                 collisionTimer += Time.DeltaTime;
-                Console.WriteLine("Coll timer" + collisionTimer);
+                //Console.WriteLine("Coll timer" + collisionTimer);
 
                 if (Engine.GetKey(Keys.SPACE) && timerShoot >= timetoShoot)
                 {
@@ -178,7 +178,7 @@ namespace Game
             {
 
                 var playerBullet = bulletsPool.Get();
-                playerBullet.Init(Transform.Position, new Vector2(1, 1), new Vector2(20, 10), 0, "Textures/Entities/Characters/BulletPj.png", 1, new Vector2(100, 100), 10, 3);
+                playerBullet.Init(Transform.Position, new Vector2(1, 1), new Vector2(20, 10), 0, "Textures/Entities/Characters/BulletPj.png", 1, new Vector2(200, 200), 10, 1);
 
             }
         }

@@ -33,8 +33,6 @@ namespace Game
                 if (Program.Characters[i].LifeController.IsPlayer)
                 {
 
-                    //Console.WriteLine("IsPlayer" + Program.Characters[i].LifeController.MaxLife);
-
                     if (Program.Characters[i].LifeController.CurrentLife == Program.Characters[i].LifeController.MaxLife - Program.Characters[i].LifeController.MaxLife * .2f)
                     {
                         Console.WriteLine("Life" + (Program.Characters[i].LifeController.MaxLife - Program.Characters[i].LifeController.MaxLife * .2f));

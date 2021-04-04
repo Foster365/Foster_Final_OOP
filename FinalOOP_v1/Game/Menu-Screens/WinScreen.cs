@@ -8,8 +8,6 @@ namespace Game
 {
     public class WinScreen
     {
-        Image background;
-        Image win;
 
         public WinScreen()
         {

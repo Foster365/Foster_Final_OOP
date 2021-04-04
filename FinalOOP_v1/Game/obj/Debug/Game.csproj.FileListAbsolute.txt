@@ -265,7 +265,6 @@ E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\60.png
 E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\7.png
 E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\8.png
 E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\9.png
-E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Level1Background.jpg
 E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\PowerUps\DamagePowerUp.png
 E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\PowerUps\HealthPowerUp.png
 E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\PowerUps\RandomPowerUp.png
@@ -302,3 +301,5 @@ E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characte
 E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Enemy3.png
 E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Enemy4.png
 E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Player.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Level_Backgrounds\Level1Background.jpg
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Level_Backgrounds\Level2Background.jpg

@@ -26,7 +26,7 @@ namespace Game
         #endregion
         int enemyKills = 0;
         private int points;
-        Level actualLevel;
+        Screen actualLevel;
 
         PowerUpsFactory.PowerUps actualPowerUp;
         //List<Program.ScreenFlow> levelScreens = new List<Program.ScreenFlow>();
