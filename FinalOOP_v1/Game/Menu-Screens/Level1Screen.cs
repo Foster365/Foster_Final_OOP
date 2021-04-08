@@ -190,7 +190,7 @@ namespace Game
         public void NextLevel()
         {
 
-            if (GameManager.Instance.EnemyKills == 3)
+            if (GameManager.Instance.EnemyKills == 10)
             {
 
                 Program.ActualScreenState = Program.ScreenFlow.level2Screen;
