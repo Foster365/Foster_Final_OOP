@@ -1,0 +1,2 @@
+Hi!
+This is my project, which i'm developing in C#, using some design patterns and a bunch of OOP concepts.
