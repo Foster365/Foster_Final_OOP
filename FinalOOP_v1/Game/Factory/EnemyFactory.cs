@@ -21,7 +21,7 @@ namespace Game
                 case EnemiesFactory.enemyLevel1:
                     return new Enemy(position, -90, new Vector2(0.5f, 0.5f), new Vector2(144, 145), new Vector2(100, 100), "Textures/Entities/Characters/Enemy1.png", 10, 0, 30, 5, 30);
                 case EnemiesFactory.enemyLevel2:
-                    return new Enemy(position, -90, new Vector2(0.5f, 0.5f), new Vector2(31, 48), new Vector2(100, 100), "Textures/Entities/Characters/Enemy2.jpg", 30, 0, 20, 10, 30);
+                    return new Enemy(position, -90, new Vector2(0.5f, 0.5f), new Vector2(31, 48), new Vector2(100, 100), "Textures/Entities/Characters/Enemy2.png", 30, 0, 20, 10, 30);
                 case EnemiesFactory.enemyLevel3:
                     return new Enemy(position, -90, new Vector2(0.5f, 0.5f), new Vector2(182, 223), new Vector2(400, 400), "Textures/Entities/Characters/Enemy3.png", 50, 0, 8, 5, 30);
                 case EnemiesFactory.enemyLevel4:

@@ -30,6 +30,8 @@ namespace Game
         public abstract void Render();
         public virtual void CleanAllElements()
         {
+            Program.Environment.Clear();
+            Program.Characters.RemoveRange(0, Program.Characters.Count);
         }
 
     }

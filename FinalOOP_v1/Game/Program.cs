@@ -109,7 +109,6 @@ namespace Game
         {
 
             UpdateScreenFlow();
-            //Console.WriteLine(actualScreenState);
 
         }
 
@@ -125,8 +124,8 @@ namespace Game
             else if (ActualScreenState == ScreenFlow.level1Screen)
                 Level1Screen.Update();
 
-            //else if (ActualScreenState == ScreenFlow.level2Screen)
-            //    Level2Screen.Update();
+            else if (ActualScreenState == ScreenFlow.level2Screen)
+                Level2Screen.Update();
 
             else if (ActualScreenState == ScreenFlow.level3Screen)
                 Level3Screen.Update();
@@ -170,8 +169,8 @@ namespace Game
             else if (ActualScreenState == ScreenFlow.level1Screen)
                 Level1Screen.Render();
 
-            //else if (ActualScreenState == ScreenFlow.level2Screen)
-            //    Level2Screen.Render();
+            else if (ActualScreenState == ScreenFlow.level2Screen)
+                Level2Screen.Render();
 
             else if (ActualScreenState == ScreenFlow.level3Screen)
                 Level3Screen.Render();
