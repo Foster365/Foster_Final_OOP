@@ -9,6 +9,10 @@ namespace Game
     public class HealthIcon : Item
     {
 
+        bool isDamage;
+
+        public bool IsDamage { get => isDamage; set => isDamage = false; }
+
         public HealthIcon(Vector2 position, Vector2 scale, Vector2 size, float rotation, string texture) : base(position, size, scale, rotation, texture)
         {
 
@@ -18,7 +22,7 @@ namespace Game
 
         public override void Update()
         {
-            CheckPlayerLife();
+            //CheckPlayerLife();
         }
 
         public override void Render()
@@ -33,11 +37,12 @@ namespace Game
                 if (Program.Characters[i].LifeController.IsPlayer)
                 {
 
-                    if (Program.Characters[i].LifeController.CurrentLife == Program.Characters[i].LifeController.MaxLife - Program.Characters[i].LifeController.MaxLife * .2f)
+                    if (isDamage/*Program.Characters[i].LifeController.CurrentLife == Program.Characters[i].LifeController.MaxLife - Program.Characters[i].LifeController.MaxLife * .2f*/)
                     {
                         Console.WriteLine("Life" + (Program.Characters[i].LifeController.MaxLife - Program.Characters[i].LifeController.MaxLife * .2f));
                         Program.Environment.Remove(this);
                         Console.WriteLine("Life Stack hearts" + Program.Environment.Count);
+                        isDamage = false;
                     }
 
                 }

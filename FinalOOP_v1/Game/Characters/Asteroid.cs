@@ -44,7 +44,7 @@ namespace Game
 
             for (int i = 0; i < Program.Characters.Count; i++)
             {
-                if (!Program.Characters[i].LifeController.IsEnemy)
+                if (Program.Characters[i].LifeController.IsPlayer/* && CircleCollider.CheckforCollisions(Program.Characters[i])*/)
                     if (CircleCollider.CheckforCollisions(Program.Characters[i]))
                     {
 

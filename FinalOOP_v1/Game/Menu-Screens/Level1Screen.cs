@@ -84,7 +84,7 @@ namespace Game
         {
 
             levelTimer += Time.DeltaTime;
-            Console.WriteLine(levelTimer);
+            //Console.WriteLine(levelTimer);
 
             if (levelTimer >= maxLevelTimer)
                 Program.ActualScreenState = Program.ScreenFlow.gameOverScreen;
@@ -178,12 +178,6 @@ namespace Game
         {
 
             Program.Environment.Add(new Image(new Vector2(0, 150), new Vector2(.8f, .8f), new Vector2(1920, 1200), 0, "Textures/Level_Backgrounds/Level1Background.jpg"));
-
-            Program.Environment.Add(new HealthIcon(new Vector2(10, 10), new Vector2(.03f, .03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
-            Program.Environment.Add(new HealthIcon(new Vector2(40, 10), new Vector2(.03f, .03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
-            Program.Environment.Add(new HealthIcon(new Vector2(70, 10), new Vector2(.03f, .03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
-            Program.Environment.Add(new HealthIcon(new Vector2(100, 10), new Vector2(.03f, .03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
-            Program.Environment.Add(new HealthIcon(new Vector2(130, 10), new Vector2(.03f, .03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
 
         }
 

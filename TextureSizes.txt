@@ -1,0 +1,8 @@
+Arrow -> 55 x 108
+TextBut -> 382 x 198
+TextCre -> 217 x 48
+TextEx -> 96 x 39
+TextLg -> 337 x 73
+TextMMenu -> 207 x 56
+TextNg -> 331 x 71
+TextPlay -> 155 x 80

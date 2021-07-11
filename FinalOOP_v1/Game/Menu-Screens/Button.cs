@@ -55,7 +55,7 @@ namespace Game
             else return this;
         }
 
-        public void Draw()
+        public void Render()
         {
             Engine.Draw(renderer.Texture, transform.Position.X, transform.Position.Y);
         }

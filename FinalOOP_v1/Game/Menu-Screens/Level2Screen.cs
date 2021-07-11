@@ -54,7 +54,7 @@ namespace Game
             EnemySpawn();
             CreateAsteroid();
             //UpdateAnimation();
-            NextLevel();
+            //NextLevel();
 
         }
 

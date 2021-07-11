@@ -10,6 +10,6 @@ namespace Game
     {
         void Start();
         void Execute();
-        void Destroy();
+        //void Destroy();
     }
 }

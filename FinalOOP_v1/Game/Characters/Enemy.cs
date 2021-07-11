@@ -41,7 +41,7 @@ namespace Game
 
                 LifeController.LifeTimer();
 
-                CheckForCollisions();
+                //CheckForCollisions();
 
                 shootTimer += Time.DeltaTime;
 

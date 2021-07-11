@@ -109,6 +109,8 @@ namespace Game
         {
 
             UpdateScreenFlow();
+            GameManager.Instance.CheckVictory();
+            GameManager.Instance.CheckDefeat();
 
         }
 

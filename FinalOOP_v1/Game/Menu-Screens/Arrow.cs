@@ -10,25 +10,31 @@ namespace Game
 {
     public class Arrow
     {
-        Vector2 position;
 
         float offset;
 
-        public Vector2 Position { get => position; set => position = value; }
-
         public float Offset { get => offset; set => offset = 30; }
 
-        //transform = new Transform(position, scale, rotation);
-        //renderer= new Renderer(size, texture, transform);
-        public void Update(Vector2 position)
+        Transform transform;
+        Renderer renderer;
+
+        public Arrow(Vector2 _position, Vector2 _scale, float _rotation, Vector2 _size, string _texture, float _offset)
         {
-            position.X = position.X - offset;
-            position.Y = position.Y;
+            offset = _offset;
+            transform = new Transform(_position, _scale, _rotation);
+            renderer = new Renderer(_size, _texture, transform);
+
         }
 
-        public void Draw()
+        public void Update()
         {
-            Engine.Draw("Textures/ScreenFlow/Select.png", position.X+60, position.Y+80);
+            transform.Position = new Vector2(transform.Position.X /*- offset*/, transform.Position.Y);
+
+        }
+
+        public void Render()
+        {
+            Engine.Draw(renderer.Texture, transform.Position.X + offset, transform.Position.Y);
         }
     }
 }

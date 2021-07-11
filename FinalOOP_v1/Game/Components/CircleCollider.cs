@@ -13,7 +13,7 @@ namespace Game
 
         bool colliding = false;
 
-        public CircleCollider(Transform _transform/*, Renderer _renderer*/, float radius):base(_transform/*, _renderer*/, radius)
+        public CircleCollider(Transform _transform, float radius):base(_transform, radius)
         {
 
             this.radius = radius;
@@ -32,15 +32,13 @@ namespace Game
 
             float dist = (float)Math.Sqrt(diffX * diffX + diffY * diffY);
 
-            //Console.WriteLine("Dist" + dist);
-            //Console.WriteLine("Radius calc" + (radius + target.ColliderRadius));
-
             if (dist <= (radius + target.ColliderRadius))//No se cumple la condición.
             {
 
                 colliding = true;
                 Colliders.Add(this);
                 Console.WriteLine(this + "Collision w/" + target);
+                //OnCollision?.Invoke(this);
 
             }
 

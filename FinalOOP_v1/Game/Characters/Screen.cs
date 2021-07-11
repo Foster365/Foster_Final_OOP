@@ -30,8 +30,17 @@ namespace Game
         public abstract void Render();
         public virtual void CleanAllElements()
         {
+
+            for (int i = 0; i < Program.Characters.Count; i++)
+            {
+
+                if (!Program.Characters[i].LifeController.IsPlayer)
+                    Program.Characters.Remove(Program.Characters[i]);
+
+            }
+
             Program.Environment.Clear();
-            Program.Characters.RemoveRange(0, Program.Characters.Count);
+            Program.Characters.Clear();/*RemoveRange(0, Program.Characters.Count);*/
         }
 
     }

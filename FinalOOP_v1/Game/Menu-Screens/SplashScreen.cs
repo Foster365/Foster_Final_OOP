@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public class SplashScreen
+    public class SplashScreen:GameScreen
     {
 
         Arrow arrow;
@@ -17,60 +17,59 @@ namespace Game
 
         Renderer renderer;
         Transform transform;
-        List<Button> buttons = new List<Button>();
 
-        Vector2 position;
-        Vector2 scale;
-        float rotation;
-
-        string texture;
-        Vector2 size;
-        
-        public Vector2 Position { get => position; set => position = new Vector2(200,455); }
-        public Vector2 Scale { get => scale; set => scale = new Vector2(1,1); }
-        public float Rotation { get => rotation; set => rotation = value; }
-        
-        public string Texture { get => texture; set => texture = value; }
-        public Vector2 Size { get => size; set => size = new Vector2(1920,1080); }
-
-        public SplashScreen()
+        public SplashScreen():base()
         {
-            background = new Image(new Vector2(200, 455), new Vector2(1, 1), new Vector2(1920, 1080), 0, "Textures/ScreenFlow/SpaceBk.png");
-            playBtn = new Button("Textures/ScreenFlow/TextPlay.png", new Vector2(300f, 400f), new Vector2(1f, 1f), new Vector2(166, 87));
-            buttons.Add(playBtn);
-
 
             playBtn.SetButtons(null, playBtn);
             playBtn.SetButtons(playBtn, null);
 
             actualBtn = playBtn;
 
-            arrow = new Arrow();
-            arrow.Update(new Vector2(actualBtn.Transform.Position.X, actualBtn.Transform.Position.Y));
+            arrow = new Arrow(actualBtn.Transform.Position, new Vector2(1, 1), 0, new Vector2(55, 108), "Textures/ScreenFlow/Select.png", 60);
+            arrow.Update();
 
         }
 
-        public void Update()
+        protected override void AddImages()
+        {
+
+            Images.Add(new Image(new Vector2(200, 455), new Vector2(1, 1), new Vector2(1920, 1080), 0, "Textures/ScreenFlow/SpaceBk.png"));
+
+        }
+
+        protected override void AddbButtons()
+        {
+
+            playBtn = new Button("Textures/ScreenFlow/TextPlay.png", new Vector2(300f, 400f), new Vector2(1f, 1f), new Vector2(155, 80));
+            Buttons.Add(playBtn);
+
+        }
+
+        public override void Update()
         {
             actualBtn = actualBtn.Update();
-            arrow.Update(new Vector2(actualBtn.Transform.Position.X, actualBtn.Transform.Position.Y));
-
             if (Engine.GetKey(Keys.SPACE) && Program.canPressSpace)
             {
                 Program. canPressSpace= false;
                 Program.timerSpace = 0f;
                 EnterButton();//MMenuS
+                arrow.Update();
+
             }
         }
 
-        public void Render()
+        public override void Render()
         {
 
-            background.Render();
-
-            foreach (var boton in buttons)
+            foreach (var image in Images)
             {
-                boton.Draw();
+                image.Render();
+            }
+
+            foreach (var boton in Buttons)
+            {
+                boton.Render();
             }
         }
 

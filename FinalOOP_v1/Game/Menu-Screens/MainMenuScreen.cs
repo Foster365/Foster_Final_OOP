@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public class MainMenuScreen
+    public class MainMenuScreen:GameScreen
     {
         Arrow arrow;
+    
         Button newGameButton;
         Button exitButton;
         Button actualButton;
-        List<Button> buttons = new List<Button>();
-
-        Image mainMenuBackground;
+        //List<Button> buttons;
+        //List<Image> images;
 
         //Vectores Backg
         public Vector2 Position { get; set; } = new Vector2(200, 455);
@@ -24,46 +24,36 @@ namespace Game
         //
         public Vector2 TextPosition { get; set; } = new Vector2(10, 10);
         public Vector2 TextScale { get; set; } = new Vector2(1.5f, 1.5f);
-        public List<Button> Buttons { get; set; } = new List<Button>();
+        //public List<Button> Buttons { get =>  buttons; set => buttons = new List<Button>(); }
+        //public List<Image> Images { get => images; set => images = new List<Image>(); }
 
         public MainMenuScreen()
         {
 
-            //Background
-            mainMenuBackground = new Image(new Vector2(200, 455), new Vector2(1, 1), new Vector2(1920, 1080), 0, "Textures/ScreenFlow/SpaceBk.png");
+            AddImages();
+            AddbButtons();
 
-            //// Dibujo el fondo
-
-            Engine.Draw("Textures/ScreenFlow/TextMMenu.png", 100, 100, 0.8f, 0.8f);
+            //Engine.Draw("Textures/ScreenFlow/TextMMenu.png", 100, 100, 0.8f, 0.8f);
 
             // Inicializo los Botones pasandoles la posicion y la textura
-            newGameButton = new Button("Textures/ScreenFlow/TextNG.png", new Vector2(200f, 100f), new Vector2(0.5f, 0.5f), new Vector2(400, 240));
-            Buttons.Add(newGameButton);
-
             //loadGameButton = new Button("Textures/ScreenFlow/TextLG.png", new Vector2(200f, 200f), new Vector2(0.5f, 0.5f), new Vector2(400, 240));
             //Buttons.Add(loadGameButton);
-            
-            exitButton = new Button("Textures/ScreenFlow/TextEx.png", new Vector2(200f, 400f), new Vector2(0.5f, 0.5f), new Vector2(129, 212));
-            Buttons.Add(exitButton);
-
 
             newGameButton.SetButtons(null, exitButton);
             exitButton.SetButtons(newGameButton, null);
 
             actualButton = newGameButton;
 
-            arrow = new Arrow();
-            arrow.Update(new Vector2(actualButton.Transform.Position.X, actualButton.Transform.Position.Y));
+            arrow = new Arrow(actualButton.Transform.Position, new Vector2(1, 1), 0, new Vector2(55, 108), "Textures/ScreenFlow/Select.png", 60);
+            arrow.Update();
         }
 
-        public void Update()
+        public override void Update()
         {
 
             actualButton = actualButton.Update();
 
-
-            arrow.Update(new Vector2(actualButton.Transform.Position.X, actualButton.Transform.Position.Y));
-
+            arrow.Update();
 
             if (Engine.GetKey(Keys.SPACE) && Program.canPressSpace)
             {
@@ -73,21 +63,46 @@ namespace Game
                 EnterButton();
 
             }
+
         }
 
-        public void Render()
+        public override void Render()
         {
 
-            mainMenuBackground.Render();
+            arrow.Render();
+
+            for (int i = 0; i < Images.Count; i++)
+            {
+
+                Images[i].Render();
+
+            }
 
             // Dibujo los Botones
             foreach (var button in Buttons)
             {
-                button.Draw();
+                button.Render();
             }
 
             // Dibujo la flecha
-            arrow.Draw();
+        }
+
+        protected override void AddImages()
+        {
+
+            Images.Add(new Image(new Vector2(200, 455), new Vector2(1, 1), new Vector2(1920, 1080), 0, "Textures/ScreenFlow/SpaceBk.png"));
+
+        }
+
+        protected override void AddbButtons()
+        {
+
+            newGameButton = new Button("Textures/ScreenFlow/TextNG.png", new Vector2(200f, 200f), new Vector2(0.5f, 0.5f), new Vector2(331, 71));
+            Buttons.Add(newGameButton);
+
+            exitButton = new Button("Textures/ScreenFlow/TextEx.png", new Vector2(230f, 400f), new Vector2(0.5f, 0.5f), new Vector2(96, 39));
+            Buttons.Add(exitButton);
+
         }
 
         private void EnterButton()

@@ -15,6 +15,7 @@ namespace Game
         {
             get
             {
+
                 if (instance == null)
                 {
                     instance = new GameManager();
@@ -97,24 +98,44 @@ namespace Game
         //        //CheckVictory();
 
         //    }
-            
+
         //}
 
-        //private void CheckVictory()
-        //{
-        //    if (Program.ActualScreenState == Program.ScreenFlow.level5Screen/* && bossEnemy.destroyed && points >= enemyKillstoWin*/)
-        //    {
-        //        Program.ActualScreenState = Program.ScreenFlow.winScreen;
-        //    }
-        //}
+        public void CheckVictory()
+        {
+            if (Program.ActualScreenState == Program.ScreenFlow.level5Screen/* && bossEnemy.destroyed && points >= enemyKillstoWin*/)
+            {
+                Program.ActualScreenState = Program.ScreenFlow.winScreen;
+            }
+        }
 
-        //private void CheckDefeat()
-        //{
-        //    if (player.lifeController.CurrentHealth<= 0)
-        //    {
-        //        Program.ActualScreenState = Program.ScreenFlow.gameOverScreen;
-        //    }
-        //}
+        public void CheckDefeat()
+        {
+
+            for (int i = 0; i < Program.Characters.Count; i++)
+            {
+                if (Program.Characters[i].LifeController.IsPlayer)
+                {
+
+                    if (Program.Characters[i].LifeController.CurrentLife <= 0)
+                    {
+                        Program.ActualScreenState = Program.ScreenFlow.gameOverScreen;
+                    }
+
+                }
+            }
+        }
+
+        void CreateLifeStack()
+        {
+
+            Program.Environment.Add(new HealthIcon(new Vector2(10, 10), new Vector2(.03f, .03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
+            Program.Environment.Add(new HealthIcon(new Vector2(40, 10), new Vector2(.03f, .03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
+            Program.Environment.Add(new HealthIcon(new Vector2(70, 10), new Vector2(.03f, .03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
+            Program.Environment.Add(new HealthIcon(new Vector2(100, 10), new Vector2(.03f, .03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
+            Program.Environment.Add(new HealthIcon(new Vector2(130, 10), new Vector2(.03f, .03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
+
+        }
 
         //void UpdateLifeStack()
         //{
@@ -126,19 +147,6 @@ namespace Game
         //    }
         //}
 
-        void SpawnPowerUp()
-        {
-
-            foreach (PowerUpsFactory.PowerUps actualPowerUp in Enum.GetValues(typeof(PowerUpsFactory.PowerUps)))
-            {
-
-                //if (player.Damaged)
-                //    Level1Screen.RenderizableObjects.Add(PowerUpsFactory.CreatePowerUp(actualPowerUp));
-
-
-            }
-                
-        }
 
         public void Start()//Init method
         {

@@ -128,15 +128,13 @@ namespace Game
 
             Console.WriteLine("Deactivating entity");
 
-            OnDeactivate?.Invoke(this);
-
-            UpdateAnimation();
             RenderAnimation();
+
+            OnDeactivate?.Invoke(this);
 
             Program.Characters.Remove(entity);
 
             Program.Environment.Remove(entity);
-
 
         }
 

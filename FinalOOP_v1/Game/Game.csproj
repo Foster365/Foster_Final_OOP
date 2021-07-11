@@ -45,6 +45,7 @@
     <Compile Include="Animation.cs" />
     <Compile Include="Characters\Asteroid.cs" />
     <Compile Include="Characters\BossEnemy.cs" />
+    <Compile Include="Characters\CircleTest.cs" />
     <Compile Include="Characters\Entity.cs" />
     <Compile Include="EnemyBullet.cs" />
     <Compile Include="Components\AnimationComponent.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Items\PowerUps\DamagePowerUp.cs" />
     <Compile Include="Items\PowerUps\RandomPowerUp.cs" />
     <Compile Include="Items\PowerUps\SpeedPowerUp.cs" />
+    <Compile Include="Managers\SpawnManager.cs" />
     <Compile Include="Menu-Screens\Button.cs" />
     <Compile Include="Components\BoxCollider.cs" />
     <Compile Include="Components\Collider.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="Items\Item.cs" />
     <Compile Include="Managers\GameManager.cs" />
     <Compile Include="Menu-Screens\GameOverScreen.cs" />
+    <Compile Include="Menu-Screens\GameScreen.cs" />
     <Compile Include="Menu-Screens\Level1Screen.cs" />
     <Compile Include="Menu-Screens\Level2Screen.cs" />
     <Compile Include="Menu-Screens\Level3Screen.cs" />

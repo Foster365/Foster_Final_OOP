@@ -24,13 +24,11 @@ namespace Game
 
             if (available.Count > 0)
             {
-                //Engine.Debug("2 _ AgarroBala");
                 bullet = available[0];
                 available.Remove(bullet);
             }
             else
             {
-                //Engine.Debug("1 _ CreoBala");
                 bullet = new T();
                 bullet.OnDeactivate += OnBulletDeactivateHandler;
             }
@@ -46,7 +44,6 @@ namespace Game
 
         public void Release(T bullet)
         {
-            //Engine.Debug("3 _ Release");
             inUse.Remove(bullet);
             available.Add(bullet);
         }
