@@ -22,7 +22,7 @@ namespace Game
         bool canRespawn;
 
         float collisionTimer = 0;
-        float collisionMaxTimer = 3f;
+        float collisionMaxTimer = 1f;
 
         ObjectsPool<PlayerBullet> bulletsPool;
 
@@ -63,7 +63,6 @@ namespace Game
                 Move();
 
                 timerShoot += Time.DeltaTime;
-
                 //Console.WriteLine("Shoot Timer" + timerShoot);
 
                 if (Engine.GetKey(Keys.SPACE) && timerShoot >= timetoShoot)
@@ -75,7 +74,9 @@ namespace Game
 
                 }
 
-                if (canReceiveDamage /*&& collisionTimer >= collisionMaxTimer*/)
+                collisionTimer += Time.DeltaTime;
+                Console.WriteLine($"Collisiontimer {collisionTimer}");
+                if (/*canReceiveDamage && */collisionTimer >= collisionMaxTimer)
                     CheckForCollisionsWEnemy();
 
                 //Console.WriteLine("Can Respawn: " + canRespawn);
@@ -90,36 +91,63 @@ namespace Game
             for (int i = 0; i < Program.Characters.Count; i++)
             {
 
-                if (Program.Characters[i].LifeController.IsEnemy && circleCollider.CheckforCollisions(Program.Characters[i]))
+                if (Program.Characters[i].LifeController.IsEnemy)
                 {
 
-                    //collisionTimer += Time.DeltaTime;
+                    if (circleCollider.CheckforCollisions(Program.Characters[i]))
+                    {
 
-                    //if(inmunityTimer >= inmunityMaxTimer/*&& timer > respawnTimer*/ )
-                    //{
+                        LifeController.Damaged = true;
+                        Console.WriteLine("Changos me golpeé");
+                        Console.WriteLine("Colliding with enemy");
+                        Console.WriteLine($"Current player health is {LifeController.CurrentLife}");
+                        LifeController.GetDamage(Program.Characters[i].Damage);
 
-                    //}
-                    Console.WriteLine("Changos me golpeé");
-                    LifeController.GetDamage(Program.Characters[i].Damage);
-                    Program.Characters[i].LifeController.Deactivate();
-                    canRespawn = true;
-                    Console.WriteLine("Can Respawn: " + canRespawn);
-                    Console.WriteLine("Player current health" + LifeController.CurrentLife);
-                    //canReceiveDamage = false;
+                    }
 
-                    inmunityTimer += Time.DeltaTime;
-
-                    Respawn();
-                    //Console.WriteLine("Player Respawn");
-
-                    //timer = 0;
                 }
 
+                collisionTimer = 0;
             }
 
-            collisionTimer = 0;
-
         }
+
+        //void CheckForCollisionsWEnemy()
+        //{
+
+        //    for (int i = 0; i < Program.Characters.Count; i++)
+        //    {
+
+        //        if (circleCollider.CheckforCollisions(Program.Characters[i]))
+        //        {
+        //            if (Program.Characters[i].LifeController.IsEnemy)
+        //            {
+
+        //                LifeController.Damaged = true;
+        //                Console.WriteLine("Changos me golpeé");
+        //                LifeController.GetDamage(Program.Characters[i].Damage);
+        //                Program.Characters[i].LifeController.Deactivate();
+
+        //                //if (LifeController.Damaged)
+        //                //{
+        //                //    Respawn();
+        //                //    canRespawn = true;
+        //                //    canReceiveDamage = true;
+        //                //    LifeController.Damaged = false;
+
+        //                //}
+
+        //                Console.WriteLine("Can Respawn: " + canRespawn);
+        //                Console.WriteLine("Player current health" + LifeController.CurrentLife);
+
+        //            }
+        //        }
+
+        //    }
+
+        //    collisionTimer = 0;
+
+        //}
 
         public void Respawn()
         {
@@ -127,7 +155,7 @@ namespace Game
             if (canRespawn)
             {
 
-                Console.WriteLine("Inmunity timer: " + inmunityTimer);
+                //Console.WriteLine("Inmunity timer: " + inmunityTimer);
                 //LifeController.Damaged = true;
 
                 Random random = new Random();
@@ -145,18 +173,20 @@ namespace Game
                 respawnTimer = 0;
 
                 inmunityTimer += Time.DeltaTime;
+
                 Console.WriteLine("Inmunity timer: " + inmunityTimer);
-               
-                PlayerInmunity();
-                //while (inmunityTimer <= inmunityMaxTimer)
-                //{
 
-                //    Console.WriteLine("Player Inmunity on");
-                //    PlayerInmunity();
+                while(inmunity)
+                {
 
-                //}
+                    if(inmunityTimer<=inmunityMaxTimer)
+                        PlayerInmunity();
 
-                //}
+                    inmunity = false;
+
+                }
+
+                inmunityTimer = 0;
 
             }
         }
@@ -164,21 +194,11 @@ namespace Game
         public void PlayerInmunity()
         {
 
-            if (inmunityTimer>=inmunityMaxTimer)
-            {
-
-                inmunity = false;
-                canShoot = true;
-                canReceiveDamage = true;
-                inmunityTimer = 0;
-
-            }
-
             Console.WriteLine("Player inmune");
             canRespawn = false;
             canReceiveDamage = false;
-
             canShoot = false;
+            //Renderizar burbuja (Podría tener un collider)
 
         }
 

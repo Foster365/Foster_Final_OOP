@@ -43,6 +43,8 @@ namespace Game
 
                 //CheckForCollisions();
 
+                //CheckForCollisionsWithPlayer();
+
                 shootTimer += Time.DeltaTime;
 
                 if (shootTimer >= shootMaxTimer)
@@ -56,28 +58,24 @@ namespace Game
             }
 
         }
-        void CheckForCollisions()
-        {
 
+        void CheckForCollisionsWithPlayer()
+        {
             for (int i = 0; i < Program.Characters.Count; i++)
             {
-
                 if (Program.Characters[i].LifeController.IsPlayer)
                 {
 
                     if (circleCollider.CheckforCollisions(Program.Characters[i]))
                     {
 
-                        Console.WriteLine("You got hit by an enemy");
-                        Program.Characters[i].LifeController.GetDamage(Program.Characters[i].Damage);
+                        Console.WriteLine("Deactivating enemy");
                         LifeController.Deactivate();
 
                     }
 
                 }
-
             }
-
         }
 
 
