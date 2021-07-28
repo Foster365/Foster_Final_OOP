@@ -43,7 +43,10 @@ namespace Game
 
                 //CheckForCollisions();
 
-                //CheckForCollisionsWithPlayer();
+                CheckForCollisionsWithPlayer();
+                
+                if(LifeController.Destroyed)
+                    LifeController.UpdateAnimation();
 
                 shootTimer += Time.DeltaTime;
 
@@ -70,7 +73,12 @@ namespace Game
                     {
 
                         Console.WriteLine("Deactivating enemy");
+                        Program.Characters[i].LifeController.GetDamage(Damage);
+                        Program.Characters[i].LifeController.Damaged = true;
+                        Console.WriteLine($"Player current life {Program.Characters[i].LifeController.CurrentLife}");
+                        LifeController.Destroyed = true;
                         LifeController.Deactivate();
+                        //LifeController.Deactivate();
 
                     }
 
@@ -91,6 +99,7 @@ namespace Game
         {
 
             Transform.Position = new Vector2(Transform.Position.X - Speed.X * Time.DeltaTime, Transform.Position.Y);
+            Console.WriteLine($"Enemy speed {Speed.X}");
 
         }
 
@@ -102,6 +111,7 @@ namespace Game
                 Engine.Draw(Renderer.Texture, Transform.Position.X, Transform.Position.Y, Transform.Scale.X, Transform.Scale.Y, transform.Rotation, Renderer.GetRealWidth() / 2, Renderer.GetRealHeight() / 2);
 
             }
+            LifeController.RenderAnimation();
         }
     }
 }

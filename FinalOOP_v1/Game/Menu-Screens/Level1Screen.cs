@@ -19,8 +19,9 @@ namespace Game
         float maxLevelTimer = 60;
 
         Animation levelCountdown;
+        Animation deathAnimation;
 
-        public enum Animations { levelCountdown }
+        public enum Animations { levelCountdown, deathAnimation}
 
         Animations actualAnimstate = Animations.levelCountdown;
 
@@ -77,6 +78,14 @@ namespace Game
 
             if (ActualAnimstate == Animations.levelCountdown)
                 Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
+
+            if (actualAnimstate == Animations.deathAnimation)
+            {
+
+                Engine.Draw(deathAnimation.AnimList[deathAnimation.ActualAnimationFrame], 300, 100, 3, 3, 0, 0, 0);
+                //Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
+
+            }
 
         }
 
@@ -154,6 +163,33 @@ namespace Game
 
             levelCountdown = new Animation(countdownFrames, 1f, false);
 
+            List<Texture> deathFrames = new List<Texture>();
+
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion1.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion2.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion3.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion4.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion5.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion6.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion7.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion8.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion9.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion10.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion11.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion12.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion13.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion14.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion15.png"));
+
+            //for (int i = 1; i < 15; i++)
+            //{
+
+            //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/" + i.ToString() + ".png"));
+
+            //}
+
+            deathAnimation = new Animation(deathFrames, .05f, false);
+
         }
 
         public void UpdateAnimation()
@@ -164,8 +200,47 @@ namespace Game
                 ActualAnimstate = Animations.levelCountdown;
                 levelCountdown.Play();
             }
+            if (actualAnimstate == Animations.deathAnimation)
+            {
+
+                actualAnimstate = Animations.deathAnimation;
+                deathAnimation.Play();
+
+            }
 
         }
+
+        //void AnimationParameters()
+        //{
+
+        //    List<Texture> deathFrames = new List<Texture>();
+
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion1.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion2.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion3.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion4.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion5.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion6.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion7.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion8.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion9.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion10.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion11.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion12.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion13.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion14.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion15.png"));
+
+        //    //for (int i = 1; i < 15; i++)
+        //    //{
+
+        //    //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/" + i.ToString() + ".png"));
+
+        //    //}
+
+        //    deathAnimation = new Animation(deathFrames, .05f, false);
+
+        //}
 
         void CreateCharacters()
         {
@@ -194,5 +269,29 @@ namespace Game
 
         }
 
+        //public void UpdateAnimation()
+        //{
+        //    if (actualAnimstate == Animations.deathAnimation)
+        //    {
+
+        //        actualAnimstate = Animations.deathAnimation;
+        //        deathAnimation.Play();
+
+        //    }
+
+        //}
+
+        //public void RenderAnimation()
+        //{
+
+        //    if (actualAnimstate == Animations.deathAnimation)
+        //    {
+
+        //        Engine.Draw(deathAnimation.AnimList[deathAnimation.ActualAnimationFrame], 300, 100, 3, 3, 0, 0, 0);
+        //        //Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
+
+        //    }
+
+        //}
     }
 }

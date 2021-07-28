@@ -75,39 +75,12 @@ namespace Game
                 }
 
                 collisionTimer += Time.DeltaTime;
-                Console.WriteLine($"Collisiontimer {collisionTimer}");
-                if (/*canReceiveDamage && */collisionTimer >= collisionMaxTimer)
-                    CheckForCollisionsWEnemy();
+                //Console.WriteLine($"Collisiontimer {collisionTimer}");
+                //if (/*canReceiveDamage && */collisionTimer >= collisionMaxTimer)
+                CheckForCollisionsWEnemy();
 
                 //Console.WriteLine("Can Respawn: " + canRespawn);
 
-            }
-
-        }
-
-        void CheckForCollisionsWEnemy()
-        {
-
-            for (int i = 0; i < Program.Characters.Count; i++)
-            {
-
-                if (Program.Characters[i].LifeController.IsEnemy)
-                {
-
-                    if (circleCollider.CheckforCollisions(Program.Characters[i]))
-                    {
-
-                        LifeController.Damaged = true;
-                        Console.WriteLine("Changos me golpeé");
-                        Console.WriteLine("Colliding with enemy");
-                        Console.WriteLine($"Current player health is {LifeController.CurrentLife}");
-                        LifeController.GetDamage(Program.Characters[i].Damage);
-
-                    }
-
-                }
-
-                collisionTimer = 0;
             }
 
         }
@@ -118,36 +91,84 @@ namespace Game
         //    for (int i = 0; i < Program.Characters.Count; i++)
         //    {
 
-        //        if (circleCollider.CheckforCollisions(Program.Characters[i]))
+        //        if (Program.Characters[i].LifeController.IsEnemy)
         //        {
-        //            if (Program.Characters[i].LifeController.IsEnemy)
+
+        //            if (CircleCollider.CheckforCollisions(Program.Characters[i]))
         //            {
 
-        //                LifeController.Damaged = true;
-        //                Console.WriteLine("Changos me golpeé");
-        //                LifeController.GetDamage(Program.Characters[i].Damage);
+        //                Program.Characters[i].LifeController.GetDamage(Damage);
+        //                Console.WriteLine("Collision with Player. CurrentLife" + Program.Characters[i].LifeController.CurrentLife);
         //                Program.Characters[i].LifeController.Deactivate();
 
-        //                //if (LifeController.Damaged)
-        //                //{
-        //                //    Respawn();
-        //                //    canRespawn = true;
-        //                //    canReceiveDamage = true;
-        //                //    LifeController.Damaged = false;
-
-        //                //}
-
-        //                Console.WriteLine("Can Respawn: " + canRespawn);
-        //                Console.WriteLine("Player current health" + LifeController.CurrentLife);
-
         //            }
+
         //        }
 
         //    }
 
-        //    collisionTimer = 0;
+
+        //    for (int i = 0; i < Program.Characters.Count; i++)
+        //    {
+
+        //        if (collisionTimer >= collisionMaxTimer)
+        //        {
+
+        //            if (circleCollider.CheckforCollisions(Program.Characters[i]) && Program.Characters[i].LifeController.IsEnemy)
+        //            {
+
+        //                //LifeController.Damaged = true;
+        //                Console.WriteLine("Changos me golpeé");
+        //                //Program.Characters.Remove(Program.Characters[i]);
+        //                //Console.WriteLine("Colliding with enemy");
+        //                Console.WriteLine($"Current player health is {LifeController.CurrentLife}");
+        //                LifeController.GetDamage(Program.Characters[i].Damage);
+
+        //            }
+
+        //        }
+
+        //        collisionTimer = 0;
+        //    }
 
         //}
+
+        void CheckForCollisionsWEnemy()
+        {
+
+            //for (int i = 0; i < Program.Characters.Count; i++)
+            //{
+
+            //    if (circleCollider.CheckforCollisions(Program.Characters[i]))
+            //    {
+            //        if (Program.Characters[i].LifeController.IsEnemy)
+            //        {
+
+            //            LifeController.Damaged = true;
+            //            Console.WriteLine("Changos me golpeé");
+            //            LifeController.GetDamage(Program.Characters[i].Damage);
+            //            Program.Characters[i].LifeController.Deactivate();
+
+            if (LifeController.Damaged)
+            {
+                Respawn();
+                canRespawn = true;
+                canReceiveDamage = true;
+                LifeController.Damaged = false;
+
+            }
+
+            //            Console.WriteLine("Can Respawn: " + canRespawn);
+            //            Console.WriteLine("Player current health" + LifeController.CurrentLife);
+
+            //        }
+            //    }
+
+            //}
+
+            //collisionTimer = 0;
+
+        }
 
         public void Respawn()
         {

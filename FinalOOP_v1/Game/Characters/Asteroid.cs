@@ -49,7 +49,8 @@ namespace Game
                     {
 
                         Program.Characters[i].LifeController.GetDamage(Damage);
-                        LifeController.Deactivate();
+                        Program.Characters.Remove(this);
+                        //LifeController.Deactivate();
 
                     }
                 //Console.WriteLine("Collision W/ Player");

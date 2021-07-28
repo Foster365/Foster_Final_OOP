@@ -130,7 +130,7 @@ namespace Game
 
             RenderAnimation();
 
-            OnDeactivate?.Invoke(this);
+            //OnDeactivate?.Invoke(this);
 
             Program.Characters.Remove(entity);
 
@@ -188,9 +188,11 @@ namespace Game
             if (actualAnimstate == Animations.deathAnimation)
             {
 
-                
+                Engine.Draw(deathAnimation.AnimList[deathAnimation.ActualAnimationFrame], 300, 100, 3, 3, 0, 0, 0);
+                //Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
 
             }
+
         }
     }
 }
