@@ -422,3 +422,4 @@ D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\obj\Debug\Game.csproj.AssemblyRefere
 D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
 D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\obj\Debug\Game.exe
 D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\obj\Debug\Game.pdb
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Character_damage.png

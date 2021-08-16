@@ -25,7 +25,9 @@ namespace Game
 
             BulletLifetime = lifeTime;
             timer = 0;
-            LifeController.Destroyed = false;
+            //LifeController.Destroyed = false;
+
+            LifeController = new LifeController(this, false, false, lifeTime);
 
             circleCollider = new CircleCollider(transform, radius);
 

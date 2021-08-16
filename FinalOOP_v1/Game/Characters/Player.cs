@@ -47,7 +47,7 @@ namespace Game
 
             canRespawn = false;
 
-            LifeController = new LifeController(_maxLife, this, false, true);
+            LifeController = new LifeController(this, false, true, _maxLife);//TODO Sacar _maxLife del constructor, correspondería ponerlo en el lifeController.
 
         }
 
@@ -85,54 +85,6 @@ namespace Game
 
         }
 
-        //void CheckForCollisionsWEnemy()
-        //{
-
-        //    for (int i = 0; i < Program.Characters.Count; i++)
-        //    {
-
-        //        if (Program.Characters[i].LifeController.IsEnemy)
-        //        {
-
-        //            if (CircleCollider.CheckforCollisions(Program.Characters[i]))
-        //            {
-
-        //                Program.Characters[i].LifeController.GetDamage(Damage);
-        //                Console.WriteLine("Collision with Player. CurrentLife" + Program.Characters[i].LifeController.CurrentLife);
-        //                Program.Characters[i].LifeController.Deactivate();
-
-        //            }
-
-        //        }
-
-        //    }
-
-
-        //    for (int i = 0; i < Program.Characters.Count; i++)
-        //    {
-
-        //        if (collisionTimer >= collisionMaxTimer)
-        //        {
-
-        //            if (circleCollider.CheckforCollisions(Program.Characters[i]) && Program.Characters[i].LifeController.IsEnemy)
-        //            {
-
-        //                //LifeController.Damaged = true;
-        //                Console.WriteLine("Changos me golpeé");
-        //                //Program.Characters.Remove(Program.Characters[i]);
-        //                //Console.WriteLine("Colliding with enemy");
-        //                Console.WriteLine($"Current player health is {LifeController.CurrentLife}");
-        //                LifeController.GetDamage(Program.Characters[i].Damage);
-
-        //            }
-
-        //        }
-
-        //        collisionTimer = 0;
-        //    }
-
-        //}
-
         void CheckForCollisionsWEnemy()
         {
 
@@ -143,7 +95,7 @@ namespace Game
             //    {
             //        if (Program.Characters[i].LifeController.IsEnemy)
             //        {
-
+            //          CircleCollider.IsCollision = true;
             //            LifeController.Damaged = true;
             //            Console.WriteLine("Changos me golpeé");
             //            LifeController.GetDamage(Program.Characters[i].Damage);
@@ -151,10 +103,10 @@ namespace Game
 
             if (LifeController.Damaged)
             {
-                Respawn();
-                canRespawn = true;
-                canReceiveDamage = true;
-                LifeController.Damaged = false;
+                //Respawn();
+                //canRespawn = true;
+                //canReceiveDamage = true;
+                //LifeController.Damaged = false;
 
             }
 
@@ -263,7 +215,7 @@ namespace Game
             {
 
                 var playerBullet = bulletsPool.Get();
-                playerBullet.Init(Transform.Position, new Vector2(1, 1), new Vector2(20, 10), 0, "Textures/Entities/Characters/BulletPj.png", 1, new Vector2(200, 200), 10, 1);
+                playerBullet.Init(Transform.Position, new Vector2(1, 1), new Vector2(20, 10), 0, "Textures/Entities/Characters/BulletPj.png", 3, new Vector2(200, 200), 10, 1);
 
             }
         }
@@ -273,7 +225,7 @@ namespace Game
             if (!LifeController.Destroyed)
             {
 
-                Engine.Draw(Renderer.Texture, Transform.Position.X, Transform.Position.Y, Transform.Scale.X, Transform.Scale.Y, transform.Rotation, Renderer.GetRealWidth()/2, Renderer.GetRealHeight() / 2);
+                Engine.Draw(renderer.Texture, transform.Position.X, transform.Position.Y, transform.Scale.X, transform.Scale.Y, transform.Rotation, renderer.GetRealWidth()/2, renderer.GetRealHeight() / 2);
             }
 
         }

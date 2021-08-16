@@ -9,14 +9,12 @@ namespace Game
     public class CircleCollider : Collider
     {
 
-        float radius;
+        //float radius;
 
-        bool colliding = false;
-
-        public CircleCollider(Transform _transform, float radius):base(_transform, radius)
+        public CircleCollider(Transform _transform, float radius) : base(_transform, radius)
         {
 
-            this.radius = radius;
+            //this.radius = radius;
 
         }
 
@@ -24,25 +22,32 @@ namespace Game
         1 singular.
         1 lista de colliders que retorne bool, si colisionó o no.
         */
-        public override bool CheckforCollisions(Entity target)
+        public bool CheckforCollisions(Vector2 entity, Vector2 target, float entityRadius, float targetRadius)
         {
 
-            float diffX = Math.Abs(Transform.Position.X - target.Transform.Position.X);
-            float diffY = Math.Abs(Transform.Position.Y - target.Transform.Position.Y);
+            //if(Colliders.Contains(target))
+            //{
+
+            float diffX = Math.Abs(entity.X - target.X);
+            float diffY = Math.Abs(entity.Y - target.Y);
+
+            Console.WriteLine($"Entity position is {entity.X}, {entity.Y}");
+            Console.WriteLine($"Target position is {target.X}, {target.Y}");
 
             float dist = (float)Math.Sqrt(diffX * diffX + diffY * diffY);
 
-            if (dist <= (radius + target.ColliderRadius))//No se cumple la condición.
-            {
+            if (dist <= (entityRadius + targetRadius))//No se cumple la condición.
+                {
 
-                colliding = true;
-                Colliders.Add(this);
-                Console.WriteLine(this + "Collision w/" + target);
-                //OnCollision?.Invoke(this);
+                    IsCollision = true;
+                    //Colliders.Add(this);
+                    Console.WriteLine(this + "Collision w/" + target);
+                    //OnCollision?.Invoke(this);
 
-            }
+                }
 
-            return colliding;
+            //}
+            return IsCollision;
 
         }
 

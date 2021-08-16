@@ -44,12 +44,13 @@
     <Compile Include="AI\Steering Behaviours\Pursuit.cs" />
     <Compile Include="Animation.cs" />
     <Compile Include="Characters\Asteroid.cs" />
+    <Compile Include="Characters\BossController.cs" />
     <Compile Include="Characters\BossEnemy.cs" />
     <Compile Include="Characters\CircleTest.cs" />
     <Compile Include="Characters\Entity.cs" />
     <Compile Include="EnemyBullet.cs" />
     <Compile Include="Components\AnimationComponent.cs" />
-    <Compile Include="Components\Background.cs" />
+    <Compile Include="Components\Image.cs" />
     <Compile Include="Bullet.cs" />
     <Compile Include="Components\LifeController.cs" />
     <Compile Include="Factory\AsteroidsFactory.cs" />
@@ -306,6 +307,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Textures\Countdown\9.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\Entities\Characters\Character_damage.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Textures\Explosion\Explosion1.png">

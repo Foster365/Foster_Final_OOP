@@ -50,12 +50,11 @@ namespace Game
                 Program.Characters[i].Update();
 
             }
-
-            LevelCounter();
+            //LevelCounter();
             EnemySpawn();
             CreateAsteroid();
-            UpdateAnimation();
-            NextLevel();
+            //UpdateAnimation();
+            //NextLevel();
 
         }
 
@@ -142,7 +141,7 @@ namespace Game
             if (asteroidTimer >= asteroidSpawnTime)
             {
 
-                Program.Environment.Add(AsteroidsFactory.CreateAsteroid(AsteroidsFactory.AsteroidFactory.asteroid1, asteroidPosition));
+                Program.Characters.Add(AsteroidsFactory.CreateAsteroid(AsteroidsFactory.AsteroidFactory.asteroid1, asteroidPosition));
                 asteroidTimer = 0;
 
             }

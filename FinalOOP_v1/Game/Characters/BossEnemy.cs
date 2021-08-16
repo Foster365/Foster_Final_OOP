@@ -17,6 +17,9 @@ namespace Game
         float timetoShoot;
 
 
+        Enemy[] enemiesCollection;
+
+
         Vector2 targetPosition = new Vector2(0, 0);
 
         //
@@ -27,7 +30,7 @@ namespace Game
             Speed = _enemySpeed;
             timetoShoot = 0.8f;
 
-            LifeController = new LifeController(_maxHealth, _lifetime, this, true, false);
+            LifeController = new LifeController(this, true, false);
 
             //pursuitBehaviour = new Pursuit(Transform.Position, player.Transform.Position, Speed, 1);
 
@@ -67,6 +70,8 @@ namespace Game
 
                 //    }
                 //}
+
+                CreateEnemies();
             }
 
         }
@@ -75,9 +80,49 @@ namespace Game
         {
             var enemyBullet = poolBullets.Get();
             enemyBullet.Init(Transform.Position, new Vector2(1, 1), new Vector2(24, 27), 0, "Textures/BulletEnemy1.png", 10, new Vector2(50, 50), 10, 4);
-            Console.WriteLine("PlayerPos.X" + Transform.Position.X + "PlayerPos.Y" + Transform.Position.Y, "bulletScale.X" + enemyBullet.Transform.Scale.X + "bulletScale.Y" + enemyBullet.Transform.Scale.Y + "bulletSize.X"
-                + enemyBullet.Renderer.Size.X + "bulletSize.Y" + enemyBullet.Renderer.Size.Y, "bulletRotation" + enemyBullet.Transform.Rotation + "bulletTexture" + enemyBullet.Renderer.Texture);
+            //Console.WriteLine("PlayerPos.X" + Transform.Position.X + "PlayerPos.Y" + Transform.Position.Y, "bulletScale.X" + enemyBullet.Transform.Scale.X + "bulletScale.Y" + enemyBullet.Transform.Scale.Y + "bulletSize.X"
+            //    + enemyBullet.Renderer.Size.X + "bulletSize.Y" + enemyBullet.Renderer.Size.Y, "bulletRotation" + enemyBullet.Transform.Rotation + "bulletTexture" + enemyBullet.Renderer.Texture);
 
+        }
+
+        void CreateEnemies()
+        {
+
+            float createEnemiesTimer = 0;
+            float createEnemiesMaxTimer = 10f;
+
+            Random random = new Random();
+
+            //Vector2 enemyPos = new Vector2(random.Next(850, 800), random.Next(200, 250));
+
+            createEnemiesMaxTimer += Time.DeltaTime;
+
+            //foreach (Enemy e in Program.Characters)
+            //{
+
+            if (createEnemiesTimer >= createEnemiesMaxTimer)
+            {
+                Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(500, 150)));
+                Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(550, 200)));
+                Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(600, 250)));
+                Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(750, 300)));
+                Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(800, 350)));
+                Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(850, 400)));
+            }
+
+            //}
+
+        }
+
+        void EnemiesCollection()
+        { 
+            foreach(Enemy e in enemiesCollection)
+            {
+                Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(0, 0)));
+                Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel2, new Vector2(0, 0)));
+                Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel3, new Vector2(0, 0)));
+                Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel4, new Vector2(0, 0)));
+            };
         }
 
         public override void Move()

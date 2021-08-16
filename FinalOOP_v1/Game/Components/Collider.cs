@@ -11,27 +11,33 @@ namespace Game
 
         float radius;
 
-        Transform transform;
+        bool isCollision;
+
+        protected Transform transform;
 
         //public event Action<Entity> OnCollision;
 
         public float Radius { get => radius; set => radius = value; }
 
-        public Transform Transform { get => transform; set => transform = value; }
+        //public Transform Transform { get => transform; set => transform = value; }
 
-        public List<Collider> Colliders { get; set; } = new List<Collider>();
+        public List<Entity> Colliders { get; set; }
+        public bool IsCollision { get => isCollision; set => isCollision = value; }
 
-        public Collider(Transform _transform/*, Renderer _renderer*/, float radius)
-        {
+        //public Collider(Transform _transform/*, Renderer _renderer*/, float radius)
+        //{
 
-            transform = _transform;
+        //    transform = _transform;
 
-            this.radius = radius;
-            //OnCollision += OnCollisionHandler;
+        //    this.radius = radius;
 
-        }
+        //    isCollision = false;
+        //    Colliders = new List<Entity>();
+        //    //OnCollision += OnCollisionHandler;
 
-        public abstract bool CheckforCollisions(Entity target);
+        //}
+
+        //public abstract bool CheckforCollisions(Entity target);
 
         //public void OnCollisionHandler(Collider collider)
         //{

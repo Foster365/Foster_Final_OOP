@@ -7,7 +7,11 @@ using System.Threading.Tasks;
 namespace Game
 {
     public class PlayerBullet : Bullet<PlayerBullet>
-    { 
+    {
+
+        float collTimer = 0;
+        float maxCollTimer = .5f;
+
         public PlayerBullet() : base()
         {
 
@@ -22,37 +26,56 @@ namespace Game
 
             if (timer >= BulletLifetime)
             {
-                LifeController.Deactivate();
+                LifeController.Deactivate(this);
             }
 
+            collTimer += Time.DeltaTime;
+
+            //if(collTimer >= maxCollTimer)
             CheckForCollisionsWEnemy();
+            //CheckForCollisionsWithAsteroids();
+
+            //Console.WriteLine($"Is collider {isCollider}");
+
         }
 
         void CheckForCollisionsWEnemy()
         {
-
             for (int i = 0; i < Program.Characters.Count; i++)
             {
 
-                if (Program.Characters[i].LifeController.IsEnemy)
+                //if (circleCollider.CheckforCollisions(Program.Characters[i]) && Program.Characters[i].LifeController.IsEnemy)
+                if(CircleCollider.)
                 {
-
-                    if(circleCollider.CheckforCollisions(Program.Characters[i]))
-                    {
-
+                    //if(isCollider)
+                    //{
+                        circleCollider.IsCollision = false;
                         Console.WriteLine("Colliding with enemy");
-                        Program.Characters[i].LifeController.GetDamage(Damage);
-                        LifeController.Deactivate();
                         GameManager.Instance.EnemyKills++;
+                        Program.Characters[i].LifeController.GetDamage(Damage);
+                        //LifeController.Deactivate(this);
+                        //Program.Characters.Remove(Program.Characters[i]);
                         Console.WriteLine("Killcount" + GameManager.Instance.EnemyKills);
                         //Console.WriteLine("Enemy current life" + Level1Screen.Enemies[i].LifeController.CurrentLife);
-
-                    }
-
+                        
+                    //}
                 }
 
             }
 
+            //isCollider = true;
+        }
+
+        void CheckForCollisionsWithAsteroids()
+        {
+            for(var i = 0; i < Program.Characters.Count; i++)
+            {
+                if (circleCollider.CheckforCollisions(Program.Characters[i]) && !Program.Characters[i].LifeController.IsPlayer)
+                {
+                    Console.WriteLine("Collision with asteroid, deactivating");
+                    Program.Characters[i].LifeController.Deactivate(Program.Characters[i]);
+                }
+            }
         }
 
         public override void Move()

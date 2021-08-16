@@ -19,7 +19,7 @@ namespace Game
         float shootTimer;
         float shootMaxTimer;
 
-        public Enemy(Vector2 _position, float _rotation, Vector2 _scale, Vector2 _size, Vector2 _enemySpeed, string _texture, int _maxHealth, float _angle, float _lifetime, int _damage, float _colliderRadius) : base(_position, _scale, _size, _rotation, _texture, _damage, _colliderRadius, _enemySpeed)/*(position, rotation, scale, size, enemySpeed, texture, life)*/
+        public Enemy(Vector2 _position, float _rotation, Vector2 _scale, Vector2 _size, Vector2 _enemySpeed, string _texture, int _maxLife, float _angle, float _lifetime, int _damage, float _colliderRadius) : base(_position, _scale, _size, _rotation, _texture, _damage, _colliderRadius, _enemySpeed)/*(position, rotation, scale, size, enemySpeed, texture, life)*/
         {
 
             Speed = _enemySpeed;
@@ -27,7 +27,7 @@ namespace Game
 
             bulletsPool = new ObjectsPool<EnemyBullet>();
 
-            LifeController = new LifeController(_maxHealth, _lifetime, this, true, false);
+            LifeController = new LifeController(this, true, false, _maxLife, _lifetime);
                 
         }
 
@@ -43,7 +43,7 @@ namespace Game
 
                 //CheckForCollisions();
 
-                CheckForCollisionsWithPlayer();
+                //CheckForCollisionsWithPlayer();
                 
                 if(LifeController.Destroyed)
                     LifeController.UpdateAnimation();
@@ -53,7 +53,7 @@ namespace Game
                 if (shootTimer >= shootMaxTimer)
                 {
 
-                    Shoot();
+                    //Shoot();
                     shootTimer = 0;
 
                 }
@@ -62,25 +62,22 @@ namespace Game
 
         }
 
-        void CheckForCollisionsWithPlayer()
+        void CheckForCollisions()
         {
             for (int i = 0; i < Program.Characters.Count; i++)
             {
-                if (Program.Characters[i].LifeController.IsPlayer)
+                if (circleCollider.CheckforCollisions(Program.Characters[i]) && Program.Characters[i].LifeController.IsPlayer)
                 {
 
-                    if (circleCollider.CheckforCollisions(Program.Characters[i]))
-                    {
-
-                        Console.WriteLine("Deactivating enemy");
-                        Program.Characters[i].LifeController.GetDamage(Damage);
-                        Program.Characters[i].LifeController.Damaged = true;
-                        Console.WriteLine($"Player current life {Program.Characters[i].LifeController.CurrentLife}");
-                        LifeController.Destroyed = true;
-                        LifeController.Deactivate();
-                        //LifeController.Deactivate();
-
-                    }
+                    Console.WriteLine("Deactivating enemy");
+                    CircleCollider.IsCollision = true;
+                    Program.Characters[i].LifeController.Damaged = true;
+                    //Program.Characters[i].LifeController.GetDamage(Damage);
+                    //Program.Characters.RemoveAt(i);
+                    //Program.Characters[i].LifeController.Deactivate();
+                    Console.WriteLine($"Player current life {Program.Characters[i].LifeController.CurrentLife}");
+                    //LifeController.Destroyed = true;
+                    //LifeController.Deactivate();
 
                 }
             }
@@ -99,7 +96,7 @@ namespace Game
         {
 
             Transform.Position = new Vector2(Transform.Position.X - Speed.X * Time.DeltaTime, Transform.Position.Y);
-            Console.WriteLine($"Enemy speed {Speed.X}");
+            //Console.WriteLine($"Enemy speed {Speed.X}");
 
         }
 
@@ -111,7 +108,7 @@ namespace Game
                 Engine.Draw(Renderer.Texture, Transform.Position.X, Transform.Position.Y, Transform.Scale.X, Transform.Scale.Y, transform.Rotation, Renderer.GetRealWidth() / 2, Renderer.GetRealHeight() / 2);
 
             }
-            LifeController.RenderAnimation();
+            //LifeController.RenderAnimation();
         }
     }
 }

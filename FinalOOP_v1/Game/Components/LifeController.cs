@@ -8,12 +8,17 @@ namespace Game
 {
     public class LifeController
     {
+
+        #region Variables
         Entity entity;
         bool damaged;
         bool destroyed;
         float lifeTimer;
         bool isEnemy;
         bool isPlayer;
+        Vector2 entityPos;
+
+        Image damageArea;
 
         public int MaxLife { get; set; }
         public int CurrentLife { get; set; }
@@ -22,6 +27,8 @@ namespace Game
         public bool Destroyed { get => destroyed; set => destroyed = value; }
         public bool IsEnemy { get => isEnemy; set => isEnemy = value; }
         public bool IsPlayer { get => isPlayer; set => isPlayer = value; }
+
+        public Vector2 EntityPos { get => entityPos; set => entityPos = value; }
 
         public event Action<LifeController> OnDeactivate;
 
@@ -34,43 +41,53 @@ namespace Game
         Animations actualAnimstate = Animations.deathAnimation;
         //
 
-        public LifeController(int _maxLife, Entity _entity, bool _isEnemy, bool _isPlayer)
-        {
+        #endregion
 
-            MaxLife = _maxLife;
-            CurrentLife = _maxLife;
+        #region constructors
+
+        public LifeController(Entity _entity, bool _isEnemy, bool _isPlayer, int _maxLife)
+        {
 
             entity = _entity;
             isEnemy = _isEnemy;
             isPlayer = _isPlayer;
 
+            MaxLife = _maxLife;
+            CurrentLife = _maxLife;
+
+            damageArea = new Image(entity.Transform.Position, new Vector2(.5f, .5f), new Vector2(739, 731), 0, "Textures/Entities/Characters/Character_damage.png");
+
             AnimationParameters();
 
         }
 
-        public LifeController(int _maxLife, float _lifeTime, Entity _entity, bool _isEnemy, bool _isPlayer)
+        public LifeController(Entity _entity, bool _isEnemy, bool _isPlayer, int _maxLife, float _lifeTime)
         {
+
+            entity = _entity;
+            isEnemy = _isEnemy;
+            isPlayer = _isPlayer;
 
             MaxLife = _maxLife;
             CurrentLife = _maxLife;
 
             LifeTime = _lifeTime;
 
-            entity = _entity;
-            isEnemy = _isEnemy;
-            isPlayer = _isPlayer;
+            damageArea = new Image(entity.Transform.Position, new Vector2(.5f, .5f), new Vector2(739, 731), 0, "Textures/Entities/Characters/Character_damage.png");
 
             AnimationParameters();
 
         }
 
-        public LifeController(float _lifeTime, Entity _entity, bool _isEnemy, bool _isPlayer)
+        public LifeController(Entity _entity, bool _isEnemy, bool _isPlayer, float _lifeTime)
         {
 
-            LifeTime = _lifeTime;
             entity = _entity;
             isEnemy = _isEnemy;
             isPlayer = _isPlayer;
+            LifeTime = _lifeTime;
+
+            damageArea = new Image(entity.Transform.Position, new Vector2(.5f, .5f), new Vector2(739, 731), 0, "Textures/Entities/Characters/Character_damage.png");
 
             AnimationParameters();
 
@@ -83,9 +100,13 @@ namespace Game
             isEnemy = _isEnemy;
             isPlayer = _isPlayer;
 
+            damageArea = new Image(entity.Transform.Position, new Vector2(.5f, .5f), new Vector2(739, 731), 0, "Textures/Entities/Characters/Character_damage.png");
+
             AnimationParameters();
 
         }
+
+        #endregion
 
         public void GetHealth(int healthPoints)
         {
@@ -104,37 +125,43 @@ namespace Game
             //Console.WriteLine("LifeTiner" + lifeTimer);
 
             if (lifeTimer >= LifeTime)
-                Deactivate();
+                Deactivate(entity);
 
         }
         
         public void GetDamage(int damagePoints)
         {
-
+            Vector2 damagePosition = new Vector2(entity.Transform.Position.X, entity.Transform.Position.Y);
             damaged = true;
             CurrentLife -= damagePoints;
-
+            RenderDamageCircle();
+            Console.WriteLine($"Circle rendered in {entity.Transform.Position.X} {entity.Transform.Position.Y}");
             Console.WriteLine(entity + "Life Points" + CurrentLife);
             if (CurrentLife <= 0)
             {
 
-                Deactivate();
+                Deactivate(entity);
 
             }
         }
 
-        public void Deactivate()
+        void RenderDamageCircle()
+        {
+            damageArea.Render();
+        }
+
+        public void Deactivate(Entity e)
         {
 
             Console.WriteLine("Deactivating entity");
 
-            RenderAnimation();
+            //RenderAnimation();
 
             //OnDeactivate?.Invoke(this);
 
-            Program.Characters.Remove(entity);
+            Program.Characters.Remove(e);
 
-            Program.Environment.Remove(entity);
+            Program.Environment.Remove(e);
 
         }
 

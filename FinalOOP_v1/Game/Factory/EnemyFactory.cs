@@ -19,9 +19,9 @@ namespace Game
             {
                 //Agrego opcion para agregar posicion random
                 case EnemiesFactory.enemyLevel1:
-                    return new Enemy(position, -90, new Vector2(0.5f, 0.5f), new Vector2(144, 145), new Vector2(100, 100), "Textures/Entities/Characters/Enemy1.png", 10, 0, 30, 5, 5);
+                    return new Enemy(position, -90, new Vector2(0.5f, 0.5f), new Vector2(144, 145), new Vector2(100, 100), "Textures/Entities/Characters/Enemy1.png", 10, 0, 30, 10, 15);
                 case EnemiesFactory.enemyLevel2:
-                    return new Enemy(position, -90, new Vector2(0.5f, 0.5f), new Vector2(31, 48), new Vector2(100, 100), "Textures/Entities/Characters/Enemy2.png", 30, 0, 20, 10, 5);
+                    return new Enemy(position, -90, new Vector2(1, 1), new Vector2(31, 48), new Vector2(100, 100), "Textures/Entities/Characters/Enemy2.png", 30, 0, 20, 10, 10);
                 case EnemiesFactory.enemyLevel3:
                     return new Enemy(position, -90, new Vector2(0.5f, 0.5f), new Vector2(182, 223), new Vector2(400, 400), "Textures/Entities/Characters/Enemy3.png", 50, 0, 8, 5, 5);
                 case EnemiesFactory.enemyLevel4:
@@ -29,7 +29,7 @@ namespace Game
                 case EnemiesFactory.finalBossEnemy:
                     return new BossEnemy(position, -90, new Vector2(1, 1), new Vector2(207, 226), new Vector2(50, 50), "Textures/Entities/Characters/Boss.png", 500, 0, 60, 40, 9);
                 default:
-                    return new Enemy(position, -90, new Vector2(0.5f, 0.5f), new Vector2(144, 145), new Vector2(100, 100), "Textures/Entities/Characters/Enemy1.png", 10, 0, 30, 5, 5);
+                    return new Enemy(position, -90, new Vector2(0.5f, 0.5f), new Vector2(144, 145), new Vector2(100, 100), "Textures/Entities/Characters/Enemy1.png", 10, 0, 30, 10, 15);
             }
         }
     }

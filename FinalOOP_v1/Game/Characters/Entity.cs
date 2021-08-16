@@ -13,9 +13,9 @@ namespace Game
 
         protected float colliderRadius;
 
-        LifeController lifeController;
+        protected LifeController lifeController;
         protected CircleCollider circleCollider;
-        protected BoxCollider boxCollider;
+        //protected BoxCollider boxCollider;
 
         protected Vector2 speed;
         private int damage;
@@ -28,98 +28,118 @@ namespace Game
         public float ColliderRadius { get => colliderRadius; set => colliderRadius = value; }
 
         public CircleCollider CircleCollider { get => circleCollider; set => circleCollider = value; }
-        public BoxCollider BoxCollider { get => boxCollider; set => boxCollider = value; }
+        //public BoxCollider BoxCollider { get => boxCollider; set => boxCollider = value; }
         public LifeController LifeController { get => lifeController; set => lifeController = value; }
+
         #region Constructors
-                public Entity()
-                {
-                    transform = new Transform(new Vector2(0f, 0f), new Vector2(1, 1), 0f);
-                    renderer = new Renderer(new Vector2(1, 1), null, transform);
-                }
+        public Entity()
+        {
+            transform = new Transform(new Vector2(0f, 0f), new Vector2(1, 1), 0f);
+            renderer = new Renderer(new Vector2(1, 1), null, transform);
+            Console.WriteLine($"colliderRadius: {colliderRadius}");
 
-                public Entity(Vector2 _position, Vector2 _scale, Vector2 _size, float _rotation, string _texture, int _damage, float _colliderRadius, Vector2 _speed)
-                {
-                    transform = new Transform(new Vector2(0f, 0f), new Vector2(1, 1), 0f);
-                    renderer = new Renderer(new Vector2(1, 1), null, transform);
-                    Initialize(_position, _scale, _size, _rotation, _texture, _damage, _colliderRadius, _speed);
-                }
+            //CircleCollider.Colliders.Add(this);
+        }
 
-                public Entity(Vector2 _position, Vector2 _scale, Vector2 _size, float _rotation, string _texture, int _damage, float _colliderRadius, int _maxHealth, Vector2 _speed)
-                {
-                    transform = new Transform(new Vector2(0f, 0f), new Vector2(1, 1), 0f);
-                    renderer = new Renderer(new Vector2(1, 1), null, transform);
-                    Initialize(_position, _scale, _size, _rotation, _texture, _damage, _colliderRadius, _maxHealth, _speed);
-                }
+        public Entity(Vector2 _position, Vector2 _scale, Vector2 _size, float _rotation, string _texture, int _damage, float _colliderRadius, Vector2 _speed)
+        {
+            transform = new Transform(new Vector2(0f, 0f), new Vector2(1, 1), 0f);
+            renderer = new Renderer(new Vector2(1, 1), null, transform);
+            Initialize(_position, _scale, _size, _rotation, _texture, _damage, _colliderRadius, _speed);
+            Console.WriteLine($"colliderRadius: {colliderRadius}");
 
-                public Entity(Vector2 _position, Vector2 _scale, Vector2 _size, float _rotation, string _texture, int _damage, float _colliderRadius, float _lifeTime, Vector2 _speed)
-                {
-                    transform = new Transform(new Vector2(0f, 0f), new Vector2(1, 1), 0f);
-                    renderer = new Renderer(new Vector2(1, 1), null, transform);
-                    Initialize(_position, _scale, _size, _rotation, _texture, _damage, _colliderRadius, _lifeTime, _speed);
-                }
-                #endregion
+            //CircleCollider.Colliders.Add(this);
+
+        }
+
+        public Entity(Vector2 _position, Vector2 _scale, Vector2 _size, float _rotation, string _texture, int _damage, float _colliderRadius, int _maxHealth, Vector2 _speed)
+        {
+            transform = new Transform(new Vector2(0f, 0f), new Vector2(1, 1), 0f);
+            renderer = new Renderer(new Vector2(1, 1), null, transform);
+            Initialize(_position, _scale, _size, _rotation, _texture, _damage, _colliderRadius, _maxHealth, _speed);
+            Console.WriteLine($"colliderRadius: {colliderRadius}");
+
+            //CircleCollider.Colliders.Add(this);
+
+        }
+
+        public Entity(Vector2 _position, Vector2 _scale, Vector2 _size, float _rotation, string _texture, int _damage, float _colliderRadius, float _lifeTime, Vector2 _speed)
+        {
+            transform = new Transform(new Vector2(0f, 0f), new Vector2(1, 1), 0f);
+            renderer = new Renderer(new Vector2(1, 1), null, transform);
+            Initialize(_position, _scale, _size, _rotation, _texture, _damage, _colliderRadius, _lifeTime, _speed);
+            Console.WriteLine($"colliderRadius: {colliderRadius}");
+            //CircleCollider.Colliders.Add(this);
+        }
+        #endregion
 
         #region Initializers
-                public void Initialize(Vector2 _position, Vector2 _scale, Vector2 _size, float _rotation, string _texture, int _damage, float _colliderRadius, int _maxHealth, Vector2 _speed)
-                {
-                    colliderRadius = _colliderRadius;
+        public void Initialize(Vector2 _position, Vector2 _scale, Vector2 _size, float _rotation, string _texture, int _damage, float _colliderRadius, int _maxHealth, Vector2 _speed)
+        {
+            colliderRadius = _colliderRadius;
 
-                    speed = _speed;
-                    Damage = _damage;
+            speed = _speed;
+            Damage = _damage;
 
-                    transform.Position = _position;
-                    transform.Scale = _scale;
-                    transform.Rotation = _rotation;
+            transform.Position = _position;
+            transform.Scale = _scale;
+            transform.Rotation = _rotation;
 
-                    renderer.Texture = _texture;
-                    renderer.Size = _size;
+            renderer.Texture = _texture;
+            renderer.Size = _size;
 
-                    LifeController = new LifeController(_maxHealth, this, false, false);
+            //boxCollider = new BoxCollider(transform, colliderRadius);
+            circleCollider = new CircleCollider(transform, colliderRadius);
+            Console.WriteLine($"colliderRadius: {colliderRadius}");
 
-                    boxCollider = new BoxCollider(transform, colliderRadius);
-                    circleCollider = new CircleCollider(transform, colliderRadius);
-                }
+            //CircleCollider.Colliders.Add(this);
 
-                public void Initialize(Vector2 _position, Vector2 _scale, Vector2 _size, float _rotation, string _texture, int _damage, float _colliderRadius, Vector2 _speed)
-                {
-                    colliderRadius = _colliderRadius;
+        }
 
-                    speed = _speed;
-                    Damage = _damage;
+        public void Initialize(Vector2 _position, Vector2 _scale, Vector2 _size, float _rotation, string _texture, int _damage, float _colliderRadius, Vector2 _speed)
+        {
+            colliderRadius = _colliderRadius;
 
-                    transform.Position = _position;
-                    transform.Scale = _scale;
-                    transform.Rotation = _rotation;
+            speed = _speed;
+            Damage = _damage;
 
-                    renderer.Texture = _texture;
-                    renderer.Size = _size;
+            transform.Position = _position;
+            transform.Scale = _scale;
+            transform.Rotation = _rotation;
 
-                    LifeController = new LifeController(this, false, false);
+            renderer.Texture = _texture;
+            renderer.Size = _size;
 
-                    boxCollider = new BoxCollider(transform, colliderRadius);
-                    circleCollider = new CircleCollider(transform, colliderRadius);
-                }
+            boxCollider = new BoxCollider(transform, colliderRadius);
+            circleCollider = new CircleCollider(transform, colliderRadius);
+            Console.WriteLine($"colliderRadius: {colliderRadius}");
+
+            //CircleCollider.Colliders.Add(this);
+        }
         
-                public void Initialize(Vector2 _position, Vector2 _scale, Vector2 _size, float _rotation, string _texture, int _damage, float _colliderRadius, float _lifeTime, Vector2 _speed)
-                {
+        public void Initialize(Vector2 _position, Vector2 _scale, Vector2 _size, float _rotation, string _texture, int _damage, float _colliderRadius, float _lifeTime, Vector2 _speed)
+        {
 
-                    colliderRadius = _colliderRadius;
+            colliderRadius = _colliderRadius;
 
-                    speed = _speed;
-                    Damage = _damage;
+            speed = _speed;
+            Damage = _damage;
 
-                    transform.Position = _position;
-                    transform.Scale = _scale;
-                    transform.Rotation = _rotation;
+            transform.Position = _position;
+            transform.Scale = _scale;
+            transform.Rotation = _rotation;
 
-                    renderer.Texture = _texture;
-                    renderer.Size = _size;
+            renderer.Texture = _texture;
+            renderer.Size = _size;
 
-                    boxCollider = new BoxCollider(transform, colliderRadius);
-                    circleCollider = new CircleCollider(transform, colliderRadius);
+            boxCollider = new BoxCollider(transform, colliderRadius);
+            circleCollider = new CircleCollider(transform, colliderRadius);
+            Console.WriteLine($"colliderRadius: {colliderRadius}");
 
-                }
-                #endregion
+            //CircleCollider.Colliders.Add(this);
+
+        }
+        #endregion
         public abstract void Render();
         public abstract void Update();
         public abstract void Move();

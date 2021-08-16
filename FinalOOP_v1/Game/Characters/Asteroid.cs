@@ -18,7 +18,7 @@ namespace Game
 
             speed = _speed;
 
-            LifeController = new LifeController(_lifeTime, this, false, false);
+            LifeController = new LifeController(this, false, false, _lifeTime);
 
 
         }
@@ -44,15 +44,19 @@ namespace Game
 
             for (int i = 0; i < Program.Characters.Count; i++)
             {
-                if (Program.Characters[i].LifeController.IsPlayer/* && CircleCollider.CheckforCollisions(Program.Characters[i])*/)
+                if (Program.Characters[i].LifeController.IsPlayer && CircleCollider.CheckforCollisions(Program.Characters[i]))
+                {
+
                     if (CircleCollider.CheckforCollisions(Program.Characters[i]))
                     {
 
-                        Program.Characters[i].LifeController.GetDamage(Damage);
-                        Program.Characters.Remove(this);
-                        //LifeController.Deactivate();
+                        //Program.Characters[i].LifeController.GetDamage(Damage);
+
+                        LifeController.Deactivate(this);
 
                     }
+
+                }
                 //Console.WriteLine("Collision W/ Player");
 
             }

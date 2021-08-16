@@ -1,0 +1,17 @@
+Collider:
+-Vuelve a colisionar, pero sigue eliminando todos los elementos de una
+
+PowerUps:
+- Hacer una probabilidad (Tal vez con roulette wheel), que determine las
+chances de que spawnee el PowerUp, e instanciar el PowerUp en el
+asteroid.
+Cuando instancio el PowerUp, tiene un lifetime y al tocar al player se
+elimina (Deactivate(powerUp/this)). Al tocar al player renderizar
+animación de vida o velocidad.
+
+Stack de vidas:
+- Volver a habilitarlo en el nivel.
+- Chequear la condición para eliminarlos (Cada vez que el player
+colisione contra un enemigo/bala/asteroid)
+- Si el player adquiere el powerUp de vida sumar una vida al stack.
+

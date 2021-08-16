@@ -20,7 +20,7 @@ namespace Game
         {
 
             Move();
-            CheckForCollisions();
+            //CheckForCollisions();
 
         }
 
@@ -36,9 +36,10 @@ namespace Game
                     if (CircleCollider.CheckforCollisions(Program.Characters[i]))
                     {
 
+                        circleCollider.IsCollision = true;
                         Program.Characters[i].LifeController.GetDamage(Damage);
                         Console.WriteLine("Collision with Player. CurrentLife" + Program.Characters[i].LifeController.CurrentLife);
-                        LifeController.Deactivate();
+                        LifeController.Deactivate(Program.Characters[i]);
 
                     }
 
