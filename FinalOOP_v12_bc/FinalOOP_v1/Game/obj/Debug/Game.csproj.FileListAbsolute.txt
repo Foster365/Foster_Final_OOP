@@ -1,0 +1,665 @@
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Engine.dll
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\ship.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Enemy2.jpg
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Enemy3.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Game.exe
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Game.pdb
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\obj\Debug\Game.csprojAssemblyReference.cache
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\obj\Debug\Game.exe
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\obj\Debug\Game.pdb
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Player.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\BulletPj.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion1.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion10.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion11.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion12.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion14.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion15.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion2.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion3.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion4.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion5.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion6.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion7.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion8.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion9.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Animations\Explosion\Explosion13.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\Game_Over.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\PauseB.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\Select.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\TextBut.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\TextCre.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\TextEx.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\TextLG.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\TextMMenu.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\TextNG.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\TextPlay.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\Win.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\ScreenFlow\SpaceBk.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Boss.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Enemy1.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\Enemy4.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\BulletEnemy1.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\BulletEnemy3.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\BulletEnemy4.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\Proyecto Base 2\Game\bin\Debug\Textures\BulletEnemy2.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Engine.dll
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\ship.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion1.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion10.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion11.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion12.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion13.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion14.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion15.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion2.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion3.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion4.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion5.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion6.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion7.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion8.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion9.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Boss.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\BulletEnemy2.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\BulletEnemy1.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\BulletEnemy3.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\BulletEnemy4.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\BulletPj.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Enemy1.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Enemy2.jpg
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Enemy3.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Enemy4.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Player.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\Game_Over.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\PauseB.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\Select.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\SpaceBk.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextBut.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextCre.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextEx.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextLG.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextMMenu.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextNG.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextPlay.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\Win.png
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Game.exe
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Game.pdb
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\obj\Debug\Game.csprojAssemblyReference.cache
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\obj\Debug\Game.exe
+C:\Users\Barbara\Desktop\Escritorio\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\obj\Debug\Game.pdb
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Engine.dll
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\ship.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion1.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion10.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion11.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion12.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion13.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion14.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion15.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion2.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion3.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion4.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion5.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion6.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion7.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion8.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Animations\Explosion\Explosion9.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Boss.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\BulletEnemy2.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\BulletEnemy1.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\BulletEnemy3.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\BulletEnemy4.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\BulletPj.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Enemy1.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Enemy2.jpg
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Enemy3.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Enemy4.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Player.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\Game_Over.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\PauseB.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\Select.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\SpaceBk.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextBut.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextCre.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextEx.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextLG.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextMMenu.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextNG.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\TextPlay.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\ScreenFlow\Win.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Game.exe
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Game.pdb
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\obj\Debug\Game.csprojAssemblyReference.cache
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\obj\Debug\Game.exe
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\obj\Debug\Game.pdb
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalPrevioOOP\Game\bin\Debug\Textures\Heart.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Engine.dll
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Heart.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\ship.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion1.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion10.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion11.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion12.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion13.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion14.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion15.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion2.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion3.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion4.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion5.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion6.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion7.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion8.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Animations\Explosion\Explosion9.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Boss.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\BulletEnemy2.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\BulletEnemy1.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\BulletEnemy3.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\BulletEnemy4.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\BulletPj.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Enemy1.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Enemy2.jpg
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Enemy3.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Enemy4.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\Player.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\Game_Over.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\PauseB.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\Select.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\SpaceBk.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\TextBut.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\TextCre.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\TextEx.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\TextLG.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\TextMMenu.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\TextNG.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\TextPlay.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Textures\ScreenFlow\Win.png
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Game.exe
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\bin\Debug\Game.pdb
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\obj\Debug\Game.csprojAssemblyReference.cache
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\obj\Debug\Game.exe
+C:\Users\Barbara\Desktop\Desktop\UADE\OOP\Final OOP previo\FinalOOP_v2\Game\obj\Debug\Game.pdb
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\obj\Debug\Game.csprojAssemblyReference.cache
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\obj\Debug\Game.exe
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\obj\Debug\Game.pdb
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Engine.dll
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Heart.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\ship.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\Game_Over.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\PauseB.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\Select.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\SpaceBk.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextBut.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextCre.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextEx.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextLG.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextMMenu.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextNG.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextPlay.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\Win.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Game.exe
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Game.pdb
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\1.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\10.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\11.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\12.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\13.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\14.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\15.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\16.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\17.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\18.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\19.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\2.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\20.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\21.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\22.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\23.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\24.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\25.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\26.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\27.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\28.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\29.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\3.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\30.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\31.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\32.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\33.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\34.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\35.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\36.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\37.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\38.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\39.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\4.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\40.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\41.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\42.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\43.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\44.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\45.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\46.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\47.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\48.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\49.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\5.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\50.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\51.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\52.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\53.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\54.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\55.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\56.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\57.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\58.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\59.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\6.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\60.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\7.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\8.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\9.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\PowerUps\DamagePowerUp.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\PowerUps\HealthPowerUp.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\PowerUps\RandomPowerUp.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\PowerUps\SpeedPowerUp.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion1.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion10.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion11.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion12.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion13.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion14.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion15.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion2.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion3.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion4.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion5.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion6.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion7.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion8.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion9.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid1.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid2.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid3.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid4.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid5.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid6.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Enemy2.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Boss.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\BulletEnemy2.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\BulletEnemy1.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\BulletEnemy3.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\BulletEnemy4.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\BulletPj.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Enemy1.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Enemy3.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Enemy4.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Player.png
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Level_Backgrounds\Level1Background.jpg
+E:\GitHub\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Level_Backgrounds\Level2Background.jpg
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Engine.dll
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid1.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid2.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid3.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid4.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid5.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid6.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\1.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\10.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\11.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\12.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\13.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\14.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\15.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\16.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\17.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\18.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\19.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\2.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\20.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\21.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\22.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\23.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\24.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\25.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\26.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\27.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\28.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\29.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\3.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\30.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\31.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\32.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\33.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\34.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\35.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\36.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\37.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\38.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\39.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\4.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\40.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\41.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\42.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\43.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\44.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\45.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\46.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\47.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\48.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\49.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\5.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\50.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\51.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\52.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\53.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\54.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\55.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\56.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\57.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\58.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\59.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\6.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\60.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\7.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\8.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\9.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion1.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion10.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion11.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion12.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion13.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion14.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion15.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion2.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion3.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion4.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion5.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion6.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion7.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion8.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion9.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Enemy2.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Heart.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\ship.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Boss.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\BulletEnemy2.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\BulletEnemy1.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\BulletEnemy3.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\BulletEnemy4.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\BulletPj.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Enemy1.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Enemy3.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Enemy4.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Level_Backgrounds\Level1Background.jpg
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Player.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Level_Backgrounds\Level2Background.jpg
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\PowerUps\DamagePowerUp.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\PowerUps\HealthPowerUp.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\PowerUps\RandomPowerUp.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\PowerUps\SpeedPowerUp.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\Game_Over.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\PauseB.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\Select.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\SpaceBk.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextBut.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextCre.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextEx.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextLG.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextMMenu.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextNG.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextPlay.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\Win.png
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Game.exe
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Game.pdb
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\obj\Debug\Game.csproj.AssemblyReference.cache
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\obj\Debug\Game.exe
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\obj\Debug\Game.pdb
+D:\Github\Foster_Final_OOP\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Character_damage.png
+D:\Github Backup\FinalOOP_v1\Game\obj\Debug\Game.csproj.AssemblyReference.cache
+D:\Github Backup\FinalOOP_v1\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+D:\Github Backup\FinalOOP_v1\Game\obj\Debug\Game.exe
+D:\Github Backup\FinalOOP_v1\Game\obj\Debug\Game.pdb
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Engine.dll
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid1.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid2.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid3.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid4.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid5.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid6.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\1.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\10.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\11.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\12.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\13.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\14.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\15.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\16.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\17.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\18.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\19.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\2.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\20.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\21.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\22.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\23.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\24.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\25.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\26.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\27.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\28.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\29.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\3.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\30.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\31.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\32.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\33.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\34.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\35.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\36.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\37.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\38.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\39.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\4.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\40.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\41.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\42.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\43.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\44.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\45.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\46.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\47.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\48.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\49.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\5.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\50.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\51.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\52.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\53.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\54.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\55.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\56.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\57.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\58.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\59.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\6.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\60.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\7.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\8.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\9.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Character_damage.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion1.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion10.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion11.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion12.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion13.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion14.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion15.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion2.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion3.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion4.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion5.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion6.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion7.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion8.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion9.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Enemy2.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Heart.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\ship.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Boss.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\BulletEnemy2.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\BulletEnemy1.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\BulletEnemy3.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\BulletEnemy4.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\BulletPj.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Enemy1.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Enemy3.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Enemy4.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Level_Backgrounds\Level1Background.jpg
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Player.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\Level_Backgrounds\Level2Background.jpg
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\PowerUps\DamagePowerUp.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\PowerUps\HealthPowerUp.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\PowerUps\RandomPowerUp.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\PowerUps\SpeedPowerUp.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\Game_Over.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\PauseB.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\Select.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\SpaceBk.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextBut.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextCre.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextEx.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextLG.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextMMenu.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextNG.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextPlay.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\Win.png
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Game.exe
+D:\Github Backup\FinalOOP_v1\Game\bin\Debug\Game.pdb
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\obj\Debug\Game.csproj.AssemblyReference.cache
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\obj\Debug\Game.exe
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\obj\Debug\Game.pdb
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Engine.dll
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid1.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid2.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid3.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid4.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid5.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Asteroids\Asteroid6.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\1.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\10.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\11.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\12.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\13.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\14.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\15.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\16.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\17.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\18.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\19.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\2.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\20.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\21.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\22.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\23.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\24.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\25.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\26.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\27.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\28.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\29.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\3.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\30.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\31.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\32.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\33.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\34.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\35.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\36.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\37.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\38.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\39.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\4.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\40.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\41.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\42.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\43.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\44.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\45.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\46.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\47.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\48.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\49.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\5.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\50.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\51.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\52.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\53.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\54.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\55.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\56.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\57.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\58.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\59.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\6.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\60.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\7.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\8.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Countdown\9.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Character_damage.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion1.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion10.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion11.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion12.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion13.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion14.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion15.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion2.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion3.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion4.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion5.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion6.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion7.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion8.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Explosion\Explosion9.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Enemy2.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Heart.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\ship.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Boss.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\BulletEnemy2.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\BulletEnemy1.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\BulletEnemy3.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\BulletEnemy4.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\BulletPj.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Enemy1.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Enemy3.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Enemy4.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Level_Backgrounds\Level1Background.jpg
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Entities\Characters\Player.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\Level_Backgrounds\Level2Background.jpg
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\PowerUps\DamagePowerUp.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\PowerUps\HealthPowerUp.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\PowerUps\RandomPowerUp.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\PowerUps\SpeedPowerUp.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\Game_Over.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\PauseB.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\Select.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\SpaceBk.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextBut.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextCre.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextEx.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextLG.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextMMenu.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextNG.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\TextPlay.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Textures\ScreenFlow\Win.png
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Game.exe
+C:\Fosters_Docs\Github Personal\FinalOOP_v1_bc\FinalOOP_v1\Game\bin\Debug\Game.pdb
