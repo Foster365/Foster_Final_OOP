@@ -1,2 +1,10 @@
-Hi!
-This is my project, which i'm developing in C#, using some design patterns and a bunch of OOP concepts.
+Controles:
+W, A, S, D para moverse, SPACE para disparar.
+
+Tengo que eliminar 10 enemigos por nivel para pasar al otro. Al matar al
+boss gano, pero si muero antes o se me termina el tiempo pierdo.
+Al colisionar con las balas enemigas el player respawnea en un lugar aleatorio.
+El player colisiona con los asteroides (No los destruye con las balas, para
+agregarle un poco más de dificultad (Obtengo una recompensa, powerup, pero a
+cambio de un sacrificio, vida)
+Los niveles 1 y final tienen 60 segundos, mientras que los demás tienen 50.
