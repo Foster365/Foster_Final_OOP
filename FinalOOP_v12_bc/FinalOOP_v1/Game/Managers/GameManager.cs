@@ -29,7 +29,7 @@ namespace Game
         private int points;
         Screen actualLevel;
 
-        PowerUpsFactory.PowerUps actualPowerUp;
+        //PowerUpsFactory.PowerUps actualPowerUp;
         //List<Program.ScreenFlow> levelScreens = new List<Program.ScreenFlow>();
 
         //BossEnemy bossEnemy{get;set;}

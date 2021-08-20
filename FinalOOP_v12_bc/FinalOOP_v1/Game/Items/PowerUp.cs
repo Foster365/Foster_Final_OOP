@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public class PowerUp : Item
+    public abstract class PowerUp : Item
     {
 
         Vector2 speed;
-        float lifeTime;
+        protected float lifeTime;
 
         CircleCollider circleCollider;
 
@@ -19,14 +19,16 @@ namespace Game
         public Vector2 Speed { get => speed; set => speed = value; }
 
         public CircleCollider CircleCollider { get => circleCollider; set => circleCollider = value; }
+        public LifeController LifeController { get => lifeController; set => lifeController = value; }
 
-        public PowerUp(Vector2 _position, Vector2 _scale, Vector2 _size, Vector2 _speed, float _rotation, float _colliderRadius, string _texture) : base(_position, _size, _scale, _rotation, _texture)
+        public PowerUp(Vector2 _position, Vector2 _scale, Vector2 _size, Vector2 _speed, float _lifeTime, float _rotation, float _colliderRadius, string _texture) : base(_position, _size, _scale, _rotation, _texture)
         {
 
             Speed = _speed;
+            lifeTime = _lifeTime;
 
             circleCollider = new CircleCollider(Transform, _colliderRadius);
-            lifeController = new LifeController(this, 2.3f);
+            lifeController = new LifeController(this, lifeTime);
 
         }
 
@@ -36,7 +38,7 @@ namespace Game
 
             counter += Time.DeltaTime;
             //if (counter >= lifeTime)
-                //Level1Screen.RenderizableObjects.Remove(this);
+            //Level1Screen.RenderizableObjects.Remove(this);
         }
 
         public override void Update()
@@ -44,16 +46,14 @@ namespace Game
             lifeController.LifeTimer();
         }
 
-        public virtual void Move()
-        {
-
-        }
+        public abstract void Move();
 
         public override void Render()
         {
+
+            Engine.Draw(Renderer.Texture, Transform.Position.X, Transform.Position.Y, Transform.Scale.X, Transform.Scale.Y, Transform.Rotation, Renderer.GetRealWidth() / 2, Renderer.GetRealHeight() / 2);
+
         }
-
-
 
         protected virtual void CheckForCollisionsWithPlayer()
         {

@@ -13,7 +13,7 @@ namespace Game
 
         Level1Screen level1;
 
-        public HealthPowerUp(Vector2 _position, Vector2 _scale, Vector2 _size, Vector2 _speed, float _rotation, float _colliderRadius, int _hp, string _texture) : base(_position, _scale, _size, _speed, _rotation, _colliderRadius, _texture)
+        public HealthPowerUp(Vector2 _position, Vector2 _scale, Vector2 _size, Vector2 _speed, float _lifeTime, float _rotation, float _colliderRadius, int _hp, string _texture) : base(_position, _scale, _size, _speed, _lifeTime, _rotation, _colliderRadius, _texture)
         {
 
             hp = _hp;
@@ -37,7 +37,11 @@ namespace Game
                 if (Program.Characters[i].LifeController.IsPlayer)
                 {
                     if (CircleCollider.CheckforCollisions(Program.Characters[i]))
+                    {
                         Heal(Program.Characters[i]);
+                        Console.WriteLine($"Player current life: {Program.Characters[i].LifeController.CurrentLife}");
+                        LifeController.Deactivate(this);
+                    }
                 }
             }
         }
@@ -58,6 +62,6 @@ namespace Game
         {
             Engine.Draw(Renderer.Texture, Transform.Position.X, Transform.Position.Y, Transform.Scale.X, Transform.Scale.Y, 0, Renderer.GetRealWidth() / 2, Renderer.GetRealHeight() / 2);
         }
-        
+
     }
 }
