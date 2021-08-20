@@ -103,10 +103,10 @@ namespace Game
 
         public void CheckVictory()
         {
-            if (Program.ActualScreenState == Program.ScreenFlow.level5Screen/* && bossEnemy.destroyed && points >= enemyKillstoWin*/)
-            {
-                Program.ActualScreenState = Program.ScreenFlow.winScreen;
-            }
+            //if (Program.ActualScreenState == Program.ScreenFlow.level5Screen/* && bossEnemy.destroyed && points >= enemyKillstoWin*/)
+            //{
+            //    Program.ActualScreenState = Program.ScreenFlow.winScreen;
+            //}
         }
 
         public void CheckDefeat()

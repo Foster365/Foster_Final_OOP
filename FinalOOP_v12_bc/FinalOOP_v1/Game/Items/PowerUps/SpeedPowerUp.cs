@@ -14,7 +14,7 @@ namespace Game
 
         Level1Screen level1;
 
-        public SpeedPowerUp(Vector2 _position, Vector2 _scale, Vector2 _size, Vector2 _speed, Vector2 _speedIncreaser, float _rotation, float _colliderRadius, string _texture) : base(_position, _scale, _size, _speed, _rotation, _colliderRadius, _texture)
+        public SpeedPowerUp(Vector2 _position, Vector2 _scale, Vector2 _size, Vector2 _speed, Vector2 _speedIncreaser, float _lifeTime, float _rotation, float _colliderRadius, string _texture) : base(_position, _scale, _size, _speed, _lifeTime, _rotation, _colliderRadius, _texture)
         {
 
             speedIncreaser = _speedIncreaser;
@@ -25,7 +25,7 @@ namespace Game
         {
 
             //CircleCollider.CheckforCollisions(level1.Player);
-
+            CheckForCollisionsWithPlayer();
             Move();
 
         }
@@ -37,7 +37,13 @@ namespace Game
                 if (Program.Characters[i].LifeController.IsPlayer)
                 {
                     if (CircleCollider.CheckforCollisions(Program.Characters[i]))
+                    {
+
                         GiveSpeed(Program.Characters[i]);
+                        Console.WriteLine($"Player current speed: {Program.Characters[i].Speed}");
+                        LifeController.Deactivate(this);
+
+                    }
                 }
             }
         }
@@ -50,7 +56,7 @@ namespace Game
         public override void Move()
         {
 
-            Transform.Position -= new Vector2(base.Speed.X * Time.DeltaTime, 0);
+            Transform.Position -= new Vector2(Speed.X * Time.DeltaTime, 0);
 
         }
 

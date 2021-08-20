@@ -13,7 +13,7 @@ namespace Game
         public List<Item> LifeStack { get => lifeStack; set => lifeStack = value; }
         public Screen()
         {
-           lifeStack = new List<Item>(); 
+           lifeStack = new List<Item>();
             ResetLevel();
             //Console.Write("Level" + this);
         }
@@ -33,16 +33,16 @@ namespace Game
         public virtual void CleanAllElements()
         {
 
-            for (int i = 0; i < Program.Characters.Count; i++)
-            {
+            //for (int i = 0; i < Program.Characters.Count; i++)
+            //{
 
-                if (!Program.Characters[i].LifeController.IsPlayer)
-                    Program.Characters.Remove(Program.Characters[i]);
+            //    if (!Program.Characters[i].LifeController.IsPlayer)
+            //        Program.Characters.Remove(Program.Characters[i]);
 
-            }
+            //}
 
-            Program.Environment.Clear();
-            Program.Characters.Clear();/*RemoveRange(0, Program.Characters.Count);*/
+            //Program.Environment.Clear();
+            //Program.Characters.Clear();/*RemoveRange(0, Program.Characters.Count);*/
         }
 
         public void CreateLifeStack(int amount, string texture)
@@ -70,13 +70,13 @@ namespace Game
 
 
                         currPlayerLife = Program.Characters[j].LifeController.MaxLife - Program.Characters[j].LifeController.MaxLife * .2f;
-                        Console.WriteLine($"currPlayerLife {currPlayerLife}");
+                        //Console.WriteLine($"currPlayerLife {currPlayerLife}");
                         if (Program.Characters[j].LifeController.Damaged && currPlayerLife == currPlayerLife - .2f/*Program.Characters[i].LifeController.CurrentLife == Program.Characters[i].LifeController.MaxLife - Program.Characters[i].LifeController.MaxLife * .2f*/)
                         {
-                            Console.WriteLine("Life" + (currPlayerLife == currPlayerLife - .2f));
+                            //Console.WriteLine("Life" + (currPlayerLife == currPlayerLife - .2f));
                             //Program.Environment.Remove(this);
                             LifeStack.Remove(LifeStack[i]);
-                            Console.WriteLine("Life Stack hearts" + Program.Environment.Count);
+                            //Console.WriteLine("Life Stack hearts" + Program.Environment.Count);
                             //isDamage = false;
                         }
 

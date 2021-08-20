@@ -150,8 +150,8 @@ namespace Game
             damaged = true;
             CurrentLife -= damagePoints;
             RenderDamageCircle();
-            Console.WriteLine($"Circle rendered in {entity.Transform.Position.X} {entity.Transform.Position.Y}");
-            Console.WriteLine(entity + "Life Points" + CurrentLife);
+            //Console.WriteLine($"Circle rendered in {entity.Transform.Position.X} {entity.Transform.Position.Y}");
+            //Console.WriteLine(entity + "Life Points" + CurrentLife);
             if (CurrentLife <= 0)
             {
 
@@ -176,7 +176,14 @@ namespace Game
 
             Program.Characters.Remove(e);
 
-            Program.Environment.Remove(e);
+        }
+
+        public void Deactivate(Item i)
+        {
+
+            Console.WriteLine("Deactivating item");
+
+            Program.Environment.Remove(i);
 
         }
 

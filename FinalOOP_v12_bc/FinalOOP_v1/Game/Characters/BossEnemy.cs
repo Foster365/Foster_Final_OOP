@@ -9,6 +9,12 @@ namespace Game
     public class BossEnemy : Entity
     {
 
+        List<PowerUp> enemies = new List<PowerUp>();
+
+        Roulette roulette;
+        Dictionary<Node, int> dict = new Dictionary<Node, int>();
+        Node initNode;
+
         //Variables
         Pursuit pursuitBehaviour;
         ObjectsPool<PlayerBullet> poolBullets = new ObjectsPool<PlayerBullet>();
@@ -16,6 +22,8 @@ namespace Game
         float timerShoot;
         float timetoShoot;
 
+        float timeToCreate = 0;
+        float maxTimeToCreate = 10;
 
         Enemy[] enemiesCollection;
 
@@ -32,20 +40,14 @@ namespace Game
 
             LifeController = new LifeController(this, true, false);
 
+            InitRouletteWheel();
+
             //pursuitBehaviour = new Pursuit(Transform.Position, player.Transform.Position, Speed, 1);
 
         }
 
         public override void Update()
         {
-
-            //Transform.Position += new Vector2(0, Speed.Y * Time.DeltaTime);
-
-            //if (Transform.Position.Y >= 0)
-            //    Transform.Position += new Vector2(0, Speed.Y * Time.DeltaTime);
-
-            //if (Transform.Position.Y < 600)
-            //    Transform.Position += new Vector2(0, -Speed.Y * Time.DeltaTime);
 
             if (!LifeController.Destroyed)
             {
@@ -54,24 +56,18 @@ namespace Game
 
                 LifeController.LifeTimer();
 
-                //lifeTimer += Time.DeltaTime;
-                //Console.WriteLine(LifeController.LifeTime);
-                //if (lifeTimer >= LifeController.LifeTime)
-                //    Level1Screen.RenderizableObjects.Remove(this);
+                //CreateEnemies();
 
-                //for (int i = 0; i < Program.Bullets.Count; i++)
-                //{
+                timeToCreate += Time.DeltaTime;
 
-                //    if (circleCollider.CheckforCollisions(Program.Bullets[i]))
-                //    {
+                if (timeToCreate >= maxTimeToCreate)
+                {
 
-                //        Level1Screen.Enemies.Remove(this);
-                //        Console.WriteLine("Enemy destroyed");
+                    RouletteAction();
+                    timeToCreate = 0;
 
-                //    }
-                //}
+                }
 
-                CreateEnemies();
             }
 
         }
@@ -85,73 +81,139 @@ namespace Game
 
         }
 
+        #region Power Up Roulette Wheel
+
+        public void InitRouletteWheel()
+        {
+            roulette = new Roulette();
+
+            ActionNode enemiesLevel1 = new ActionNode(SpawnEnemiesLevel1);
+            ActionNode enemiesLevel2 = new ActionNode(SpawnEnemiesLevel2);
+            ActionNode enemiesLevel3 = new ActionNode(SpawnEnemiesLevel3);
+            ActionNode enemiesLevel4 = new ActionNode(SpawnEnemiesLevel4);
+            ActionNode enemiesAllLevels = new ActionNode(SpawnAllEnemyTypes);
+
+            dict.Add(enemiesLevel1, 60);
+            dict.Add(enemiesLevel2, 20);
+            dict.Add(enemiesLevel3, 10);
+            dict.Add(enemiesLevel4, 30);
+            dict.Add(enemiesAllLevels, 30);
+
+            ActionNode rouletteAction = new ActionNode(RouletteAction);
+
+        }
+
+        public void RouletteAction()
+        {
+            Console.WriteLine("Power Up Roulette Wheel initialized");
+            Node nodeRoulette = roulette.Run(dict);
+            nodeRoulette.Execute();
+        }
+
+        public void SpawnEnemiesLevel1()
+        {
+
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(Transform.Position.X + 10, Transform.Position.Y + 10)));
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(Transform.Position.X + 35, Transform.Position.Y + 20)));
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(Transform.Position.X + 70, Transform.Position.Y + 30)));
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(Transform.Position.X + 100, Transform.Position.Y + 40)));
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(Transform.Position.X + 130, Transform.Position.Y + 50)));
+
+            Console.WriteLine("Enemies level 1 Deployed");
+
+        }
+        public void SpawnEnemiesLevel2()
+        {
+
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel2, new Vector2(Transform.Position.X + 10, Transform.Position.Y + 10)));
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel2, new Vector2(Transform.Position.X + 35, Transform.Position.Y + 20)));
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel2, new Vector2(Transform.Position.X + 70, Transform.Position.Y + 30)));
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel2, new Vector2(Transform.Position.X + 100, Transform.Position.Y + 40)));
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel2, new Vector2(Transform.Position.X + 130, Transform.Position.Y + 50)));
+
+            Console.WriteLine("Enemies level 2 Deployed");
+
+        }
+        public void SpawnEnemiesLevel3()
+        {
+
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel3, new Vector2(Transform.Position.X + 10, Transform.Position.Y + 10)));
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel3, new Vector2(Transform.Position.X + 35, Transform.Position.Y + 20)));
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel3, new Vector2(Transform.Position.X + 70, Transform.Position.Y + 30)));
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel3, new Vector2(Transform.Position.X + 100, Transform.Position.Y + 40)));
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel3, new Vector2(Transform.Position.X + 130, Transform.Position.Y + 50)));
+
+            Console.WriteLine("Enemies level 3 Deployed");
+
+        }
+
+        public void SpawnEnemiesLevel4()
+        {
+
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel4, new Vector2(Transform.Position.X + 10, Transform.Position.Y + 10)));
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel4, new Vector2(Transform.Position.X + 35, Transform.Position.Y + 20)));
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel4, new Vector2(Transform.Position.X + 70, Transform.Position.Y + 30)));
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel4, new Vector2(Transform.Position.X + 100, Transform.Position.Y + 40)));
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel4, new Vector2(Transform.Position.X + 130, Transform.Position.Y + 50)));
+
+            Console.WriteLine("Enemies level 4 Deployed");
+
+        }
+
+        public void SpawnAllEnemyTypes()
+        {
+
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(Transform.Position.X + 10, Transform.Position.Y + 10)));
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel2, new Vector2(Transform.Position.X + 35, Transform.Position.Y + 20)));
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel3, new Vector2(Transform.Position.X + 70, Transform.Position.Y + 30)));
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel4, new Vector2(Transform.Position.X + 100, Transform.Position.Y + 40)));
+            Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel3, new Vector2(Transform.Position.X + 130, Transform.Position.Y + 50)));
+
+            Console.WriteLine("Enemies all levels Deployed");
+
+        }
+        #endregion;
+
         void CreateEnemies()
         {
 
-            float createEnemiesTimer = 0;
-            float createEnemiesMaxTimer = 10f;
+            //float createEnemiesTimer = 0;
+            //float createEnemiesMaxTimer = 10f;
 
-            Random random = new Random();
+            //Random random = new Random();
 
-            //Vector2 enemyPos = new Vector2(random.Next(850, 800), random.Next(200, 250));
+            ////Vector2 enemyPos = new Vector2(random.Next(850, 800), random.Next(200, 250));
 
-            createEnemiesMaxTimer += Time.DeltaTime;
+            //createEnemiesMaxTimer += Time.DeltaTime;
 
-            //foreach (Enemy e in Program.Characters)
+            ////foreach (Enemy e in Program.Characters)
+            ////{
+
+            //if (createEnemiesTimer >= createEnemiesMaxTimer)
             //{
-
-            if (createEnemiesTimer >= createEnemiesMaxTimer)
-            {
-                Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(500, 150)));
-                Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(550, 200)));
-                Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(600, 250)));
-                Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(750, 300)));
-                Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(800, 350)));
-                Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(850, 400)));
-            }
-
+            //    Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(500, 150)));
+            //    Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(550, 200)));
+            //    Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(600, 250)));
+            //    Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(750, 300)));
+            //    Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(800, 350)));
+            //    Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(850, 400)));
             //}
 
+            ////}
+
         }
 
-        void EnemiesCollection()
-        { 
-            foreach(Enemy e in enemiesCollection)
-            {
-                Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, new Vector2(0, 0)));
-                Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel2, new Vector2(0, 0)));
-                Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel3, new Vector2(0, 0)));
-                Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel4, new Vector2(0, 0)));
-            };
-        }
 
         public override void Move()
         {
 
-            //Vector2 dir = pursuitBehaviour.GetDir();
-            for (int i = 0; i < Program.Characters.Count; i++)
-            {
+            Transform.Position += new Vector2(0, Speed.Y * Time.DeltaTime);
 
-                if (Program.Characters[i].LifeController.IsPlayer)
-                    targetPosition = Program.Characters[i].Transform.Position;
-                //targetPosition = new Vector2(Program.Characters[i].Transform.Position.X, Program.Characters[i].Transform.Position.Y);
+            if (Transform.Position.Y <= 0)
+                Transform.Position += new Vector2(0, Speed.Y * Time.DeltaTime);
 
-                // angle is the arctan placed in the correct quadrant of the Y difference and X difference
-                //float angleOfAttack =
-                //     (float)Math.Atan2((float)(targetPosition.Y - transform.Position.Y),
-                //     (float)(targetPosition.X - transform.Position.X));
-
-                //// velocity is the cos(angle*speed), sin(angle*speed)
-                //Vector2 velocity =
-                //     new Vector2((float)Math.Sin(angleOfAttack) * speed.X,
-                //     (float)Math.Cos(angleOfAttack) * speed.Y);
-
-                //// new position is +velocity
-                //transform.Position += new Vector2(velocity.X*Time.DeltaTime, 0);
-                //transform.Position += new Vector2(0, velocity.Y * Time.DeltaTime);
-          
-
-            }
+            if (Transform.Position.Y > 600)
+                Transform.Position -= new Vector2(0, Speed.Y * Time.DeltaTime);
 
         }
 

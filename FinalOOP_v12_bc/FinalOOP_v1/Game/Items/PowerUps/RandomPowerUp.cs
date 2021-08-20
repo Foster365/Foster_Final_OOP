@@ -18,7 +18,7 @@ namespace Game
         Dictionary<Node, int> _rouletteNodes = new Dictionary<Node, int>();
         Node _initNode;
 
-        public RandomPowerUp(Vector2 _position, Vector2 _scale, Vector2 _size, Vector2 _speed, float _rotation, float _colliderRadius, string _texture) : base(_position, _scale, _size, _speed, _rotation, _colliderRadius, _texture)
+        public RandomPowerUp(Vector2 _position, Vector2 _scale, Vector2 _size, Vector2 _speed, float _lifeTime, float _rotation, float _colliderRadius, string _texture) : base(_position, _scale, _size, _speed, _lifeTime, _rotation, _colliderRadius, _texture)
         {
 
         }
@@ -51,7 +51,7 @@ namespace Game
 
         void HealthPowerUpAN()
         {
-            PowerUpsFactory.CreatePowerUp(PowerUpsFactory.PowerUps.life, Transform.Position);
+            PowerUpsFactory.CreatePowerUp(PowerUpsFactory.PowerUps.health, Transform.Position);
         }
 
         void DamagePowerUpAN()
