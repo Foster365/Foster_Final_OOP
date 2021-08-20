@@ -73,8 +73,13 @@ namespace Game
 
                 collisionTimer += Time.DeltaTime;
 
+                Console.WriteLine($"Player damaged: {LifeController.Damaged}");
+
+                if (LifeController.Damaged)
+                    Respawn();
+
                 //if(canReceiveDamage && !LifeController.Damaged)
-                    //CheckForCollisionsWEnemy();
+                //CheckForCollisionsWEnemy();
 
             }
             
@@ -101,12 +106,11 @@ namespace Game
                         if (LifeController.Damaged)
                         {
 
-                            //LifeController.GetDamage(Program.Characters[i].Damage);
 
                             Console.WriteLine("Respawn player");
-                            
-                            //if(canRespawn)
-                            //    Respawn();
+
+                            if (canRespawn)
+                                Respawn();
 
                         }
 
@@ -140,53 +144,53 @@ namespace Game
           
         }
 
-        void Respawn()
+        public void Respawn()
         {
 
             respawnTimer = 0;
             inmunityTimer = 0;
-            inmunityTimer = 0;
 
+            canReceiveDamage = false;
+
+            //Console.WriteLine("Inmunity timer: " + inmunityTimer);
+            //LifeController.Damaged = true;
+
+            Random random = new Random();
+
+            //Vector2 randomPosition = ;
+
+            Console.WriteLine("Respawning player");
+
+            //if (LifeController.Damaged)
+            //{
+
+            Transform.Position = new Vector2(random.Next(200, 600), random.Next(100, 500))/*randomPosition*/;
+            Console.WriteLine($"Player new pos {Transform.Position.X}, {Transform.Position.Y}");
+            //canReceiveDamage = false;
+
+            inmunity = true;
+            canRespawn = false;
+
+            inmunityTimer += Time.DeltaTime;
+
+            if(inmunity && inmunityTimer <= inmunityMaxTimer)
+            {
+                Console.WriteLine("Hi");
+
+                Console.WriteLine($"InmunityTimer is {inmunityTimer}");
+
+                //Console.WriteLine($"Player is inmune for {inmunityTimer} sec");
+                //if(inmunity)
+                //if ()
+                PlayerInmunity();
+
+            }
+
+                
             if (canRespawn)
             {
 
-                canReceiveDamage = false;
-
-                //Console.WriteLine("Inmunity timer: " + inmunityTimer);
-                //LifeController.Damaged = true;
-
-                Random random = new Random();
-
-                //Vector2 randomPosition = ;
-
-                Console.WriteLine("Respawning player");
-
-                //if (LifeController.Damaged)
-                //{
-
-                Transform.Position = new Vector2(random.Next(200, 600), random.Next(100, 500))/*randomPosition*/;
-                Console.WriteLine($"Player new pos {Transform.Position.X}, {Transform.Position.Y}");
-                //canReceiveDamage = false;
-
-                inmunity = true;
-                canRespawn = false;
-
-                inmunityTimer += Time.DeltaTime;
-
-                if(inmunity && inmunityTimer <= inmunityMaxTimer)
-                {
-                    Console.WriteLine("Hi");
-
-                    Console.WriteLine($"InmunityTimer is {inmunityTimer}");
-
-                    //Console.WriteLine($"Player is inmune for {inmunityTimer} sec");
-                    //if(inmunity)
-                    //if ()
-                    PlayerInmunity();
-
-                }
-
-                
+           
             }
 
             inmunity = false;

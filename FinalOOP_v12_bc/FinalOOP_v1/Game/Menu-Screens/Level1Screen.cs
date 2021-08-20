@@ -19,9 +19,8 @@ namespace Game
         float maxLevelTimer = 60;
 
         Animation levelCountdown;
-        Animation deathAnimation;
 
-        public enum Animations { levelCountdown, deathAnimation}
+        public enum Animations { levelCountdown}
 
         Animations actualAnimstate = Animations.levelCountdown;
 
@@ -54,8 +53,8 @@ namespace Game
             EnemySpawn();
             CreateAsteroid();
             CheckPlayerLife();
-            //UpdateAnimation();
-            NextLevel();
+            UpdateAnimation();
+            //NextLevel();
 
         }
 
@@ -83,14 +82,6 @@ namespace Game
 
             if (ActualAnimstate == Animations.levelCountdown)
                 Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
-
-            if (actualAnimstate == Animations.deathAnimation)
-            {
-
-                Engine.Draw(deathAnimation.AnimList[deathAnimation.ActualAnimationFrame], 300, 100, 3, 3, 0, 0, 0);
-                //Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
-
-            }
 
         }
 
@@ -196,18 +187,18 @@ namespace Game
 
         }
 
-        public void NextLevel()
-        {
+        //public void NextLevel()
+        //{
 
-            if (GameManager.Instance.EnemyKills == 1)
-            {
+        //    if (GameManager.Instance.EnemyKills == 1)
+        //    {
 
-                Program.ActualScreenState = Program.ScreenFlow.level2Screen;
-                //CleanAllElements();
+        //        Program.ActualScreenState = Program.ScreenFlow.level2Screen;
+        //        //CleanAllElements();
 
-            }
+        //    }
 
-        }
+        //}
 
     }
 }

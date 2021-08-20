@@ -53,7 +53,7 @@ namespace Game
                 if (shootTimer >= shootMaxTimer)
                 {
 
-                    //Shoot();
+                    Shoot();
                     shootTimer = 0;
 
                 }
@@ -76,7 +76,7 @@ namespace Game
                         Program.Characters[i].LifeController.GetDamage(Damage);
                         //CircleCollider.IsCollision = true;
                         //Program.Characters[i].LifeController.Damaged = true;
-                        //LifeController.Deactivate(this);
+                        LifeController.Deactivate(this);
 
                         Console.WriteLine($"Player current life {Program.Characters[i].LifeController.CurrentLife}");
                         //LifeController.Destroyed = true;

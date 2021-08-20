@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public class WinScreen
+    public class WinScreen : Screen
     {
 
         public WinScreen()
         {
 
-            ResetScreen();
+            ResetLevel();
 
         }
 
-        void ResetScreen()
+        public override void ResetLevel()
         {
             Engine.Clear();
             AddTextures();
@@ -24,25 +24,34 @@ namespace Game
 
         void AddTextures()
         {
+            if(Program.ActualScreenState == Program.ScreenFlow.winScreen)
+            {
 
-            //Program.Renderizable.Add(new Image(new Vector2(200, 455), new Vector2(1, 1), new Vector2(1920, 1080), 0, "Textures/ScreenFlow/SpaceBk.png"));
-            //Program.Renderizable.Add(new Image(new Vector2(300, 100), new Vector2(1, 1), new Vector2(238, 84), 0, "Textures/ScreenFlow/Win.png"));
+                Program.Environment.Add(new Image(new Vector2(200, 455), new Vector2(1, 1), new Vector2(1920, 1080), 0, "Textures/ScreenFlow/SpaceBk.png"));
+                Program.Environment.Add(new Image(new Vector2(300, 100), new Vector2(1, 1), new Vector2(238, 84), 0, "Textures/ScreenFlow/Win.png"));
+
+            }
 
         }
 
-        public void Update()
+        public override void Update()
         {
 
         }
 
-        public void Render()
+        public override void Render()
         {
-            //for(int i = 0; i<Program.Renderizable.Count; i++)
-            //{
+            RenderTextures();
+        }
 
-            //    Program.Renderizable[i].Render();
+        void RenderTextures()
+        {
+            for (int i = 0; i < Program.Environment.Count; i++)
+            {
 
-            //}
+                Program.Environment[i].Render();
+
+            }
         }
     }
 }

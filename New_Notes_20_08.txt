@@ -1,0 +1,8 @@
+Powerups
+Bullet tiene damage de player
+boss copiado
+Background niveles
+Seteo background nivel 1
+Nivel 2 ok, falta mantener lifestack y contador
+Nivel 3 seteado
+Pantalla win y gameover hay bug, queda fixearlo.

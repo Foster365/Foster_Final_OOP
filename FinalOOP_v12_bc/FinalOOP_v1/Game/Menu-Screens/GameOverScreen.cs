@@ -15,6 +15,8 @@ namespace Game
         public GameOverScreen():base()
         {
 
+            ResetLevel();
+
         }
 
         public override void Update()
@@ -33,7 +35,7 @@ namespace Game
             {
 
                 Program.Environment[i].Render();
-
+                Console.WriteLine("Rendering Game Over Sxreen");
             }
 
         }
@@ -62,6 +64,7 @@ namespace Game
                 Program.Environment.Add(new Image(new Vector2(200, 100), new Vector2(.6f, .6f), new Vector2(448, 56), 0, "Textures/ScreenFlow/Game_Over.png"));
 
             }
+
         }
     }
 }
