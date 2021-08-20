@@ -10,10 +10,10 @@ namespace Game
     {
 
         float enemySpawnerTimer = 0;
-        float timetoCreate = 3f;
+        float timetoCreate = 2.7f;
 
         float asteroidTimer = 0;
-        float asteroidSpawnTime = 2.5f;
+        float asteroidSpawnTime = 3f;
 
         float levelTimer = 0;
         float maxLevelTimer = 50;
@@ -30,6 +30,7 @@ namespace Game
         {
 
             GameManager.Instance.EnemyKills = 0;
+            ResetLevel();
 
         }
 
@@ -53,7 +54,7 @@ namespace Game
             LevelCounter();
             EnemySpawn();
             CreateAsteroid();
-            UpdateAnimation();
+            //UpdateAnimation();
             NextLevel();
 
         }
@@ -75,8 +76,8 @@ namespace Game
 
             }
 
-            if (ActualAnimstate == Animations.levelCountdown)
-                Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
+            //if (ActualAnimstate == Animations.levelCountdown)
+            //    Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
 
         }
 
@@ -98,7 +99,7 @@ namespace Game
             if (Program.ActualScreenState == Program.ScreenFlow.level3Screen)
             {
 
-                Environment_Textures();
+                //Environment_Textures();
                 AnimationParameters();
                 CreateCharacters();
 
@@ -118,8 +119,9 @@ namespace Game
 
             if (enemySpawnerTimer >= timetoCreate)
             {
-
+                
                 Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel2, enemyPosition));
+                Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel3, enemyPosition));
                 enemySpawnerTimer = 0;
 
             }
@@ -138,7 +140,7 @@ namespace Game
             if (asteroidTimer >= asteroidSpawnTime)
             {
 
-                Program.Environment.Add(AsteroidsFactory.CreateAsteroid(AsteroidsFactory.AsteroidFactory.asteroid2, asteroidPosition));
+                Program.Environment.Add(AsteroidsFactory.CreateAsteroid(AsteroidsFactory.AsteroidFactory.asteroid3, asteroidPosition));
                 asteroidTimer = 0;
 
             }
@@ -189,7 +191,7 @@ namespace Game
         public void NextLevel()
         {
 
-            if (GameManager.Instance.EnemyKills == 10)
+            if (GameManager.Instance.EnemyKills >= 10)
             {
 
                 Program.ActualScreenState = Program.ScreenFlow.level4Screen;

@@ -30,6 +30,7 @@ namespace Game
         {
 
             GameManager.Instance.EnemyKills = 0;
+            ResetLevel();
 
         }
 
@@ -50,7 +51,7 @@ namespace Game
 
             }
 
-            UpdateAnimation();
+            //UpdateAnimation();
             LevelCounter();
             EnemySpawn();
             CreateAsteroid();
@@ -75,8 +76,8 @@ namespace Game
 
             }
 
-            if (ActualAnimstate == Animations.levelCountdown)
-                Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
+            //if (ActualAnimstate == Animations.levelCountdown)
+            //    Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
 
         }
 
@@ -98,7 +99,7 @@ namespace Game
             if (Program.ActualScreenState == Program.ScreenFlow.level2Screen)
             {
 
-                AnimationParameters();
+                //AnimationParameters();
                 Environment_Textures();
                 CreateCharacters();
 
@@ -189,7 +190,7 @@ namespace Game
         public void NextLevel()
         {
 
-            if (GameManager.Instance.EnemyKills == 10)
+            if (GameManager.Instance.EnemyKills >= 10)
             {
 
                 Program.ActualScreenState = Program.ScreenFlow.level3Screen;

@@ -14,7 +14,6 @@ namespace Game
         public Screen()
         {
            lifeStack = new List<Item>(); 
-            ResetLevel();
             //Console.Write("Level" + this);
         }
 

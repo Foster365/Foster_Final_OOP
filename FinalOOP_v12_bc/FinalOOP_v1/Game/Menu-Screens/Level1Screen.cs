@@ -30,6 +30,7 @@ namespace Game
         {
 
             GameManager.Instance.EnemyKills = 0;
+            ResetLevel();
 
         }
 
@@ -54,7 +55,7 @@ namespace Game
             CreateAsteroid();
             CheckPlayerLife();
             UpdateAnimation();
-            //NextLevel();
+            NextLevel();
 
         }
 
@@ -187,18 +188,18 @@ namespace Game
 
         }
 
-        //public void NextLevel()
-        //{
+        public void NextLevel()
+        {
 
-        //    if (GameManager.Instance.EnemyKills == 1)
-        //    {
+            if (GameManager.Instance.EnemyKills >= 10)
+            {
 
-        //        Program.ActualScreenState = Program.ScreenFlow.level2Screen;
-        //        //CleanAllElements();
+                Program.ActualScreenState = Program.ScreenFlow.level2Screen;
+                //CleanAllElements();
 
-        //    }
+            }
 
-        //}
+        }
 
     }
 }

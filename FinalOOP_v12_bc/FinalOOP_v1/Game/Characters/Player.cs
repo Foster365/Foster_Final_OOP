@@ -55,15 +55,13 @@ namespace Game
             {
 
                 //timer += Time.DeltaTime;
-                //Console.WriteLine("Respawn in" + timer);
 
                 ScreenLimits();
                 Move();
 
                 timerShoot += Time.DeltaTime;
-                //Console.WriteLine("Shoot Timer" + timerShoot);
 
-                if (Engine.GetKey(Keys.SPACE) && timerShoot >= timetoShoot && canShoot)
+                if (Engine.GetKey(Keys.SPACE) && timerShoot >= timetoShoot)
                 {
 
                     Shoot();
@@ -71,18 +69,8 @@ namespace Game
 
                 }
 
-                if (Engine.GetKey(Keys.Q))
-                    LifeController.GetDamage(10);
-
-                collisionTimer += Time.DeltaTime;
-
-                Console.WriteLine($"Player damaged: {LifeController.Damaged}");
-
                 if (LifeController.Damaged)
                     Respawn();
-
-                //if(canReceiveDamage && !LifeController.Damaged)
-                //CheckForCollisionsWEnemy();
 
             }
             
@@ -95,18 +83,14 @@ namespace Game
 
             canReceiveDamage = false;
             inmunity = true;
-            canRespawn = false;
+            //canRespawn = false;
 
             Random random = new Random();
 
             Transform.Position = new Vector2(random.Next(200, 600), random.Next(100, 500));
 
-            inmunityTimer += Time.DeltaTime;
-
-            if(inmunity && inmunityTimer <= inmunityMaxTimer)
+            if (inmunity)
             {
-
-                Console.WriteLine($"InmunityTimer is {inmunityTimer}");
 
                 PlayerInmunity();
 
@@ -126,6 +110,9 @@ namespace Game
 
             canShoot = false;
             canRespawn = false;
+
+            inmunityTimer += Time.DeltaTime;
+            Console.WriteLine($"InmunityTimer is {inmunityTimer}");
 
         }
 
