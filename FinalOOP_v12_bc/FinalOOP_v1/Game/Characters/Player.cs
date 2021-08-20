@@ -11,15 +11,15 @@ namespace Game
     {
         //Variables
 
-        bool inmunity = false;
+        bool inmunity;
         float inmunityMaxTimer = 3; float inmunityTimer = 0;
 
         bool canShoot;
         float timerShoot = 0; float timetoShoot = .3f;
 
-        bool canReceiveDamage = true;
+        bool canReceiveDamage;
 
-        bool canRespawn = true;
+        bool canRespawn;
 
         float collisionTimer = 0;
         float collisionMaxTimer = 1f;
@@ -73,9 +73,8 @@ namespace Game
 
                 collisionTimer += Time.DeltaTime;
 
-                if (/*collisionTimer >= collisionMaxTimer && */canReceiveDamage)
-                    CheckForCollisionsWEnemy();
-                //    if (collisionTimer >= collisionMaxTimer)
+                //if(canReceiveDamage && !LifeController.Damaged)
+                    //CheckForCollisionsWEnemy();
 
             }
             
@@ -94,65 +93,67 @@ namespace Game
 
                         //Console.WriteLine("Collision with enemy, respawning");
 
-                        LifeController.GetDamage(Program.Characters[i].Damage);
-                        //LifeController.Damaged = true;
+                        LifeController.Damaged = true;
+                        canRespawn = true;
                         //Console.WriteLine("Changos me golpeé");
 
 
-                        Console.WriteLine("Player current life" + LifeController.CurrentLife);
-                        //canRespawn = true;
-                        Console.WriteLine("Respawn player");
-                        if(canRespawn)
+                        if (LifeController.Damaged)
                         {
 
-                            Respawn();
-                            canRespawn = false;
+                            //LifeController.GetDamage(Program.Characters[i].Damage);
+
+                            Console.WriteLine("Respawn player");
+                            
+                            //if(canRespawn)
+                            //    Respawn();
 
                         }
 
-                        //if (LifeController.Damaged)
-                        //{
-
-                        //}
-
-                        //Console.WriteLine($"Player inmunity outside PlayerInmunity(): {inmunity}");
+                        Console.WriteLine($"Player inmunity outside PlayerInmunity(): {inmunity}");
 
                         Console.WriteLine($"Can Respawn outside PlayerInmunity(): {canRespawn}");
 
-                    }
+                        //LifeController.Damaged = false;
+                        //canReceiveDamage = true;
 
-                    collisionTimer = 0;
-                    canReceiveDamage = true;
+                        //Console.WriteLine("Can Respawn: " + canRespawn);
+                        //Console.WriteLine("Player current health" + LifeController.CurrentLife);
+
+                    }
                 }
 
 
-                inmunity = false;
+                //inmunity = false;
 
                 //canReceiveDamage = true;
                 //LifeController.Damaged = false;
 
-                canShoot = true;
+                //canShoot = true;
                 //canRespawn = true;
 
 
             }
 
-            //canRespawn = false;
-            //canReceiveDamage = true;
+            collisionTimer = 0;
 
+          
         }
 
         void Respawn()
         {
 
-            if(canRespawn)
+            respawnTimer = 0;
+            inmunityTimer = 0;
+            inmunityTimer = 0;
+
+            if (canRespawn)
             {
 
-                respawnTimer = 0;
-                inmunityTimer = 0;
-
                 canReceiveDamage = false;
-                inmunity = true;
+
+                //Console.WriteLine("Inmunity timer: " + inmunityTimer);
+                //LifeController.Damaged = true;
 
                 Random random = new Random();
 
@@ -165,11 +166,14 @@ namespace Game
 
                 Transform.Position = new Vector2(random.Next(200, 600), random.Next(100, 500))/*randomPosition*/;
                 Console.WriteLine($"Player new pos {Transform.Position.X}, {Transform.Position.Y}");
+                //canReceiveDamage = false;
 
+                inmunity = true;
+                canRespawn = false;
 
                 inmunityTimer += Time.DeltaTime;
 
-                if (inmunity && inmunityTimer <= inmunityMaxTimer && canReceiveDamage == false)
+                if(inmunity && inmunityTimer <= inmunityMaxTimer)
                 {
                     Console.WriteLine("Hi");
 
@@ -182,25 +186,14 @@ namespace Game
 
                 }
 
+                
             }
 
-            canRespawn = true;
-            //Console.WriteLine("Inmunity timer: " + inmunityTimer);
-            //LifeController.Damaged = true;
-
-            //if (canRespawn)
-            //{
-
-            //canReceiveDamage = false;
-
-           
-
-            //}
-
-            //inmunity = false;
-            //LifeController.Damaged = false;
-            //canShoot = true;
-            //canRespawn = false;
+            inmunity = false;
+            canReceiveDamage = true;
+            LifeController.Damaged = false;
+            canShoot = true;
+            canRespawn = false;
 
         }
 
@@ -261,7 +254,7 @@ namespace Game
             {
 
                 var playerBullet = bulletsPool.Get();
-                playerBullet.Init(Transform.Position, new Vector2(1, 1), new Vector2(20, 10), 0, "Textures/Entities/Characters/BulletPj.png", 3, new Vector2(200, 200), Damage, 1);
+                playerBullet.Init(Transform.Position, new Vector2(1, 1), new Vector2(20, 10), 0, "Textures/Entities/Characters/BulletPj.png", 3, new Vector2(200, 200), 10, 1);
 
             }
         }

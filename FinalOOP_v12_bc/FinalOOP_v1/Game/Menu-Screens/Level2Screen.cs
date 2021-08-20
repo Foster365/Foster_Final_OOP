@@ -10,18 +10,17 @@ namespace Game
     {
 
         float enemySpawnerTimer = 0;
-        float timetoCreate = 2f;
+        float timetoCreate = 3f;
 
         float asteroidTimer = 0;
-        float asteroidSpawnTime = 4f;
+        float asteroidSpawnTime = 2.5f;
 
         float levelTimer = 0;
         float maxLevelTimer = 50;
 
         Animation levelCountdown;
-        Animation deathAnimation;
 
-        public enum Animations { levelCountdown, deathAnimation }
+        public enum Animations { levelCountdown }
 
         Animations actualAnimstate = Animations.levelCountdown;
 
@@ -30,17 +29,19 @@ namespace Game
         public Level2Screen() : base()
         {
 
-            Console.WriteLine("Level 2");
-            //CleanAllElements();
             GameManager.Instance.EnemyKills = 0;
-            //Program.Environment.Add(new Image(new Vector2(0, 0), new Vector2(1, 1), new Vector2(2560, 1080), 0, "Textures/Level_Backgrounds/Level_1.jpg"));
-
-            //ResetLevel();
 
         }
 
         public override void Update()
         {
+
+            for (int i = 0; i < Program.Characters.Count; i++)
+            {
+
+                Program.Characters[i].Update();
+
+            }
 
             for (int i = 0; i < Program.Environment.Count; i++)
             {
@@ -49,17 +50,10 @@ namespace Game
 
             }
 
-            for (int i = 0; i < Program.Characters.Count; i++)
-            {
-
-                Program.Characters[i].Update();
-
-            }
             LevelCounter();
             EnemySpawn();
             CreateAsteroid();
-            CheckPlayerLife();
-            UpdateAnimation();
+            //UpdateAnimation();
             //NextLevel();
 
         }
@@ -67,10 +61,10 @@ namespace Game
         public override void Render()
         {
 
-            for (int i = 0; i < Program.Environment.Count; i++)
+            for (int j = 0; j < Program.Environment.Count; j++)
             {
 
-                Program.Environment[i].Render();
+                Program.Environment[j].Render();
 
             }
 
@@ -81,14 +75,8 @@ namespace Game
 
             }
 
-            for (int i = 0; i < LifeStack.Count; i++)
-            {
-                LifeStack[i].Render();
-            }
-
-            if (ActualAnimstate == Animations.levelCountdown)
-                Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
-
+            //if (ActualAnimstate == Animations.levelCountdown)
+            //    Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
 
         }
 
@@ -96,6 +84,7 @@ namespace Game
         {
 
             levelTimer += Time.DeltaTime;
+            Console.WriteLine(levelTimer);
 
             if (levelTimer >= maxLevelTimer)
                 Program.ActualScreenState = Program.ScreenFlow.gameOverScreen;
@@ -106,10 +95,14 @@ namespace Game
         public override void ResetLevel()
         {
 
-            Environment_Textures();
-            CreateCharacters();
-            AnimationParameters();
-            //CreateLifeStack(5, "Textures/Heart.png");
+            if (Program.ActualScreenState == Program.ScreenFlow.level2Screen)
+            {
+
+                Environment_Textures();
+                //AnimationParameters();
+                CreateCharacters();
+
+            }
 
         }
 
@@ -145,8 +138,7 @@ namespace Game
             if (asteroidTimer >= asteroidSpawnTime)
             {
 
-                Program.Characters.Add(AsteroidsFactory.CreateAsteroid(AsteroidsFactory.AsteroidFactory.asteroid1, asteroidPosition));
-                Program.Characters.Add(AsteroidsFactory.CreateAsteroid(AsteroidsFactory.AsteroidFactory.asteroid2, asteroidPosition));
+                Program.Environment.Add(AsteroidsFactory.CreateAsteroid(AsteroidsFactory.AsteroidFactory.asteroid2, asteroidPosition));
                 asteroidTimer = 0;
 
             }
@@ -183,22 +175,24 @@ namespace Game
         void CreateCharacters()
         {
 
+            Program.Characters.Add(new Player(new Vector2(400, 400), new Vector2(0.15f, 0.15f), 0, new Vector2(166, 304), new Vector2(200, 200), 100, "Textures/Entities/Characters/Player.png", 10, 10));
+
         }
 
         void Environment_Textures()
         {
 
-            Program.Environment.Add(new Image(new Vector2(0, 150), new Vector2(1, 1), new Vector2(1200, 600), 0, "Textures/Level_Backgrounds/Level_2.jpg"));
+            Program.Environment.Add(new Image(new Vector2(0, 150), new Vector2(.8f, .8f), new Vector2(1920, 1200), 0, "Textures/Level_Backgrounds/Level2Background.jpg"));
+
         }
 
         public void NextLevel()
         {
 
-            if (GameManager.Instance.EnemyKills >= 1)
+            if (GameManager.Instance.EnemyKills == 10)
             {
 
-                //Program.ActualScreenState = Program.ScreenFlow.level3Screen;
-                //CleanAllElements();
+                Program.ActualScreenState = Program.ScreenFlow.level3Screen;
 
             }
 
@@ -206,3 +200,4 @@ namespace Game
 
     }
 }
+

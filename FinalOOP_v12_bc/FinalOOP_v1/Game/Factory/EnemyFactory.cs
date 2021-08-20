@@ -27,7 +27,7 @@ namespace Game
                 case EnemiesFactory.enemyLevel4:
                     return new Enemy(position, -90, new Vector2(2, 2), new Vector2(177, 189), new Vector2(200, 200), "Textures/Entities/Characters/Enemy4.png", 10, 0, 15, 15, 5);
                 case EnemiesFactory.finalBossEnemy:
-                    return new BossEnemy(position, -90, new Vector2(1, 1), new Vector2(207, 226), new Vector2(30, 30), "Textures/Entities/Characters/Boss.png", 500, 0, 70, 40, 200);
+                    return new BossEnemy(position, -90, new Vector2(1, 1), new Vector2(207, 226), new Vector2(50, 50), "Textures/Entities/Characters/Boss.png", 500, 0, 60, 40, 9);
                 default:
                     return new Enemy(position, -90, new Vector2(0.5f, 0.5f), new Vector2(144, 145), new Vector2(100, 100), "Textures/Entities/Characters/Enemy1.png", 10, 0, 30, 10, 15);
             }

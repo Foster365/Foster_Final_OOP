@@ -8,7 +8,7 @@ en el render de esa clase.
 4- El jugador se mueve y dispara sobre un escenario OK
 
 5- Los enemigos spawnean por tiempo y p/ pasar de nivel hay que matar a 
-una cantidad específica. OK
+una cantidad específica.
 
 6- Hacer 5 niveles (Dificultad progresiva)
 

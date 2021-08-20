@@ -30,10 +30,7 @@ namespace Game
         public Level1Screen() : base()
         {
 
-            Console.WriteLine($"Level 1");
-
             GameManager.Instance.EnemyKills = 0;
-            ResetLevel();
 
         }
 
@@ -47,30 +44,28 @@ namespace Game
 
             }
 
-            for (int i = 0; i < Program.Characters.Count; i++)
+            for(int i = 0; i < Program.Characters.Count; i++)
             {
 
                 Program.Characters[i].Update();
 
             }
-
             LevelCounter();
             EnemySpawn();
             CreateAsteroid();
             CheckPlayerLife();
-            UpdateAnimation();
-            //NextLevel();
+            //UpdateAnimation();
+            NextLevel();
 
         }
 
         public override void Render()
         {
 
-
-            for(int i = 0; i < Program.Environment.Count-1; i++)
+            for (int j = 0; j < Program.Environment.Count; j++)
             {
 
-                Program.Environment[i].Render();
+                Program.Environment[j].Render();
 
             }
 
@@ -89,6 +84,13 @@ namespace Game
             if (ActualAnimstate == Animations.levelCountdown)
                 Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
 
+            if (actualAnimstate == Animations.deathAnimation)
+            {
+
+                Engine.Draw(deathAnimation.AnimList[deathAnimation.ActualAnimationFrame], 300, 100, 3, 3, 0, 0, 0);
+                //Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
+
+            }
 
         }
 
@@ -108,9 +110,7 @@ namespace Game
         {
 
             Environment_Textures();
-
             CreateCharacters();
-            //CreateAsteroid();
             AnimationParameters();
             CreateLifeStack(5, "Textures/Heart.png");
 
@@ -126,9 +126,9 @@ namespace Game
 
             enemySpawnerTimer += Time.DeltaTime;
 
-
             if (enemySpawnerTimer >= timetoCreate)
             {
+
                 Program.Characters.Add(EnemyFactory.CreateEnemy(EnemyFactory.EnemiesFactory.enemyLevel1, enemyPosition));
                 enemySpawnerTimer = 0;
 
@@ -148,7 +148,6 @@ namespace Game
             if (asteroidTimer >= asteroidSpawnTime)
             {
 
-                Program.Characters.Add(AsteroidsFactory.CreateAsteroid(AsteroidsFactory.AsteroidFactory.asteroid1, asteroidPosition));
                 Program.Characters.Add(AsteroidsFactory.CreateAsteroid(AsteroidsFactory.AsteroidFactory.asteroid1, asteroidPosition));
                 asteroidTimer = 0;
 
@@ -170,6 +169,33 @@ namespace Game
 
             levelCountdown = new Animation(countdownFrames, 1f, false);
 
+            List<Texture> deathFrames = new List<Texture>();
+
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion1.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion2.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion3.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion4.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion5.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion6.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion7.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion8.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion9.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion10.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion11.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion12.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion13.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion14.png"));
+            deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion15.png"));
+
+            //for (int i = 1; i < 15; i++)
+            //{
+
+            //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/" + i.ToString() + ".png"));
+
+            //}
+
+            deathAnimation = new Animation(deathFrames, .05f, false);
+
         }
 
         public void UpdateAnimation()
@@ -180,8 +206,47 @@ namespace Game
                 ActualAnimstate = Animations.levelCountdown;
                 levelCountdown.Play();
             }
+            if (actualAnimstate == Animations.deathAnimation)
+            {
+
+                actualAnimstate = Animations.deathAnimation;
+                deathAnimation.Play();
+
+            }
 
         }
+
+        //void AnimationParameters()
+        //{
+
+        //    List<Texture> deathFrames = new List<Texture>();
+
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion1.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion2.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion3.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion4.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion5.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion6.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion7.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion8.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion9.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion10.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion11.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion12.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion13.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion14.png"));
+        //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/Explosion15.png"));
+
+        //    //for (int i = 1; i < 15; i++)
+        //    //{
+
+        //    //    deathFrames.Add(Engine.GetTexture("Textures/Explosion/" + i.ToString() + ".png"));
+
+        //    //}
+
+        //    deathAnimation = new Animation(deathFrames, .05f, false);
+
+        //}
 
         void CreateCharacters()
         {
@@ -193,22 +258,52 @@ namespace Game
         void Environment_Textures()
         {
 
-            //Program.Environment.Add(new Image(new Vector2(0, 150), new Vector2(1, 1), new Vector2(2560, 1080), 0, "Textures/Level_Backgrounds/Level_1.jpg"));
+            Program.Environment.Add(new Image(new Vector2(0, 150), new Vector2(.8f, .8f), new Vector2(1920, 1200), 0, "Textures/Level_Backgrounds/Level1Background.jpg"));
+
+            //Program.Environment.Add(new HealthIcon(new Vector2(10, 10), new Vector2(.03f, .03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
+            //Program.Environment.Add(new HealthIcon(new Vector2(60, 10), new Vector2(.03f, .03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
+            //Program.Environment.Add(new HealthIcon(new Vector2(110, 10), new Vector2(.03f, .03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
+            //Program.Environment.Add(new HealthIcon(new Vector2(160, 10), new Vector2(.03f, .03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
+            //Program.Environment.Add(new HealthIcon(new Vector2(210, 10), new Vector2(.03f, .03f), new Vector2(788, 663), 0, "Textures/Heart.png"));
 
         }
 
-        //public void NextLevel()
-        //{
+        public void NextLevel()
+        {
 
-        //    if (GameManager.Instance.EnemyKills >= 1)
+            if (GameManager.Instance.EnemyKills == 10)
+            {
+
+                Program.ActualScreenState = Program.ScreenFlow.level2Screen;
+                CleanAllElements();
+
+            }
+
+        }
+
+        //public void UpdateAnimation()
+        //{
+        //    if (actualAnimstate == Animations.deathAnimation)
         //    {
 
-        //        //CleanAllElements();
-        //        Program.ActualScreenState = Program.ScreenFlow.level2Screen;
+        //        actualAnimstate = Animations.deathAnimation;
+        //        deathAnimation.Play();
 
         //    }
 
         //}
 
+        //public void RenderAnimation()
+        //{
+
+        //    if (actualAnimstate == Animations.deathAnimation)
+        //    {
+
+        //        Engine.Draw(deathAnimation.AnimList[deathAnimation.ActualAnimationFrame], 300, 100, 3, 3, 0, 0, 0);
+        //        //Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
+
+        //    }
+
+        //}
     }
 }

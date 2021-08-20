@@ -13,7 +13,7 @@ namespace Game
 
         //Level1Screen level1;
 
-        public DamagePowerUp(Vector2 _position, Vector2 _scale, Vector2 _size, Vector2 _speed, float _lifeTime, float _rotation, float _colliderRadius, int _damageIncreaser, string _texture) : base(_position, _scale, _size, _speed, _lifeTime, _rotation, _colliderRadius, _texture)
+        public DamagePowerUp(Vector2 _position, Vector2 _scale, Vector2 _size, Vector2 _speed, float _rotation, float _colliderRadius, int _damageIncreaser, string _texture) : base(_position, _scale, _size, _speed, _rotation, _colliderRadius, _texture)
         {
 
             damageIncreaser = _damageIncreaser;
@@ -36,13 +36,7 @@ namespace Game
                 if (Program.Characters[i].LifeController.IsPlayer)
                 {
                     if (CircleCollider.CheckforCollisions(Program.Characters[i]))
-                    {
-
                         GiveDamage(Program.Characters[i]);
-                        Console.WriteLine($"Player current damage: {Program.Characters[i].Damage}");
-                        LifeController.Deactivate(this);
-
-                    }
                 }
             }
         }
