@@ -101,7 +101,7 @@ namespace Game
         static public void ActualScreen()
         {
 
-            actualScreenState = ScreenFlow.level1Screen;
+            actualScreenState = ScreenFlow.splashScreen;
 
         }
 
