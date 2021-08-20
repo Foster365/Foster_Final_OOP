@@ -254,7 +254,7 @@ namespace Game
             {
 
                 var playerBullet = bulletsPool.Get();
-                playerBullet.Init(Transform.Position, new Vector2(1, 1), new Vector2(20, 10), 0, "Textures/Entities/Characters/BulletPj.png", 3, new Vector2(200, 200), 10, 1);
+                playerBullet.Init(Transform.Position, new Vector2(1, 1), new Vector2(20, 10), 0, "Textures/Entities/Characters/BulletPj.png", 3, new Vector2(200, 200), Damage, 1);
 
             }
         }

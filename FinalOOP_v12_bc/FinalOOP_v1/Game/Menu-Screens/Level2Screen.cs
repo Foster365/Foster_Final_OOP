@@ -50,11 +50,11 @@ namespace Game
 
             }
 
+            UpdateAnimation();
             LevelCounter();
             EnemySpawn();
             CreateAsteroid();
-            //UpdateAnimation();
-            //NextLevel();
+            NextLevel();
 
         }
 
@@ -75,8 +75,8 @@ namespace Game
 
             }
 
-            //if (ActualAnimstate == Animations.levelCountdown)
-            //    Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
+            if (ActualAnimstate == Animations.levelCountdown)
+                Engine.Draw(levelCountdown.AnimList[levelCountdown.ActualAnimationFrame], 750, 10, .5f, .5f, 0, 0, 0);
 
         }
 
@@ -98,8 +98,8 @@ namespace Game
             if (Program.ActualScreenState == Program.ScreenFlow.level2Screen)
             {
 
+                AnimationParameters();
                 Environment_Textures();
-                //AnimationParameters();
                 CreateCharacters();
 
             }
@@ -150,7 +150,7 @@ namespace Game
 
             List<Texture> countdownFrames = new List<Texture>();
 
-            for (int i = 60; i >= 1; i--)
+            for (int i = 50; i >= 1; i--)
             {
 
                 countdownFrames.Add(Engine.GetTexture("Textures/Countdown/" + i.ToString() + ".png"));
@@ -182,7 +182,7 @@ namespace Game
         void Environment_Textures()
         {
 
-            Program.Environment.Add(new Image(new Vector2(0, 150), new Vector2(.8f, .8f), new Vector2(1920, 1200), 0, "Textures/Level_Backgrounds/Level2Background.jpg"));
+            Program.Environment.Add(new Image(new Vector2(0, 150), new Vector2(1, 1), new Vector2(1200, 600), 0, "Textures/Level_Backgrounds/Level_2.png"));
 
         }
 
